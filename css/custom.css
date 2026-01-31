@@ -1,0 +1,981 @@
+.info-dev {
+  margin-left: 16px !important
+}
+
+
+/* keyframes valides */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-5px); }
+}
+
+
+
+
+/* =========================================================
+   MINI CASE STUDY MODAL — THEME DARK / TECH
+========================================================= */
+
+.case-overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(10, 15, 25, 0.78);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:10000;
+  padding:18px;
+}
+
+/* ===== Carte modale ===== */
+.case-modal{
+  width:min(920px,92vw);
+  max-height:90dvh;
+  overflow:auto;
+  background:linear-gradient(180deg,#111827,#0b1220);
+  color:#e5e7eb;
+  border-radius:18px;
+  box-shadow:
+    0 30px 80px rgba(0,0,0,.65),
+    inset 0 0 0 1px rgba(255,255,255,.04);
+}
+
+/* ===== Header ===== */
+.case-modal header{
+  position:sticky;
+  top:0;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  padding:16px 18px;
+  background:linear-gradient(180deg,#0f172a,#0b1220);
+  border-bottom:1px solid rgba(255,255,255,.06);
+  z-index:2;
+}
+
+.case-modal header h3{
+  margin:0;
+  font-size:18px;
+  font-weight:600;
+  letter-spacing:.2px;
+  color:#f9fafb;
+}
+
+/* Bouton fermer */
+.case-close{
+  border:none;
+  background:rgba(255,255,255,.06);
+  color:#e5e7eb;
+  font-size:22px;
+  cursor:pointer;
+  line-height:1;
+  padding:6px 12px;
+  border-radius:10px;
+  transition:.15s ease;
+}
+.case-close:hover{
+  background:rgba(255,255,255,.12);
+}
+.case-close:focus{
+  outline:3px solid rgba(139,92,246,.55);
+  outline-offset:2px;
+}
+
+/* ===== Contenu ===== */
+.case-body{
+  padding:18px;
+}
+
+.case-body p{
+  margin:0 0 10px;
+  line-height:1.55;
+  color:#d1d5db;
+}
+
+.case-body strong{
+  color:#f9fafb;
+}
+
+.case-body ul{
+  margin:8px 0 12px;
+  padding-left:18px;
+}
+
+.case-body li{
+  margin-bottom:6px;
+}
+
+.case-body li::marker{
+  color:#8b5cf6;
+}
+
+/* ===== Zone actions ===== */
+.case-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:18px;
+  padding-top:14px;
+  border-top:1px dashed rgba(255,255,255,.12);
+}
+
+/* ===== Bouton Démo ===== */
+.case-demo-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:12px 18px;
+  border-radius:14px;
+  border:none;
+  background:linear-gradient(135deg,#8b5cf6,#6366f1);
+  color:#fff;
+  font-weight:600;
+  font-size:14px;
+  text-decoration:none;
+  box-shadow:
+    0 10px 30px rgba(139,92,246,.45);
+  transition:transform .15s ease, box-shadow .15s ease;
+}
+
+.case-demo-btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 14px 40px rgba(139,92,246,.6);
+}
+
+.case-demo-btn:focus{
+  outline:3px solid rgba(139,92,246,.55);
+  outline-offset:3px;
+}
+
+/* Bouton secondaire éventuel */
+.case-demo-secondary{
+  display:inline-flex;
+  align-items:center;
+  padding:12px 16px;
+  border-radius:14px;
+  border:1px solid rgba(255,255,255,.18);
+  background:transparent;
+  color:#e5e7eb;
+  text-decoration:none;
+  transition:.15s ease;
+}
+
+.case-demo-secondary:hover{
+  background:rgba(255,255,255,.06);
+}
+
+/* ===== Galerie ===== */
+.case-gallery{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:12px;
+  margin-top:14px;
+}
+
+@media (max-width:520px){
+  .case-gallery{
+    grid-template-columns:1fr;
+  }
+}
+
+.case-gallery img{
+  width:100%;
+  border-radius:14px;
+  border:1px solid rgba(255,255,255,.08);
+  background:#020617;
+  transition:transform .15s ease, box-shadow .15s ease;
+}
+
+.case-gallery img:hover{
+  transform:translateY(-3px);
+  box-shadow:0 18px 40px rgba(0,0,0,.6);
+}
+
+
+              /* =========================================================
+   CTA FREELANCE — HERO & SECTIONS
+========================================================= */
+
+
+
+.btn-cta{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  padding:14px 22px;
+  border-radius:16px;
+  font-weight:600;
+  font-size:15px;
+  text-decoration:none;
+  cursor:pointer;
+  transition:
+    transform .15s ease,
+    box-shadow .15s ease,
+    background .15s ease,
+    border-color .15s ease;
+}
+
+/* CTA principal */
+.btn-cta.primary{
+  background:linear-gradient(135deg,#8b5cf6,#6366f1);
+  color:#fff;
+  font-weight:700;
+  border:none;
+  box-shadow:0 14px 40px rgba(139,92,246,.45);
+}
+
+.btn-cta.primary:hover{
+  transform:translateY(-2px);
+  box-shadow:0 18px 48px rgba(139,92,246,.6);
+}
+
+/* CTA secondaire */
+.btn-cta.secondary{
+  background:transparent;
+  color:#fff;
+  font-weight:650;
+  border:1px solid rgba(255,255,255,.55);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+}
+
+.btn-cta.secondary:hover{
+  background:rgba(255,255,255,.08);
+  transform:translateY(-2px);
+}
+
+/* Texte de réassurance sous CTA */
+.cta-note{
+  margin-top:10px;
+  font-size:14px;
+  opacity:.85;
+  text-align:center;
+}
+
+/* Responsive */
+@media (max-width:768px){
+  .btn-cta{
+    width:100%;
+    max-width:280px;
+  }
+}
+
+/* =========================================================
+   SECTION "COMMENT JE TRAVAILLE"
+========================================================= */
+.how-container{
+  margin-top:40px;
+  padding:22px;
+  border-radius:18px;
+  background:linear-gradient(180deg, rgba(17,24,39,.72), rgba(2,6,23,.78));
+  border:1px solid rgba(255,255,255,.06);
+  box-shadow:0 24px 60px rgba(0,0,0,.35);
+}
+
+.how-intro{
+  margin:8px 0 18px;
+  opacity:.88;
+  max-width:760px;
+}
+
+.how-grid{
+  display:grid;
+  grid-template-columns:repeat(4, 1fr);
+  gap:14px;
+}
+
+@media (max-width:1100px){
+  .how-grid{ grid-template-columns:repeat(2, 1fr); }
+}
+@media (max-width:560px){
+  .how-grid{ grid-template-columns:1fr; }
+}
+
+.how-step{
+  position:relative;
+  padding:16px 16px 14px;
+  border-radius:16px;
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.07);
+  transition:transform .15s ease, background .15s ease, box-shadow .15s ease;
+}
+
+.how-step:hover{
+  transform:translateY(-3px);
+  background:rgba(255,255,255,.06);
+  box-shadow:0 18px 40px rgba(0,0,0,.35);
+}
+
+.how-badge{
+  width:34px;
+  height:34px;
+  border-radius:12px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:700;
+  color:#fff;
+  background:linear-gradient(135deg,#8b5cf6,#6366f1);
+  box-shadow:0 10px 24px rgba(139,92,246,.35);
+  margin-bottom:10px;
+}
+
+.how-step h4{
+  margin:0 0 8px;
+  font-size:16px;
+  color:#f9fafb;
+}
+
+.how-step p{
+  margin:0 0 10px;
+  line-height:1.55;
+  color:#d1d5db;
+}
+
+.how-step ul{
+  margin:0;
+  padding-left:18px;
+  color:#cbd5e1;
+}
+
+.how-step li{
+  margin-bottom:6px;
+}
+
+.how-step li::marker{
+  color:#8b5cf6;
+}
+
+.how-cta{
+  display:flex;
+  justify-content:center;
+  margin-top:18px;
+}
+
+/* =========================================================
+   FORMULAIRE "DEVIS RAPIDE"
+========================================================= */
+.quick-quote{
+  margin:10px 0 30px;
+  padding:20px;
+  border-radius:18px;
+  background:linear-gradient(180deg, rgba(17,24,39,.72), rgba(2,6,23,.78));
+  border:1px solid rgba(255,255,255,.06);
+  box-shadow:0 24px 60px rgba(0,0,0,.35);
+}
+
+.quick-quote h3{
+  margin:0 0 6px;
+  color:#f9fafb;
+}
+
+.quick-quote p{
+  margin:0 0 14px;
+  color:#d1d5db;
+  opacity:.9;
+}
+
+.qq-help{ opacity:.8; color:#cbd5e1; display:block; margin-top:6px; font-size:13px; }
+
+.qq-step{
+  border:1px solid rgba(255,255,255,.06);
+  background:rgba(255,255,255,.02);
+  border-radius:16px;
+  padding:14px;
+  margin-bottom:12px;
+  transition:background .15s ease, border-color .15s ease;
+}
+
+.qq-step__title{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-bottom:10px;
+}
+
+.qq-step__badge{
+  width:26px;height:26px;border-radius:10px;
+  display:inline-flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,#8b5cf6,#6366f1);
+  color:#fff;font-weight:700;font-size:13px;
+}
+
+.qq-step__status{
+  margin-left:auto;
+  font-size:12px;
+  opacity:.85;
+  color:#cbd5e1;
+}
+
+.qq-step.is-done{
+  border-color:rgba(139,92,246,.35);
+  background:rgba(139,92,246,.06);
+}
+
+.qq-step.is-locked .qq-chip[data-fill]{
+  pointer-events: auto !important;
+  opacity: 1 !important;
+  cursor: pointer !important;
+}
+
+/* (Optionnel) rendre le step lock moins agressif */
+.qq-step.is-locked{
+  pointer-events: auto; /* <-- si ton thème avait mis none */
+}
+
+
+.qq-step.is-done .qq-step__status{ color:#a7f3d0; } /* vert doux */
+.qq-step.is-open .qq-step__status{ color:#e5e7eb; }
+
+/* Step 2 verrouillée : on peut bloquer complètement */
+.qq-step[data-step="2"].is-locked{
+  opacity:.55;
+  pointer-events:none;
+  filter:saturate(.85);
+}
+
+/* Step 3 verrouillée : on NE bloque PAS tout, sinon les chips ne "hover" jamais */
+.qq-step[data-step="3"].is-locked{
+  opacity:.55;
+  pointer-events:auto;
+  filter:saturate(.85);
+}
+
+/* Dans step 3 verrouillée, on bloque uniquement les champs */
+.qq-step[data-step="3"].is-locked input,
+.qq-step[data-step="3"].is-locked select,
+.qq-step[data-step="3"].is-locked textarea{
+  pointer-events:none;
+}
+
+
+/* On bloque uniquement les champs quand c’est verrouillé */
+.qq-step.is-locked input,
+.qq-step.is-locked select,
+.qq-step.is-locked textarea{
+  pointer-events:none;
+}
+
+/* Mais on laisse les boutons du wizard cliquables */
+.qq-step.is-locked .qq-chip,
+.qq-step.is-locked button{
+  pointer-events:auto;
+}
+
+.qq-step__content{ overflow:hidden; }
+
+/* Hover plus visible pour les starters (data-fill) */
+#quick-quote-form .qq-chip[data-fill]:hover{
+  transform: translateY(-2px) !important;
+  background: rgba(255,255,255,.14) !important;
+  border-color: rgba(255,255,255,.35) !important;
+  box-shadow: 0 10px 26px rgba(0,0,0,.28) !important;
+}
+
+
+/* Et si sélectionné */
+#quick-quote-form .qq-chip[data-fill].is-selected,
+#quick-quote-form .qq-chip[data-fill][aria-pressed="true"]{
+  background: rgba(99,102,241,.28) !important;
+  border-color: rgba(99,102,241,.85) !important;
+  box-shadow: 0 0 0 3px rgba(99,102,241,.22), 0 16px 40px rgba(0,0,0,.35) !important;
+}
+
+
+.qq-chips{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-top:10px;
+}
+/* Chips */
+.qq-chip {
+  border: 1px solid rgba(255,255,255,.18);
+  background: rgba(255,255,255,.06);
+  color: #f9fafb;
+  padding: 10px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: transform .08s ease, background .15s ease, border-color .15s ease, box-shadow .15s ease;
+}
+
+.qq-chip:hover {
+  transform: translateY(-1px);
+  background: rgba(255,255,255,.10);
+  border-color: rgba(255,255,255,.28);
+}
+
+/* ✅ Sélection visible */
+/* Affiche clairement le choix (starter + wizard + priorité) */
+.qq-chip.is-selected,
+.qq-chip[aria-pressed="true"]{
+  background: rgba(99,102,241,.22) !important;
+  border-color: rgba(99,102,241,.75) !important;
+  box-shadow: 0 0 0 3px rgba(99,102,241,.18) !important;
+}
+
+/* Optionnel: coche visuelle */
+.qq-chip.is-selected::before,
+.qq-chip[aria-pressed="true"]::before{
+  content: "✓";
+  display: inline-block;
+  margin-right: 8px;
+  opacity: .95;
+}
+
+
+/* Focus clavier (accessibilité) */
+.qq-chip:focus {
+  outline: none;
+}
+.qq-chip:focus-visible {
+  box-shadow: 0 0 0 3px rgba(255,255,255,.18);
+}
+
+/* Disabled (si tu désactives certains chips) */
+.qq-chip.is-disabled,
+.qq-chip:disabled {
+  opacity: .45;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* (Optionnel) Petites chips inline */
+.qq-chips.qq-inline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* petite animation quand on déverrouille */
+@keyframes qqPop {
+  from { transform: translateY(6px); opacity: .0; }
+  to   { transform: translateY(0); opacity: 1; }
+}
+.qq-step.is-open{ animation: qqPop .18s ease-out; }
+
+
+.qq-grid{
+  display:grid;
+  grid-template-columns:repeat(2, 1fr);
+  gap:12px;
+}
+
+@media (max-width:680px){
+  .qq-grid{ grid-template-columns:1fr; }
+}
+
+.qq-field label{
+  display:block;
+  margin:0 0 6px;
+  font-size:13px;
+  color:#e5e7eb;
+  opacity:.9;
+}
+
+.qq-field input,
+.qq-field select,
+.qq-field textarea{
+  width:100%;
+  padding:12px 12px;
+  border-radius:14px;
+  border:1px solid rgba(255,255,255,.10);
+  background:rgba(255,255,255,.04);
+  color:#f9fafb;
+  outline:none;
+  transition:border-color .15s ease, box-shadow .15s ease, background .15s ease;
+}
+
+.qq-field input::placeholder,
+.qq-field textarea::placeholder{
+  color:rgba(255,255,255,.55);
+}
+
+.qq-field input:focus,
+.qq-field select:focus,
+.qq-field textarea:focus{
+  border-color:rgba(139,92,246,.55);
+  box-shadow:0 0 0 4px rgba(139,92,246,.18);
+  background:rgba(255,255,255,.06);
+}
+
+.qq-full{ grid-column:1 / -1; }
+
+.qq-actions{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  justify-content:flex-start;
+  margin-top:14px;
+  flex-wrap:wrap;
+}
+
+.qq-note{
+  font-size:13px;
+  color:#cbd5e1;
+  opacity:.85;
+}
+
+/* ===== Progress (Devis) ===== */
+.qq-progress{
+  height:10px;
+  border-radius:999px;
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.10);
+  overflow:hidden;
+  margin:12px 0 8px;
+}
+
+.qq-progress__bar{
+  height:100%;
+  width:33%;
+  border-radius:999px;
+  background:linear-gradient(135deg,#8b5cf6,#6366f1);
+  box-shadow:0 10px 24px rgba(139,92,246,.25);
+  transition:width .25s ease;
+}
+
+.qq-progress__meta{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  font-size:13px;
+  color:#cbd5e1;
+  opacity:.9;
+  margin-bottom:10px;
+}
+
+.qq-progress__hint{
+  opacity:.85;
+}
+
+
+/* =========================================================
+   HERO (HOME) — clean + hybride
+========================================================= */
+#home .banner-content{
+ font-family: inherit;
+  text-align: center;
+  padding: 0 150px;
+}
+
+#home.banner-section{
+  display:flex;
+  align-items:center;
+}
+
+#home .home-logo{
+  width: 56px;         /* au lieu de 80 */
+  height: auto;
+  margin: 0 auto 10px;
+  opacity: .92;
+}
+
+#home .home-title{
+  font-size: clamp(30px, 3.2vw, 44px) !important;
+  line-height: 1.05;
+  margin: 0;
+  font-weight: 800;
+  letter-spacing: .2px;
+}
+
+#home .hero-byline{
+  margin: 6px 0 0;
+  font-size: 14px;
+  letter-spacing: .2px;
+  opacity: .78;
+}
+
+#home .home-desc{
+display: none;
+}
+
+.home-hero-title{
+  display: block;
+}
+
+#home .hero-note{
+  font-size: 15px !important;  /* 10-12 conseillé */
+  line-height: 1.2 !important;
+  opacity: .75 !important;
+  margin-top: 12px !important;
+}
+
+/* CTA base */
+.cta-group{
+  display:flex;
+  gap:12px;
+  justify-content:center;
+  flex-wrap:wrap;
+  margin-top:18px;
+}
+
+.btn-cta.ghost{
+  background: transparent;
+  border: 1px solid rgba(255,255,255,.18);
+  color: rgba(255,255,255,.9);
+  box-shadow: none;
+}
+
+/* Desktop only helpers */
+.cta-desktop-only{ display: inline-flex; }
+.cd-desktop-only{ display: block; }
+
+
+
+#home .home-title span{
+  font-weight:500;
+  opacity:.85;
+}
+
+
+
+
+/* Mobile: caché */
+@media (max-width:800px){
+  .cd-desktop-only{ display:none !important; }
+}
+
+/* =========================================================
+   MOBILE ≤ 600px — simplifie et booste la lisibilité
+========================================================= */
+@media (max-width:800px){
+
+  /* Header brand */
+  .header-mobile{ padding:12px 16px; }
+  .header-mobile-brand{ gap:12px; }
+  .header-mobile-logo{
+    width:36px; height:36px;
+    object-fit:cover;
+  }
+  .header-mobile-name{
+    font-size:18px;
+    font-weight:700;
+   line-height:1.1;
+    letter-spacing:.2px;
+
+  }
+  .header-mobile-sub{
+  display:block;
+  font-size:12px;
+  opacity:.75;
+  margin-top:2px;
+  line-height:1.1;
+}
+
+#home .banner-content{
+ font-family: inherit;
+  text-align: center;
+  padding: 0 18px;
+}
+
+
+  /* Home : cacher branding desktop */
+  #home .home-logo,
+  #home .home-title,
+  #home .home-desc,
+  #home .cd-desktop-only{
+    display:none !important;
+  }
+
+  /* Show mobile content */
+  #home .home-mobile-title{
+    display:block;
+    font-size: clamp(20px, 5.8vw, 26px);
+    font-weight: 800;
+    line-height: 1.2;
+    margin: 0 0 10px;
+  }
+
+  #home .home-mobile-subtitle{
+    display:block;
+    font-size: 16px;
+    line-height: 1.45;
+    opacity: .92;
+    max-width: 360px;
+    margin: 0 auto 16px;
+  }
+
+  .header-mobile-brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.header-mobile-brand span{
+  display:block;
+}
+
+.header-mobile-brand .header-mobile-text{
+  display:flex;
+  flex-direction:column;
+  line-height:1.05;
+}
+
+
+
+  /* CTA : colonne, 2 boutons, pas de 3e */
+  .cta-group{
+    margin-top:12px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn-cta{
+    width:100%;
+    max-width: 320px;
+    font-size: 15px;
+    padding: 15px 18px;
+  }
+
+  .cta-desktop-only{ display:none !important; }
+
+
+}
+.image-container{ text-align:center; }
+
+.header-name{
+  margin: 0;
+  font-size: 16px; /* tu peux monter à 18 si tu veux */
+  letter-spacing: .3px;
+}
+
+.header-subname{
+  margin: 6px 0 14px;
+  font-size: 13px;
+  opacity: .75;
+}
+
+
+/* Sidebar desktop : logo + marge plus compacts */
+.header-main .hero-brand .home-logo{
+  width: 82px;      /* ajuste: 40-48 */
+  margin: 12px auto 8px;
+    opacity: .95;
+}
+/* Sidebar desktop : garder le nom mais plus petit */
+.header-main .hero-brand .home-title{
+  display:block !important;
+  font-size: 30px !important;     /* ajuste 12-15 */
+  margin: 0px 0 22px !important;
+  opacity: .85;
+  letter-spacing: 2px;
+  font-weight: 700;
+}
+
+.header-main .hero-brand{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  padding: 14px 0 10px;
+}
+
+.u-pos-relative{ position: relative; }
+.u-overflow-visible{ overflow: visible; }
+
+.u-text-center{ text-align: center; }
+
+.u-opacity-80{ opacity: .8; }
+.u-opacity-85{ opacity: .85; }
+
+.u-mt-10{ margin-top: 10px; }
+.u-mt-12{ margin-top: 12px; }
+.u-mt-0{ margin-top: 0; }
+
+.u-my-10{ margin: 10px 0; }
+
+.u-mx-auto{ margin-left: auto; margin-right: auto; }
+
+.u-maxw-820{ max-width: 820px; }
+
+.u-mb-18{ margin-bottom: 18px; }
+
+.u-hidden{ display: none; }
+
+.u-signature-img{ width: 88%; height: auto; }
+
+.u-social-icon-100{
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+}
+
+.u-social-icon-github{
+  width: 110px;
+  height: 100px;
+  margin: 10px;
+}
+
+.case-img{
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid #eef1f4;
+}
+
+.u-grid-2{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-top: 12px;
+}
+
+#qq .qq-tabs {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 14px 0 10px;
+}
+
+#qq .qq-tab {
+  border: 1px solid rgba(255, 255, 255, .18);
+  background: rgba(255, 255, 255, .06);
+  color: #f9fafb;
+  padding: 10px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: transform .08s ease, background .15s ease, border-color .15s ease, box-shadow .15s ease;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+#qq .qq-tab:hover {
+  transform: translateY(-1px);
+  background: rgba(255, 255, 255, .10);
+  border-color: rgba(255, 255, 255, .28);
+}
+
+#qq .qq-tab.is-active {
+  background: rgba(99, 102, 241, .22);
+  border-color: rgba(99, 102, 241, .75);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, .18);
+}
+
+#qq .qq-subnote {
+  margin: 0 0 6px;
+  opacity: .85;
+  font-size: 13px;
+  color: #cbd5e1;
+}
+
+#qq .qq-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 14px;
+}
+
+#qq .qq-errors {
+  border: 1px solid rgba(239, 68, 68, .35);
+  background: rgba(239, 68, 68, .08);
+  color: #fecaca;
+  border-radius: 14px;
+  padding: 10px 12px;
+  font-size: 13px;
+}
