@@ -1,102 +1,102 @@
 .header-main .image-container .header-name:before {
-    background-color: #5078FF;
+    background-color: #a78bfa;
 }
 
 .page-heading h2 {
-    color: #5078FF;
+    color: #a78bfa;
 }
 
 .page-heading .icon {
-    color: #5078FF;
+    color: #a78bfa;
 }
 
 .subheading h3 {
-    border-color: #5078FF !important;
+    border-color: #a78bfa !important;
 }
 
 .subheading h3:before,
 .subheading h3:after {
-    background-color: #5078FF;
+    background-color: #a78bfa;
 }
 
 .banner-section h1 span {
-    color: #5078FF;
+    color: #a78bfa;
 }
 
 .banner-section p .cd-words-wrapper b {
-    border-color: #5078FF !important;
+    border-color: #a78bfa !important;
 }
 
 .about-info ul li span.title {
-    border-color: #5078FF !important;
+    border-color: #a78bfa !important;
 }
 
 .btn-main {
-    border-color: #5078FF !important;
-    color: #5078FF;
+    border-color: #a78bfa !important;
+    color: #a78bfa;
 }
 
 .btn-main:after {
-    background-color: #5078FF;
+    background-color: #a78bfa;
 }
 
 .services .service-item .icon {
-    color: #5078FF !important;
+    color: #a78bfa !important;
 }
 
 .testimonial-item .testimonial-content:before {
-    color: #5078FF !important;
+    color: #a78bfa !important;
 }
 
 ul.experience li span.line-left,
 ul.education li span.line-left {
-    background-color: #5078FF !important;
+    background-color: #a78bfa !important;
 }
 
 ul.experience li span.line-left:before,
 ul.experience li span.line-left:after,
 ul.education li span.line-left:before,
 ul.education li span.line-left:after {
-    border-color: #5078FF !important;
+    border-color: #a78bfa !important;
 }
 
 ul.experience .content h5,
 ul.education .content h5 {
-    color: #5078FF;
+    color: #a78bfa;
 }
 
 .progress .progress-bar {
-    background-color: #5078FF;
+    background-color: #a78bfa;
 }
 
 .progress .progress-bar:after {
-    border-bottom-color: #2c5cff;
+    border-bottom-color: #7c3aed;
 }
 
 .portfolio-section .portfolio-filter ul li.active {
-    background-color: #5078FF;
+    background-color: #a78bfa;
 }
 
 .portfolio-section .item figure:before {
-    background-color: #5078FF;
+    background-color: #a78bfa;
 }
 
 .ajax-portfolio-popup .information span.title {
-    color: #5078FF;
+    color: #a78bfa;
 }
 
 .blog-section .blog-item .blog-content .cat {
-    color: #5078FF;
+    color: #a78bfa;
 }
 
 .contact-info .info-item .icon {
-    color: #5078FF;
+    color: #a78bfa;
 }
 
 blockquote {
-    border-color: #5078FF !important;
+    border-color: #a78bfa !important;
 }
 
 .blog-page .blog-heading .cat {
-    color: #5078FF;
+    color: #a78bfa;
 }
