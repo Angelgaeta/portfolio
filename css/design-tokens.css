@@ -194,15 +194,21 @@ a:hover {
 }
 
 #home .banner-content {
-  max-width: 920px;
-  margin: 0 auto;
-  padding-inline: var(--space-3);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: min(920px, calc(100% - (2 * var(--space-3))));
+  margin: 0;
+  padding-inline: 0;
+  transform: translate(-50%, -50%);
+  text-align: center;
 }
 
 #home .home-hero-stack {
   font-size: 1rem;
   line-height: 1.6;
   color: var(--muted);
+  margin-inline: auto;
 }
 
 #home .home-hero-promise {
@@ -210,11 +216,13 @@ a:hover {
   line-height: 1.65;
   color: var(--text);
   max-width: 720px;
+  margin-inline: auto;
 }
 
 #home .hero-note {
   color: var(--muted);
   font-size: 0.875rem;
+  margin-inline: auto;
 }
 
 #home .cta-group {
