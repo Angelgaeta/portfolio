@@ -37,6 +37,7 @@
   <meta name="twitter:card" content="summary_large_image">
 	  <meta name="twitter:image" content="https://devweb.angelgaeta.com/img/og-cover.jpg">
   <meta name="twitter:image:alt" content="Portfolio Angélique Redjdal">
+  <link rel="preload" as="image" href="img/photo-portrait.jpg" fetchpriority="high">
 
 
 
@@ -59,6 +60,7 @@
 	  <!--Couleur CSS-->
   <link rel="stylesheet" href="css/purple-color.css" />
   <link rel="stylesheet" href="css/custom.css" />
+  <link rel="stylesheet" href="css/design-tokens.css" />
 
 
   <!--Modernizr (requis par plugins.min.js pour les transitions de page)-->
@@ -103,6 +105,7 @@
 
 
 <body>
+  <a class="skip-link" href="#main">Aller au contenu principal</a>
 
   <div id="caseOverlay" class="case-overlay" aria-hidden="true">
     <div id="caseDialog" class="case-modal" role="dialog" aria-modal="true" aria-labelledby="caseTitle" tabindex="-1">
@@ -210,12 +213,12 @@
             </ul>
             <!--Contact rapide-->
             <div class="sidebar-contact">
-              <a href="mailto:angeldevweb@gmail.com" class="sidebar-email">📧 angeldevweb@gmail.com</a>
+              <a href="mailto:angeldevweb@gmail.com" class="sidebar-email">angeldevweb@gmail.com</a>
             </div>
             <!--Texte du droit d'auteur-->
             <div class="copy">
               <p>2026 &copy; Angélique Redjdal</p>
-              <p class="copy-sub">Fait avec 💜 à Montpellier</p>
+              <p class="copy-sub">Montpellier</p>
             </div>
           </div>
         </div>
@@ -234,44 +237,16 @@
 					        </video>
 
 	        <div class="banner-content">
-	          <h1 class="sr-only">Angélique Redjdal — Développeuse full-stack UI/UX</h1>
+	          <h1 class="home-hero-title">Développeuse full‑stack</h1>
+	          <p class="home-hero-stack">PHP • SQL • JavaScript • API REST</p>
+	          <p class="home-hero-promise">Qualité, maintenabilité et UX claire pour des produits fiables.</p>
 
-	          <!-- Desktop only (branding) -->
+	          <div class="cta-group">
+	            <a href="#contact" class="btn-cta primary" aria-label="Me contacter - formulaire de contact">Me contacter</a>
+	            <a href="#portfolio" class="btn-cta secondary">Voir mes projets</a>
+	          </div>
 
-
-          <!-- Mobile only (titre compact) -->
-          <h2 class="home-mobile-title">
-            <span class="gradient-text">Développeuse full‑stack</span><br>
-            UI/UX • produit • qualité
-          </h2>
-
-          <!-- Desktop text -->
-            <p class="home-desc">
-	            Full‑stack : PHP/SQL/JavaScript, API REST. UI/UX : Figma, intégration responsive, accessibilité.
-	          </p>
-
-
-	          <!-- Mobile text -->
-		          <p class="home-mobile-subtitle">
-		            Full‑stack : PHP/SQL/JavaScript, API REST. UI/UX : Figma, intégration responsive, accessibilité.
-		          </p>
-
-		          <ul class="hero-chips" aria-label="Focus">
-		            <li class="hero-chip">API REST</li>
-		            <li class="hero-chip">SQL / MySQL</li>
-		            <li class="hero-chip">UI/UX</li>
-		            <li class="hero-chip">Accessibilité</li>
-		          </ul>
-
-		          <div class="cta-group">
-		            <a href="#portfolio" class="btn-cta primary">Voir mes projets</a>
-		            <a href="#contact" class="btn-cta secondary" aria-label="Me contacter - formulaire de contact">Me contacter</a>
-		          </div>
-
-	          <!-- Réassurance unique -->
-	          <p class="hero-note">
-	            Montpellier / Remote • Ouverte aux opportunités
-	          </p>
+	          <p class="hero-note">Montpellier / Remote • Ouverte aux opportunités</p>
         </div>
 
 
@@ -396,7 +371,7 @@
           <div class="row services mb-30">
             <div class="col-md-12">
               <div class="subheading">
-                <h3>Compétences</h3>
+                <h3>Ce que j'apporte</h3>
               </div>
             </div>
 
@@ -468,6 +443,10 @@
 	              <div class="stat-item glass-card">
 	                <span class="big-number">2</span>
 	                <span class="stat-label">Certifications</span>
+	              </div>
+	              <div class="stat-item glass-card">
+	                <span class="big-number">3</span>
+	                <span class="stat-label">Stacks maîtrisées</span>
 	              </div>
 	            </div>
 	          </div>
@@ -654,14 +633,14 @@
                 <a href="https://www.w3schools.com/css/" target="_blank" rel="noopener noreferrer">
                   <img
                     src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg"
-                    alt="Logo CSS3" width="100" height="100" loading="lazy" />
+                    alt="Logo CSS3" width="100" height="100" loading="lazy" decoding="async" />
                 </a>
               </div>
 
               <!--Client Logo-->
               <div class="client-logo">
                 <a href="https://www.figma.com/" target="_blank" rel="noopener noreferrer">
-                  <img src="https://www.vectorlogo.zone/logos/figma/figma-icon.svg" alt="Logo Figma" width="100" height="100" loading="lazy" />
+                  <img src="https://www.vectorlogo.zone/logos/figma/figma-icon.svg" alt="Logo Figma" width="100" height="100" loading="lazy" decoding="async" />
                 </a>
               </div>
 
@@ -670,7 +649,7 @@
                 <a href="https://www.w3.org/html/" target="_blank" rel="noopener noreferrer">
                   <img
                     src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg"
-                    alt="Logo HTML5" width="100" height="100" loading="lazy" />
+                    alt="Logo HTML5" width="100" height="100" loading="lazy" decoding="async" />
                 </a>
               </div>
 
@@ -678,7 +657,7 @@
               <div class="client-logo">
                 <a href="https://www.adobe.com/in/products/illustrator.html" target="_blank" rel="noopener noreferrer">
                   <img src="https://www.vectorlogo.zone/logos/adobe_illustrator/adobe_illustrator-icon.svg"
-                    alt="Logo Adobe Illustrator" width="100" height="100" loading="lazy" />
+                    alt="Logo Adobe Illustrator" width="100" height="100" loading="lazy" decoding="async" />
                 </a>
               </div>
 
@@ -688,7 +667,7 @@
                   rel="noopener noreferrer">
                   <img
                     src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg"
-                    alt="Logo JavaScript" width="100" height="100" loading="lazy" />
+                    alt="Logo JavaScript" width="100" height="100" loading="lazy" decoding="async" />
                 </a>
               </div>
 
@@ -697,7 +676,7 @@
                 <a href="https://www.mysql.com/" target="_blank" rel="noopener noreferrer">
                   <img
                     src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg"
-                    alt="Logo MySQL" width="100" height="100" loading="lazy" />
+                    alt="Logo MySQL" width="100" height="100" loading="lazy" decoding="async" />
                 </a>
               </div>
 
@@ -706,7 +685,7 @@
                 <a href="https://www.photoshop.com/en" target="_blank" rel="noopener noreferrer">
                   <img
                     src="https://raw.githubusercontent.com/devicons/devicon/master/icons/photoshop/photoshop-line.svg"
-                    alt="Logo Adobe Photoshop" width="100" height="100" loading="lazy" />
+                    alt="Logo Adobe Photoshop" width="100" height="100" loading="lazy" decoding="async" />
                 </a>
               </div>
 
@@ -714,19 +693,18 @@
               <div class="client-logo">
                 <a href="https://www.php.net" target="_blank" rel="noopener noreferrer">
                   <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/php/php-original.svg"
-                    alt="Logo PHP" width="100" height="100" loading="lazy" />
+                    alt="Logo PHP" width="100" height="100" loading="lazy" decoding="async" />
                 </a>
               </div>
 
               <!--Client Logo-->
               <div class="client-logo">
                 <a href="https://www.adobe.com/products/xd.html" target="_blank" rel="noopener noreferrer">
-                  <img src="https://cdn.worldvectorlogo.com/logos/adobe-xd.svg" alt="Logo Adobe XD" width="100" height="100" loading="lazy" />
+                  <img src="https://cdn.worldvectorlogo.com/logos/adobe-xd.svg" alt="Logo Adobe XD" width="100" height="100" loading="lazy" decoding="async" />
                 </a>
               </div>
             </div>
           </div>
-          <br />
 	          <!--Outils Row End-->
           <!--Services Row Start-->
           <div class="row services mb-30">
@@ -743,7 +721,7 @@
                   <a href="https://www.linkedin.com/in/angeliqueredjdal/" target="_blank" rel="noopener noreferrer">
                     <img
                       src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg"
-                      class="u-social-icon-100" alt="LinkedIn"  loading="lazy" />
+                      class="u-social-icon-100" alt="LinkedIn"  loading="lazy" decoding="async" />
                   </a>
                 </div>
               </div>
@@ -754,7 +732,7 @@
               <div class="service-item">
                 <div class="icon u-text-center">
                   <a href="https://github.com/Angelgaeta" target="_blank" rel="noopener noreferrer">
-                    <img src="./img/github.png" class="u-social-icon-github" alt="GitHub"  loading="lazy"  width="110" height="100" />
+                    <img src="./img/github.png" class="u-social-icon-github" alt="GitHub"  loading="lazy" decoding="async"  width="110" height="100" />
                   </a>
                 </div>
               </div>
@@ -767,7 +745,7 @@
                   <a href="https://codepen.io/angelgaeta" target="_blank" rel="noopener noreferrer">
                     <img
                       src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/codepen.svg"
-                      class="u-social-icon-100" alt="CodePen"  loading="lazy" />
+                      class="u-social-icon-100" alt="CodePen"  loading="lazy" decoding="async" />
                   </a>
                 </div>
               </div>
@@ -780,7 +758,7 @@
                   <a href="https://www.behance.net/angel_gaeta_redjdal" target="_blank" rel="noopener noreferrer">
                     <img
                       src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/behance.svg"
-                      class="u-social-icon-100" alt="Behance"  loading="lazy" />
+                      class="u-social-icon-100" alt="Behance"  loading="lazy" decoding="async" />
                   </a>
                 </div>
               </div>
@@ -788,7 +766,6 @@
           </div>
           <!--Services Row End-->
         </div>
-        <br />
       </section>
       <!--Resume Section End-->
 
@@ -802,73 +779,84 @@
           </div>
 
           <p class="u-maxw-820 u-opacity-85 u-mx-auto u-mb-18">
-            Projets en <strong>contexte pro ou formation</strong> — focus sur la <strong>qualité</strong>, la
-            <strong>maintenabilité</strong> et l'<strong>expérience utilisateur</strong>.
+            Projets en <strong>contexte pro ou formation</strong> — <strong>rôle</strong>, <strong>stack</strong> et
+            <strong>résultats</strong> visibles pour juger la qualité et la maintenabilité.
           </p>
 
-		          <div class="row mb-30">
+		          <div class="row mb-30 flagship-projects">
 		            <div class="col-md-12">
 		              <div class="subheading">
 		                <h3>Projets phares</h3>
+		                <p class="portfolio-proof-note">3 cas représentatifs du niveau attendu en développement et modélisation.</p>
 		              </div>
 		            </div>
 
-	            <div class="col-lg-4 col-sm-6">
-	              <div class="service-item">
+	            <div class="col-lg-4 col-sm-6 fade-in stagger-1">
+	              <div class="service-item scale-in">
 	                <div class="content">
 	                  <h4>Site vitrine — WordPress</h4>
-		                  <div class="project-badges">
-		                    <span class="project-badge">Projet pro</span>
-		                    <span class="project-badge">Responsive</span>
-		                    <span class="project-badge">UI</span>
-		                  </div>
-		                  <p>Structure claire, cohérence UI, lisible sur mobile.</p>
-		                  <p class="project-proof"><span class="project-proof-label">Proof</span>Composants réutilisables + responsive solide.</p>
-		                  <p class="u-mt-12"><a href="#" class="btn-main" data-case-open="case-dev-bornes">Voir le cas</a></p>
-		                </div>
-		              </div>
-		            </div>
+	                  <div class="project-badges">
+	                    <span class="project-badge">Projet pro</span>
+	                    <span class="project-badge">Responsive</span>
+	                    <span class="project-badge">UI</span>
+	                  </div>
+	                  <ul class="project-meta">
+	                    <li><strong>Rôle :</strong> intégration + UI</li>
+	                    <li><strong>Stack :</strong> WordPress, HTML/CSS</li>
+	                    <li><strong>Résultat :</strong> composants réutilisables, mobile solide</li>
+	                  </ul>
+	                  <p class="u-mt-12"><a href="#" class="btn-main" data-case-open="case-dev-bornes">Voir le cas</a></p>
+	                </div>
+	              </div>
+	            </div>
 
-	            <div class="col-lg-4 col-sm-6">
-	              <div class="service-item">
+	            <div class="col-lg-4 col-sm-6 fade-in stagger-2">
+	              <div class="service-item scale-in">
 	                <div class="content">
 	                  <h4>Formulaire PHP — validation & traitement</h4>
-		                  <div class="project-badges">
-		                    <span class="project-badge">Back</span>
-		                    <span class="project-badge">Validation</span>
-		                    <span class="project-badge">Sécurité</span>
-		                  </div>
-		                  <p>Validation, traitement serveur, base extensible.</p>
-		                  <p class="project-proof"><span class="project-proof-label">Proof</span>Validations + contrôles serveur (anti-spam ready).</p>
-		                  <p class="u-mt-12"><a href="#" class="btn-main" data-case-open="case-dev-formphp">Voir le cas</a></p>
-		                </div>
-		              </div>
-		            </div>
+	                  <div class="project-badges">
+	                    <span class="project-badge">Back</span>
+	                    <span class="project-badge">Validation</span>
+	                    <span class="project-badge">Sécurité</span>
+	                  </div>
+	                  <ul class="project-meta">
+	                    <li><strong>Rôle :</strong> logique PHP + intégration</li>
+	                    <li><strong>Stack :</strong> PHP, HTML/CSS</li>
+	                    <li><strong>Résultat :</strong> validations serveurs + base extensible</li>
+	                  </ul>
+	                  <p class="u-mt-12"><a href="#" class="btn-main" data-case-open="case-dev-formphp">Voir le cas</a></p>
+	                </div>
+	              </div>
+	            </div>
 
-		            <div class="col-lg-4 col-sm-6">
-		              <div class="service-item">
+		            <div class="col-lg-4 col-sm-6 fade-in stagger-3">
+		              <div class="service-item scale-in">
 		                <div class="content">
 		                  <h4>Data — Modélisation (MCD/MLD/MPD)</h4>
-			                  <div class="project-badges">
-			                    <span class="project-badge">Data</span>
-			                    <span class="project-badge">Merise</span>
-			                    <span class="project-badge">SQL-ready</span>
-			                  </div>
-			                  <p>Conception relationnelle prête pour SQL.</p>
-			                  <p class="project-proof"><span class="project-proof-label">Proof</span>MCD/MLD/MPD + relations/contraintes clarifiées.</p>
-			                  <p class="u-mt-12"><a href="#" class="btn-main" data-case-open="case-data-social">Voir le cas</a></p>
-			                </div>
-			              </div>
+		                  <div class="project-badges">
+		                    <span class="project-badge">Data</span>
+		                    <span class="project-badge">Merise</span>
+		                    <span class="project-badge">SQL-ready</span>
+		                  </div>
+		                  <ul class="project-meta">
+		                    <li><strong>Rôle :</strong> modélisation + contraintes</li>
+		                    <li><strong>Stack :</strong> Merise, SQL</li>
+		                    <li><strong>Résultat :</strong> MCD/MLD/MPD prêts à implémenter</li>
+		                  </ul>
+		                  <p class="u-mt-12"><a href="#" class="btn-main" data-case-open="case-data-social">Voir le cas</a></p>
+		                </div>
+		              </div>
 			            </div>
 		          </div>
 
           <div class="row">
             <div class="col-md-12 portfolio-filter text-center">
+	              <p class="portfolio-bonus-note">UI/UX et graphisme restent consultables en bonus.</p>
 	              <ul>
-	                <li class="active" data-filter=".design" role="button" tabindex="0">Applications & Développement</li>
-	                <li data-filter=".graphic" role="button" tabindex="0">UI/UX & Conception</li>
-	                <li data-filter=".data" role="button" tabindex="0">Data & Modélisation</li>
-	                <li data-filter=".brand" role="button" tabindex="0">Graphisme</li>
+	                <li class="active" data-filter=".design" role="button" tabindex="0" aria-pressed="true">Applications & Développement</li>
+	                <li data-filter=".data" role="button" tabindex="0" aria-pressed="false">Data & Modélisation</li>
+	                <li data-filter=".graphic" role="button" tabindex="0" aria-pressed="false">UI/UX (bonus)</li>
+	                <li data-filter=".brand" role="button" tabindex="0" aria-pressed="false">Graphisme (bonus)</li>
 	              </ul>
 	            </div>
 	          </div>
@@ -884,7 +872,7 @@
               <a href="#" data-case-open="case-data-social">
                 <figure>
                   <img src="img/MCD.png" alt="MCD réseau social"
-                    onerror="this.onerror=null;this.src='img/portfolio/logo-angel-blanc-480x480.png';"  loading="lazy"  width="1414" height="818" />
+                    onerror="this.onerror=null;this.src='img/portfolio/logo-angel-blanc-480x480.png';"  loading="lazy" decoding="async"  width="1414" height="818" />
                   <figcaption>
                     <h4>MCD / MLD / MPD — Réseau social</h4>
                     <p>Modélisation BDD (évolution)</p>
@@ -897,12 +885,12 @@
 	              <a href="#" data-case-open="case-data-cekmf">
 	                <figure>
 	                  <img src="img/mcd-cekmf.PNG" alt="MCD fédération sportive"
-	                    onerror="this.onerror=null;this.src='img/portfolio/logo-angel-blanc-480x480.png';"  loading="lazy"  width="1368" height="737" />
+	                    onerror="this.onerror=null;this.src='img/portfolio/logo-angel-blanc-480x480.png';"  loading="lazy" decoding="async"  width="1368" height="737" />
 	                  <picture>
 	                    <source type="image/avif" srcset="img/mpd-cekmf.avif">
 	                    <source type="image/webp" srcset="img/mpd-cekmf.webp">
 	                    <img src="img/mpd-cekmf.PNG" alt="MPD fédération sportive"
-	                      onerror="this.onerror=null;this.src='img/portfolio/logo-angel-blanc-480x480.png';"  loading="lazy"  width="1340" height="801" />
+	                      onerror="this.onerror=null;this.src='img/portfolio/logo-angel-blanc-480x480.png';"  loading="lazy" decoding="async"  width="1340" height="801" />
 	                  </picture>
 	                  <figcaption>
 	                    <h4>MCD / MPD — Fédération sportive</h4>
@@ -916,7 +904,7 @@
               <a href="#" data-case-open="case-data-uml">
                 <figure>
                   <img src="img/uml.PNG" alt="Use case UML"
-                    onerror="this.onerror=null;this.src='img/portfolio/logo-angel-blanc-480x480.png';"  loading="lazy"  width="1128" height="607" />
+                    onerror="this.onerror=null;this.src='img/portfolio/logo-angel-blanc-480x480.png';"  loading="lazy" decoding="async"  width="1128" height="607" />
                   <figcaption>
                     <h4>UML — Use cases</h4>
                     <p>Analyse fonctionnelle</p>
@@ -929,7 +917,7 @@
               <a href="#" data-case-open="case-data-perms">
                 <figure>
                   <img src="img/gestion-droits-cekmf.PNG" alt="Gestion des rôles et permissions"
-                    onerror="this.onerror=null;this.src='img/portfolio/logo-angel-blanc-480x480.png';"  loading="lazy"  width="467" height="768" />
+                    onerror="this.onerror=null;this.src='img/portfolio/logo-angel-blanc-480x480.png';"  loading="lazy" decoding="async"  width="467" height="768" />
                   <figcaption>
                     <h4>Rôles / droits — Permissions</h4>
                     <p>Conception des accès</p>
@@ -949,7 +937,7 @@
 	                    <source type="image/avif" srcset="img/maquette-cekmf.avif">
 	                    <source type="image/webp" srcset="img/maquette-cekmf.webp">
 	                    <img src="img/maquette-cekmf.PNG" alt="Maquette Figma"
-	                      onerror="this.onerror=null;this.src='img/portfolio/logo-angel-blanc-480x480.png';"  loading="lazy"  width="1436" height="785" />
+	                      onerror="this.onerror=null;this.src='img/portfolio/logo-angel-blanc-480x480.png';"  loading="lazy" decoding="async"  width="1436" height="785" />
 	                  </picture>
 	                  <figcaption>
 	                    <h4>Maquette Figma — multi-support</h4>
@@ -966,7 +954,7 @@
 	                    <source type="image/avif" srcset="img/wireframe-cekmf.avif">
 	                    <source type="image/webp" srcset="img/wireframe-cekmf.webp">
 	                    <img src="img/wireframe-cekmf.PNG" alt="Wireframe Figma"
-	                      onerror="this.onerror=null;this.src='img/portfolio/logo-angel-blanc-480x480.png';"  loading="lazy"  width="1400" height="754" />
+	                      onerror="this.onerror=null;this.src='img/portfolio/logo-angel-blanc-480x480.png';"  loading="lazy" decoding="async"  width="1400" height="754" />
 	                  </picture>
 	                  <figcaption>
 	                    <h4>Wireframes</h4>
@@ -980,15 +968,15 @@
 	              <a href="#" data-case-open="case-ux-arbo">
 	                <figure>
 	                  <img src="img/parcours-utilisateurs.PNG" alt="Parcours utilisateurs"
-	                    onerror="this.onerror=null;this.src='img/portfolio/logo-angel-blanc-480x480.png';"  loading="lazy"  width="1370" height="661" />
+	                    onerror="this.onerror=null;this.src='img/portfolio/logo-angel-blanc-480x480.png';"  loading="lazy" decoding="async"  width="1370" height="661" />
 	                  <picture>
 	                    <source type="image/avif" srcset="img/arborescence-dashboard-admin.avif">
 	                    <source type="image/webp" srcset="img/arborescence-dashboard-admin.webp">
 	                    <img src="img/arborescence-dashboard-admin.PNG" alt="Arborescence dashboard admin"
-	                      onerror="this.onerror=null;this.src='img/portfolio/logo-angel-blanc-480x480.png';"  loading="lazy"  width="1354" height="687" />
+	                      onerror="this.onerror=null;this.src='img/portfolio/logo-angel-blanc-480x480.png';"  loading="lazy" decoding="async"  width="1354" height="687" />
 	                  </picture>
 	                  <img src="img/arborescence-dashboard-formateur.PNG" alt="Arborescence dashboard formateur"
-	                    onerror="this.onerror=null;this.src='img/portfolio/logo-angel-blanc-480x480.png';"  loading="lazy"  width="1369" height="625" />
+	                    onerror="this.onerror=null;this.src='img/portfolio/logo-angel-blanc-480x480.png';"  loading="lazy" decoding="async"  width="1369" height="625" />
 	                  <figcaption>
 	                    <h4>Arborescence & dashboards</h4>
                     <p>Admin / Formateur / Club</p>
@@ -1004,7 +992,7 @@
 	                    <source type="image/avif" srcset="img/maquette-site-bornes-recharge.avif">
 	                    <source type="image/webp" srcset="img/maquette-site-bornes-recharge.webp">
 	                    <img src="img/maquette-site-bornes-recharge.png" alt="Prototype avant intégration"
-	                      onerror="this.onerror=null;this.src='img/portfolio/logo-angel-blanc-480x480.png';"  loading="lazy"  width="1944" height="1030" />
+	                      onerror="this.onerror=null;this.src='img/portfolio/logo-angel-blanc-480x480.png';"  loading="lazy" decoding="async"  width="1944" height="1030" />
 	                  </picture>
 	                  <figcaption>
 	                    <h4>Prototype UI — avant intégration</h4>
@@ -1018,7 +1006,7 @@
               <a href="#" data-case-open="case-ux-sso">
                 <figure>
                   <img src="img/portail-data-sso.png" alt="Mire de connexion SSO"
-                    onerror="this.onerror=null;this.src='img/portfolio/logo-angel-blanc-480x480.png';"  loading="lazy"  width="1077" height="1248" />
+                    onerror="this.onerror=null;this.src='img/portfolio/logo-angel-blanc-480x480.png';"  loading="lazy" decoding="async"  width="1077" height="1248" />
                   <figcaption>
                     <h4>Mire de connexion — SSO</h4>
                     <p>Maquette UI</p>
@@ -1037,7 +1025,7 @@
 	                  <picture>
 	                    <source type="image/avif" srcset="img/portfolio/formulaire.avif">
 	                    <source type="image/webp" srcset="img/portfolio/formulaire.webp">
-	                    <img loading="lazy" src="img/portfolio/formulaire.png" alt="Formulaire PHP"
+	                    <img loading="lazy" decoding="async" src="img/portfolio/formulaire.png" alt="Formulaire PHP"
 	                      onerror="this.onerror=null;this.src='img/portfolio/logo-angel-blanc-480x480.png';"  width="1200" height="734" />
 	                  </picture>
 	                  <figcaption>
@@ -1051,7 +1039,7 @@
             <div class="item col-lg-4 col-sm-6 design">
               <a href="#" data-case-open="case-dev-fubiz">
                 <figure>
-                  <img loading="lazy" src="img/portfolio/fubiz.jpg" alt="Fubiz responsive"
+                  <img loading="lazy" decoding="async" src="img/portfolio/fubiz.jpg" alt="Fubiz responsive"
                     onerror="this.onerror=null;this.src='img/portfolio/logo-angel-blanc-480x480.png';"  width="500" height="351" />
                   <figcaption>
                     <h4>Fubiz — Accueil responsive</h4>
@@ -1067,7 +1055,7 @@
 	                  <picture>
 	                    <source type="image/avif" srcset="img/portfolio/00-screenshot-1.avif">
 	                    <source type="image/webp" srcset="img/portfolio/00-screenshot-1.webp">
-	                    <img loading="lazy" src="img/portfolio/00-screenshot-1.png" alt="Restaurant Okay responsive"
+	                    <img loading="lazy" decoding="async" src="img/portfolio/00-screenshot-1.png" alt="Restaurant Okay responsive"
 	                      onerror="this.onerror=null;this.src='img/portfolio/logo-angel-blanc-480x480.png';"  width="500" height="478" />
 	                  </picture>
 	                  <figcaption>
@@ -1081,7 +1069,7 @@
             <div class="item col-lg-4 col-sm-6 design">
               <a href="#" data-case-open="case-dev-furniture">
                 <figure>
-                  <img loading="lazy" src="img/portfolio/meubles-screenshot-01.jpg" alt="Furniture store responsive"
+                  <img loading="lazy" decoding="async" src="img/portfolio/meubles-screenshot-01.jpg" alt="Furniture store responsive"
                     onerror="this.onerror=null;this.src='img/portfolio/logo-angel-blanc-480x480.png';"  width="500" height="549" />
                   <figcaption>
                     <h4>Furniture Store — Responsive</h4>
@@ -1094,7 +1082,7 @@
             <div class="item col-lg-4 col-sm-6 design">
               <a href="#" data-case-open="case-dev-ticket">
                 <figure>
-                  <img loading="lazy" src="img/portfolio/ticket.jpg" alt="Ticket CSS Grid"
+                  <img loading="lazy" decoding="async" src="img/portfolio/ticket.jpg" alt="Ticket CSS Grid"
                     onerror="this.onerror=null;this.src='img/portfolio/logo-angel-blanc-480x480.png';"  width="500" height="311" />
                   <figcaption>
                     <h4>Ticket — CSS Grid</h4>
@@ -1110,7 +1098,7 @@
 	                  <picture>
 	                    <source type="image/avif" srcset="img/portfolio/generateureleves.avif">
 	                    <source type="image/webp" srcset="img/portfolio/generateureleves.webp">
-	                    <img loading="lazy" src="img/portfolio/generateureleves.jpg" alt="Name generator JS"
+	                    <img loading="lazy" decoding="async" src="img/portfolio/generateureleves.jpg" alt="Name generator JS"
 	                      onerror="this.onerror=null;this.src='img/portfolio/logo-angel-blanc-480x480.png';"  width="1000" height="682" />
 	                  </picture>
 	                  <figcaption>
@@ -1127,7 +1115,7 @@
 	                  <picture>
 	                    <source type="image/avif" srcset="img/portfolio/sombreclair.avif">
 	                    <source type="image/webp" srcset="img/portfolio/sombreclair.webp">
-	                    <img loading="lazy" src="img/portfolio/sombreclair.png" alt="Mode clair sombre"
+	                    <img loading="lazy" decoding="async" src="img/portfolio/sombreclair.png" alt="Mode clair sombre"
 	                      onerror="this.onerror=null;this.src='img/portfolio/logo-angel-blanc-480x480.png';"  width="2786" height="1750" />
 	                  </picture>
 	                  <figcaption>
@@ -1145,7 +1133,7 @@
 	                    <source type="image/avif" srcset="img/borne-recharge.avif">
 	                    <source type="image/webp" srcset="img/borne-recharge.webp">
 	                    <img src="img/borne-recharge.PNG" alt="Bornes Recharges Sud"
-	                      onerror="this.onerror=null;this.src='img/portfolio/logo-angel-blanc-480x480.png';"  loading="lazy"  width="1896" height="926" />
+	                      onerror="this.onerror=null;this.src='img/portfolio/logo-angel-blanc-480x480.png';"  loading="lazy" decoding="async"  width="1896" height="926" />
 	                  </picture>
 		                  <figcaption>
 		                    <h4>Bornes Recharges Sud — WordPress</h4>
@@ -1171,7 +1159,7 @@
             <div class="item col-lg-4 col-sm-6 brand">
               <a href="#" data-case-open="case-brand-cvflower">
                 <figure>
-                  <img loading="lazy" src="img/portfolio/cvflower.jpg" alt="Carte de visite fleuriste"
+                  <img loading="lazy" decoding="async" src="img/portfolio/cvflower.jpg" alt="Carte de visite fleuriste"
                     onerror="this.onerror=null;this.src='img/portfolio/logo-angel-blanc-480x480.png';"  width="1200" height="800" />
                   <figcaption>
                     <h4>Carte de visite — Fleuriste</h4>
@@ -1184,7 +1172,7 @@
             <div class="item col-lg-4 col-sm-6 brand">
               <a href="#" data-case-open="case-brand-danceuses">
                 <figure>
-                  <img loading="lazy" src="img/portfolio/danceusesétoiles.jpg" alt="Danceuse étoilée Photoshop"
+                  <img loading="lazy" decoding="async" src="img/portfolio/danceusesétoiles.jpg" alt="Danceuse étoilée Photoshop"
                     onerror="this.onerror=null;this.src='img/portfolio/logo-angel-blanc-480x480.png';"  width="1200" height="706" />
                   <figcaption>
                     <h4>Danceuse étoilée</h4>
@@ -1200,7 +1188,7 @@
 	                  <picture>
 	                    <source type="image/avif" srcset="img/portfolio/applion.avif">
 	                    <source type="image/webp" srcset="img/portfolio/applion.webp">
-	                    <img loading="lazy" src="img/portfolio/applion.jpg" alt="Mockup mobile"
+	                    <img loading="lazy" decoding="async" src="img/portfolio/applion.jpg" alt="Mockup mobile"
 	                      onerror="this.onerror=null;this.src='img/portfolio/logo-angel-blanc-480x480.png';"  width="1000" height="806" />
 	                  </picture>
 	                  <figcaption>
@@ -1217,7 +1205,7 @@
 	                  <picture>
 	                    <source type="image/avif" srcset="img/portfolio/cremhand.avif">
 	                    <source type="image/webp" srcset="img/portfolio/cremhand.webp">
-	                    <img loading="lazy" src="img/portfolio/cremhand.jpg" alt="Packaging crème"
+	                    <img loading="lazy" decoding="async" src="img/portfolio/cremhand.jpg" alt="Packaging crème"
 	                      onerror="this.onerror=null;this.src='img/portfolio/logo-angel-blanc-480x480.png';"  width="1200" height="801" />
 	                  </picture>
 	                  <figcaption>
@@ -1234,7 +1222,7 @@
 	                  <picture>
 	                    <source type="image/avif" srcset="img/portfolio/cvarchitecte.avif">
 	                    <source type="image/webp" srcset="img/portfolio/cvarchitecte.webp">
-	                    <img loading="lazy" src="img/portfolio/cvarchitecte.jpg" alt="Carte de visite"
+	                    <img loading="lazy" decoding="async" src="img/portfolio/cvarchitecte.jpg" alt="Carte de visite"
 	                      onerror="this.onerror=null;this.src='img/portfolio/logo-angel-blanc-480x480.png';"  width="1200" height="800" />
 	                  </picture>
 	                  <figcaption>
@@ -1251,7 +1239,7 @@
 	                  <picture>
 	                    <source type="image/avif" srcset="img/portfolio/deuxtubes.avif">
 	                    <source type="image/webp" srcset="img/portfolio/deuxtubes.webp">
-	                    <img loading="lazy" src="img/portfolio/deuxtubes.jpg" alt="Packaging"
+	                    <img loading="lazy" decoding="async" src="img/portfolio/deuxtubes.jpg" alt="Packaging"
 	                      onerror="this.onerror=null;this.src='img/portfolio/logo-angel-blanc-480x480.png';"  width="1920" height="1281" />
 	                  </picture>
 	                  <figcaption>
@@ -1268,7 +1256,7 @@
 	                  <picture>
 	                    <source type="image/avif" srcset="img/portfolio/enseignebio.avif">
 	                    <source type="image/webp" srcset="img/portfolio/enseignebio.webp">
-	                    <img loading="lazy" src="img/portfolio/enseignebio.jpg" alt="Enseigne Vita food"
+	                    <img loading="lazy" decoding="async" src="img/portfolio/enseignebio.jpg" alt="Enseigne Vita food"
 	                      onerror="this.onerror=null;this.src='img/portfolio/logo-angel-blanc-480x480.png';"  width="1200" height="800" />
 	                  </picture>
 	                  <figcaption>
@@ -1285,7 +1273,7 @@
 	                  <picture>
 	                    <source type="image/avif" srcset="img/portfolio/illuechiquier.avif">
 	                    <source type="image/webp" srcset="img/portfolio/illuechiquier.webp">
-	                    <img loading="lazy" src="img/portfolio/illuechiquier.jpg" alt="Illustration échiquier"
+	                    <img loading="lazy" decoding="async" src="img/portfolio/illuechiquier.jpg" alt="Illustration échiquier"
 	                      onerror="this.onerror=null;this.src='img/portfolio/logo-angel-blanc-480x480.png';"  width="1000" height="1001" />
 	                  </picture>
 	                  <figcaption>
@@ -1302,7 +1290,7 @@
 	                  <picture>
 	                    <source type="image/avif" srcset="img/portfolio/illurond2.avif">
 	                    <source type="image/webp" srcset="img/portfolio/illurond2.webp">
-	                    <img loading="lazy" src="img/portfolio/illurond2.jpg" alt="Cercle 2D"
+	                    <img loading="lazy" decoding="async" src="img/portfolio/illurond2.jpg" alt="Cercle 2D"
 	                      onerror="this.onerror=null;this.src='img/portfolio/logo-angel-blanc-480x480.png';"  width="1077" height="1082" />
 	                  </picture>
 	                  <figcaption>
@@ -1319,7 +1307,7 @@
 	                  <picture>
 	                    <source type="image/avif" srcset="img/portfolio/magazine-bulthaup.avif">
 	                    <source type="image/webp" srcset="img/portfolio/magazine-bulthaup.webp">
-	                    <img loading="lazy" src="img/portfolio/magazine-bulthaup.jpg" alt="Magazine Bulthaup"
+	                    <img loading="lazy" decoding="async" src="img/portfolio/magazine-bulthaup.jpg" alt="Magazine Bulthaup"
 	                      onerror="this.onerror=null;this.src='img/portfolio/logo-angel-blanc-480x480.png';"  width="1200" height="675" />
 	                  </picture>
 	                  <figcaption>
@@ -1336,7 +1324,7 @@
 	                  <picture>
 	                    <source type="image/avif" srcset="img/portfolio/logoartemis.avif">
 	                    <source type="image/webp" srcset="img/portfolio/logoartemis.webp">
-	                    <img loading="lazy" src="img/portfolio/logoartemis.jpg" alt="Logo Artemis"
+	                    <img loading="lazy" decoding="async" src="img/portfolio/logoartemis.jpg" alt="Logo Artemis"
 	                      onerror="this.onerror=null;this.src='img/portfolio/logo-angel-blanc-480x480.png';"  width="800" height="1200" />
 	                  </picture>
 	                  <figcaption>
@@ -1353,7 +1341,7 @@
 	                  <picture>
 	                    <source type="image/avif" srcset="img/portfolio/magazine-astronomie1.avif">
 	                    <source type="image/webp" srcset="img/portfolio/magazine-astronomie1.webp">
-	                    <img loading="lazy" src="img/portfolio/magazine-astronomie1.jpg" alt="Couverture Astronomie"
+	                    <img loading="lazy" decoding="async" src="img/portfolio/magazine-astronomie1.jpg" alt="Couverture Astronomie"
 	                      onerror="this.onerror=null;this.src='img/portfolio/logo-angel-blanc-480x480.png';"  width="4000" height="2667" />
 	                  </picture>
 	                  <figcaption>
@@ -1367,7 +1355,7 @@
             <div class="item col-lg-4 col-sm-6 brand">
               <a href="#" data-case-open="case-brand-pubb1">
                 <figure>
-                  <img loading="lazy" src="img/portfolio/page-pub-borne1.jpg" alt="Pub borne 1"
+                  <img loading="lazy" decoding="async" src="img/portfolio/page-pub-borne1.jpg" alt="Pub borne 1"
                     onerror="this.onerror=null;this.src='img/portfolio/logo-angel-blanc-480x480.png';"  width="1200" height="801" />
                   <figcaption>
                     <h4>Page pub (1) — Bornes</h4>
@@ -1380,7 +1368,7 @@
             <div class="item col-lg-4 col-sm-6 brand">
               <a href="#" data-case-open="case-brand-pubb2">
                 <figure>
-                  <img loading="lazy" src="img/portfolio/page-pub-borne2.jpg" alt="Pub borne 2"
+                  <img loading="lazy" decoding="async" src="img/portfolio/page-pub-borne2.jpg" alt="Pub borne 2"
                     onerror="this.onerror=null;this.src='img/portfolio/logo-angel-blanc-480x480.png';"  width="1200" height="801" />
                   <figcaption>
                     <h4>Page pub (2) — Bornes</h4>
@@ -1393,7 +1381,7 @@
             <div class="item col-lg-4 col-sm-6 brand">
               <a href="#" data-case-open="case-brand-paquetdegraine">
                 <figure>
-                  <img loading="lazy" src="img/portfolio/paquetdegraine.jpg" alt="Packaging Vita Food"
+                  <img loading="lazy" decoding="async" src="img/portfolio/paquetdegraine.jpg" alt="Packaging Vita Food"
                     onerror="this.onerror=null;this.src='img/portfolio/logo-angel-blanc-480x480.png';"  width="1000" height="667" />
                   <figcaption>
                     <h4>Packaging — Vita Food</h4>
@@ -1406,7 +1394,7 @@
             <div class="item col-lg-4 col-sm-6 brand">
               <a href="#" data-case-open="case-brand-femmezebre">
                 <figure>
-                  <img loading="lazy" src="img/portfolio/tableaufemmezebre.jpg" alt="Femme zébrée"
+                  <img loading="lazy" decoding="async" src="img/portfolio/tableaufemmezebre.jpg" alt="Femme zébrée"
                     onerror="this.onerror=null;this.src='img/portfolio/logo-angel-blanc-480x480.png';"  width="1000" height="700" />
                   <figcaption>
                     <h4>Art digital “Femme zébrée”</h4>
@@ -1422,7 +1410,7 @@
 	                  <picture>
 	                    <source type="image/avif" srcset="img/portfolio/sacbio.avif">
 	                    <source type="image/webp" srcset="img/portfolio/sacbio.webp">
-	                    <img loading="lazy" src="img/portfolio/sacbio.jpg" alt="Mockup sac"
+	                    <img loading="lazy" decoding="async" src="img/portfolio/sacbio.jpg" alt="Mockup sac"
 	                      onerror="this.onerror=null;this.src='img/portfolio/logo-angel-blanc-480x480.png';"  width="1000" height="722" />
 	                  </picture>
 	                  <figcaption>
@@ -1436,7 +1424,7 @@
             <div class="item col-lg-4 col-sm-6 brand">
               <a href="#" data-case-open="case-brand-tshirt">
                 <figure>
-                  <img loading="lazy" src="img/portfolio/tshirtlafemme.jpg" alt="Mockup tee-shirt"
+                  <img loading="lazy" decoding="async" src="img/portfolio/tshirtlafemme.jpg" alt="Mockup tee-shirt"
                     onerror="this.onerror=null;this.src='img/portfolio/logo-angel-blanc-480x480.png';"  width="1000" height="735" />
                   <figcaption>
                     <h4>Mockup — illustration tee-shirt</h4>
@@ -1455,8 +1443,8 @@
 	            <h3>On échange ?</h3>
 	            <p>Recruteur, équipe produit ou collaboration : je suis disponible pour échanger.</p>
 	            <div class="final-cta-buttons">
-	              <a href="#contact" class="btn-main">📩 Envoyer un message</a>
-	              <a href="https://www.linkedin.com/in/angeliqueredjdal/" target="_blank" rel="noopener noreferrer" class="btn-main btn-outline">💼 Voir mon LinkedIn</a>
+	              <a href="#contact" class="btn-cta primary fade-in stagger-1">Envoyer un message</a>
+	              <a href="https://www.linkedin.com/in/angeliqueredjdal/" target="_blank" rel="noopener noreferrer" class="btn-cta secondary fade-in stagger-2">Voir mon LinkedIn</a>
 	            </div>
 	          </div>
 
@@ -1473,12 +1461,12 @@
         <div class="section-container">
           <div class="page-heading">
             <span class="icon"><i class="lnr lnr-envelope"></i></span>
-            <h2>Me Contacter.</h2>
+            <h2>Contact</h2>
           </div>
 
           <div class="row contact-grid">
-            <div class="col-lg-5 col-md-12 mb-30">
-              <div class="contact-card glass-card">
+            <div class="col-lg-5 col-md-12 mb-30 fade-in stagger-1">
+              <div class="contact-card glass-card scale-in">
                 <h3>Pour les recruteurs</h3>
                 <p>Je suis ouverte aux opportunités et j’aime échanger sur des sujets produit, qualité et UI/UX.</p>
                 <ul class="contact-list">
@@ -1490,37 +1478,38 @@
               </div>
             </div>
 
-            <div class="col-lg-7 col-md-12">
-              <div class="contact-card glass-card">
+            <div class="col-lg-7 col-md-12 fade-in stagger-2">
+              <div class="contact-card glass-card scale-in">
                 <h3>Envoyer un message</h3>
 	                <form id="contact-form" novalidate>
 	                  <div class="row">
 	                    <div class="col-md-6">
 	                      <div class="input">
 	                        <label class="sr-only" for="cf-name">Nom</label>
-	                        <input id="cf-name" class="input__field cf-validate" type="text" name="cf_name" autocomplete="name" required placeholder="Nom" aria-describedby="cf-name-error" />
+	                        <input id="cf-name" class="input__field cf-validate" type="text" name="cf_name" autocomplete="name" required maxlength="80" placeholder="Nom" aria-describedby="cf-name-error" />
 	                        <span id="cf-name-error" class="cf-error-msg sr-only" aria-live="polite"></span>
 	                      </div>
 	                    </div>
 	                    <div class="col-md-6">
 	                      <div class="input">
 	                        <label class="sr-only" for="cf-email">Email</label>
-	                        <input id="cf-email" class="input__field cf-validate" type="email" name="cf_email" autocomplete="email" required placeholder="Email" aria-describedby="cf-email-error" />
+	                        <input id="cf-email" class="input__field cf-validate" type="email" name="cf_email" autocomplete="email" inputmode="email" required maxlength="120" placeholder="Email" aria-describedby="cf-email-error" />
 	                        <span id="cf-email-error" class="cf-error-msg sr-only" aria-live="polite"></span>
 	                      </div>
 	                    </div>
 	                    <div class="col-12">
 	                      <div class="input">
 	                        <label class="sr-only" for="cf-message">Message</label>
-	                        <textarea id="cf-message" class="input__field cf-validate" name="cf_message" rows="6" required placeholder="Message (contexte, stack, timing, liens…)" aria-describedby="cf-message-error"></textarea>
+	                        <textarea id="cf-message" class="input__field cf-validate" name="cf_message" rows="6" required minlength="10" maxlength="2000" placeholder="Message (contexte, stack, timing, liens…)" aria-describedby="cf-message-error"></textarea>
 	                        <span id="cf-message-error" class="cf-error-msg sr-only" aria-live="polite"></span>
 	                      </div>
 	                    </div>
 	                  </div>
 	                  <div class="contact-actions">
-	                    <button type="submit" class="btn-main">Envoyer</button>
+	                    <button type="submit" class="btn-cta primary">Envoyer</button>
 	                    <span class="contact-note">Je réponds dès que possible</span>
 	                  </div>
+	                  <p id="contact-form-status" class="contact-form-status sr-only" role="status" aria-live="polite"></p>
                 </form>
               </div>
             </div>
@@ -1564,7 +1553,7 @@
 		      <picture>
 		        <source type="image/avif" srcset="img/portfolio/formulaire.avif">
 		        <source type="image/webp" srcset="img/portfolio/formulaire.webp">
-		        <img loading="lazy" src="img/portfolio/formulaire.png" alt="Aperçu du projet : Formulaire — Envoi de données (PHP)"
+		        <img loading="lazy" decoding="async" src="img/portfolio/formulaire.png" alt="Aperçu du projet : Formulaire — Envoi de données (PHP)"
 		          class="case-img" width="1200" height="734">
 		      </picture>
 		    </div>
@@ -1588,7 +1577,7 @@
 	      <picture>
 	        <source type="image/avif" srcset="img/portfolio/generateureleves.avif">
 	        <source type="image/webp" srcset="img/portfolio/generateureleves.webp">
-	        <img loading="lazy" src="img/portfolio/generateureleves.jpg" alt="Aperçu du projet : Recherche via tableau JS — Générateur"
+	        <img loading="lazy" decoding="async" src="img/portfolio/generateureleves.jpg" alt="Aperçu du projet : Recherche via tableau JS — Générateur"
 	          class="case-img" width="1000" height="682">
 	      </picture>
 	    </div>
@@ -1612,7 +1601,7 @@
 	      <picture>
 	        <source type="image/avif" srcset="img/portfolio/sombreclair.avif">
 	        <source type="image/webp" srcset="img/portfolio/sombreclair.webp">
-	        <img loading="lazy" src="img/portfolio/sombreclair.png" alt="Aperçu du projet : Mode clair / sombre — UI State" class="case-img" width="2786" height="1750">
+	        <img loading="lazy" decoding="async" src="img/portfolio/sombreclair.png" alt="Aperçu du projet : Mode clair / sombre — UI State" class="case-img" width="2786" height="1750">
 	      </picture>
 	    </div>
 	  </div>
@@ -1633,7 +1622,7 @@
     <p><strong>Démo :</strong> <a href="https://angelgaeta.github.io/fubiz-accueil-responsive/" target="_blank"
         rel="noopener noreferrer">Voir la démo</a></p>
     <div class="u-mt-12">
-      <img loading="lazy" src="img/portfolio/fubiz.jpg" alt="Aperçu du projet : Fubiz — Intégration page d’accueil responsive"
+      <img loading="lazy" decoding="async" src="img/portfolio/fubiz.jpg" alt="Aperçu du projet : Fubiz — Intégration page d’accueil responsive"
         class="case-img" width="500" height="351">
     </div>
   </div>
@@ -1656,7 +1645,7 @@
 	      <picture>
 	        <source type="image/avif" srcset="img/portfolio/00-screenshot-1.avif">
 	        <source type="image/webp" srcset="img/portfolio/00-screenshot-1.webp">
-	        <img loading="lazy" src="img/portfolio/00-screenshot-1.png" alt="Aperçu du projet : Restaurant Okay — Landing page responsive"
+	        <img loading="lazy" decoding="async" src="img/portfolio/00-screenshot-1.png" alt="Aperçu du projet : Restaurant Okay — Landing page responsive"
 	          class="case-img" width="500" height="478">
 	      </picture>
 	    </div>
@@ -1676,7 +1665,7 @@
     <p><strong>Démo :</strong> <a href="https://angelgaeta.github.io/furniture-store-responsive/" target="_blank"
         rel="noopener noreferrer">Voir la démo</a></p>
     <div class="u-mt-12">
-      <img loading="lazy" src="img/portfolio/meubles-screenshot-01.jpg"
+      <img loading="lazy" decoding="async" src="img/portfolio/meubles-screenshot-01.jpg"
         alt="Aperçu du projet : Furniture Store — Page e-commerce responsive" class="case-img" width="500" height="549">
     </div>
   </div>
@@ -1695,7 +1684,7 @@
     <p><strong>Démo :</strong> <a href="https://angelgaeta.github.io/grid-ticket/" target="_blank"
         rel="noopener noreferrer">Voir la démo</a></p>
     <div class="u-mt-12">
-      <img loading="lazy" src="img/portfolio/ticket.jpg" alt="Aperçu du projet : Ticket — Layout CSS Grid" class="case-img" width="500" height="311">
+      <img loading="lazy" decoding="async" src="img/portfolio/ticket.jpg" alt="Aperçu du projet : Ticket — Layout CSS Grid" class="case-img" width="500" height="311">
     </div>
   </div>
 
@@ -1718,7 +1707,7 @@
 	        <source type="image/avif" srcset="img/borne-recharge.avif">
 	        <source type="image/webp" srcset="img/borne-recharge.webp">
 	        <img src="img/borne-recharge.PNG" alt="Aperçu du projet : Bornes Recharges Sud — Site vitrine WordPress"
-	          class="case-img" loading="lazy" width="1896" height="926">
+	          class="case-img" loading="lazy" decoding="async" width="1896" height="926">
 	      </picture>
 	    </div>
 	  </div>
@@ -1742,7 +1731,7 @@
 	      <picture>
 	        <source type="image/avif" srcset="img/maquette-cekmf.avif">
 	        <source type="image/webp" srcset="img/maquette-cekmf.webp">
-	        <img src="img/maquette-cekmf.PNG" alt="Aperçu du projet : Maquette Figma — Multi-support" class="case-img" loading="lazy" width="1436" height="785">
+	        <img src="img/maquette-cekmf.PNG" alt="Aperçu du projet : Maquette Figma — Multi-support" class="case-img" loading="lazy" decoding="async" width="1436" height="785">
 	      </picture>
 	    </div>
 	  </div>
@@ -1762,7 +1751,7 @@
 	      <picture>
 	        <source type="image/avif" srcset="img/wireframe-cekmf.avif">
 	        <source type="image/webp" srcset="img/wireframe-cekmf.webp">
-	        <img src="img/wireframe-cekmf.PNG" alt="Aperçu du projet : Wireframes — Structuration UX" class="case-img" loading="lazy" width="1400" height="754">
+	        <img src="img/wireframe-cekmf.PNG" alt="Aperçu du projet : Wireframes — Structuration UX" class="case-img" loading="lazy" decoding="async" width="1400" height="754">
 	      </picture>
 	    </div>
 	  </div>
@@ -1781,13 +1770,13 @@
 	    <div class="u-grid-2">
 	      <img src="img/parcours-utilisateurs.PNG"
 	        alt="Aperçu du projet : Arborescence & dashboards — Architecture de l’info (parcours utilisateurs)"
-	        class="case-img" loading="lazy" width="1370" height="661">
+	        class="case-img" loading="lazy" decoding="async" width="1370" height="661">
 	      <picture>
 	        <source type="image/avif" srcset="img/arborescence-dashboard-admin.avif">
 	        <source type="image/webp" srcset="img/arborescence-dashboard-admin.webp">
 	        <img src="img/arborescence-dashboard-admin.PNG"
 	          alt="Aperçu du projet : Arborescence & dashboards — Architecture de l’info (arborescence dashboard admin)"
-	          class="case-img" loading="lazy" width="1354" height="687">
+	          class="case-img" loading="lazy" decoding="async" width="1354" height="687">
 	      </picture>
 	    </div>
 	  </div>
@@ -1807,7 +1796,7 @@
 	        <source type="image/avif" srcset="img/maquette-site-bornes-recharge.avif">
 	        <source type="image/webp" srcset="img/maquette-site-bornes-recharge.webp">
 	        <img src="img/maquette-site-bornes-recharge.png" alt="Aperçu du projet : Prototype UI — Avant intégration"
-	          class="case-img" loading="lazy" width="1944" height="1030">
+	          class="case-img" loading="lazy" decoding="async" width="1944" height="1030">
 	      </picture>
 	    </div>
 	  </div>
@@ -1823,7 +1812,7 @@
       <li>Base adaptable (responsive)</li>
     </ul>
     <div class="u-mt-12">
-      <img src="img/portail-data-sso.png" alt="Aperçu du projet : Mire de connexion — SSO" class="case-img" loading="lazy" width="1077" height="1248">
+      <img src="img/portail-data-sso.png" alt="Aperçu du projet : Mire de connexion — SSO" class="case-img" loading="lazy" decoding="async" width="1077" height="1248">
     </div>
   </div>
 
@@ -1844,8 +1833,8 @@
     <p><strong>Outils :</strong> UML / Merise</p>
     <p><strong>Résultat :</strong> modèle prêt à être traduit en schéma SQL, avec relations et contraintes clarifiées.</p>
     <div class="u-grid-2">
-      <img src="img/MCD.png" alt="Aperçu du projet : Modélisation — Réseau social (MCD)" class="case-img" loading="lazy" width="1414" height="818">
-      <img src="img/MLD-MPD.png" alt="Aperçu du projet : Modélisation — Réseau social (MLD/MPD)" class="case-img" loading="lazy" width="1403" height="832">
+      <img src="img/MCD.png" alt="Aperçu du projet : Modélisation — Réseau social (MCD)" class="case-img" loading="lazy" decoding="async" width="1414" height="818">
+      <img src="img/MLD-MPD.png" alt="Aperçu du projet : Modélisation — Réseau social (MLD/MPD)" class="case-img" loading="lazy" decoding="async" width="1403" height="832">
     </div>
   </div>
 
@@ -1864,7 +1853,7 @@
 	        <source type="image/avif" srcset="img/mpd-cekmf.avif">
 	        <source type="image/webp" srcset="img/mpd-cekmf.webp">
 	        <img src="img/mpd-cekmf.PNG" alt="Aperçu du projet : Modélisation — Fédération sportive (MCD/MPD)"
-	          class="case-img" loading="lazy" width="1340" height="801">
+	          class="case-img" loading="lazy" decoding="async" width="1340" height="801">
 	      </picture>
 	    </div>
 	  </div>
@@ -1874,7 +1863,7 @@
     <p><strong>Objectifs :</strong> clarifier les acteurs et les scénarios.</p>
     <p><strong>Réalisations :</strong> diagrammes de cas d’utilisation + structuration des interactions.</p>
     <div class="u-mt-12">
-      <img src="img/uml.PNG" alt="Aperçu du projet : UML — Use cases" class="case-img" loading="lazy" width="1128" height="607">
+      <img src="img/uml.PNG" alt="Aperçu du projet : UML — Use cases" class="case-img" loading="lazy" decoding="async" width="1128" height="607">
     </div>
   </div>
 
@@ -1894,7 +1883,7 @@
     <p><strong>Résultat :</strong> matrice exploitable côté back-end et base claire pour les tests de droits (scénarios).</p>
     <div class="u-mt-12">
       <img src="img/gestion-droits-cekmf.PNG" alt="Aperçu du projet : Rôles & permissions — matrice d’accès"
-        class="case-img" loading="lazy" width="467" height="768">
+        class="case-img" loading="lazy" decoding="async" width="467" height="768">
     </div>
   </div>
 
@@ -1909,7 +1898,7 @@
     <p><strong>Outils :</strong> Illustrator / Photoshop</p>
     <p><strong>Résultat :</strong> support imprimable + cohérent avec l’univers de marque.</p>
     <div class="u-mt-12">
-      <img loading="lazy" src="img/portfolio/cvflower.jpg" alt="Aperçu du projet : Carte de visite — Fleuriste" class="case-img" width="1200" height="800">
+      <img loading="lazy" decoding="async" src="img/portfolio/cvflower.jpg" alt="Aperçu du projet : Carte de visite — Fleuriste" class="case-img" width="1200" height="800">
     </div>
   </div>
 
@@ -1919,7 +1908,7 @@
     <p><strong>Mon rôle :</strong> retouche & composition.</p>
     <p><strong>Outils :</strong> Photoshop</p>
     <div class="u-mt-12">
-      <img loading="lazy" src="img/portfolio/danceusesétoiles.jpg" alt="Aperçu du projet : Composition — Danceuse étoilée"
+      <img loading="lazy" decoding="async" src="img/portfolio/danceusesétoiles.jpg" alt="Aperçu du projet : Composition — Danceuse étoilée"
         class="case-img" width="1200" height="706">
     </div>
   </div>
@@ -1933,7 +1922,7 @@
 	      <picture>
 	        <source type="image/avif" srcset="img/portfolio/applion.avif">
 	        <source type="image/webp" srcset="img/portfolio/applion.webp">
-	        <img loading="lazy" src="img/portfolio/applion.jpg" alt="Aperçu du projet : Mockup mobile — Adobe XD" class="case-img" width="1000" height="806">
+	        <img loading="lazy" decoding="async" src="img/portfolio/applion.jpg" alt="Aperçu du projet : Mockup mobile — Adobe XD" class="case-img" width="1000" height="806">
 	      </picture>
 	    </div>
 	  </div>
@@ -1947,7 +1936,7 @@
 	      <picture>
 	        <source type="image/avif" srcset="img/portfolio/cremhand.avif">
 	        <source type="image/webp" srcset="img/portfolio/cremhand.webp">
-	        <img loading="lazy" src="img/portfolio/cremhand.jpg" alt="Aperçu du projet : Packaging — Crème mains “Pure & Nature”"
+	        <img loading="lazy" decoding="async" src="img/portfolio/cremhand.jpg" alt="Aperçu du projet : Packaging — Crème mains “Pure & Nature”"
 	          class="case-img" width="1200" height="801">
 	      </picture>
 	    </div>
@@ -1961,7 +1950,7 @@
 	      <picture>
 	        <source type="image/avif" srcset="img/portfolio/cvarchitecte.avif">
 	        <source type="image/webp" srcset="img/portfolio/cvarchitecte.webp">
-	        <img loading="lazy" src="img/portfolio/cvarchitecte.jpg" alt="Aperçu du projet : Carte de visite — Architecte" class="case-img" width="1200" height="800">
+	        <img loading="lazy" decoding="async" src="img/portfolio/cvarchitecte.jpg" alt="Aperçu du projet : Carte de visite — Architecte" class="case-img" width="1200" height="800">
 	      </picture>
 	    </div>
 	  </div>
@@ -1974,7 +1963,7 @@
 	      <picture>
 	        <source type="image/avif" srcset="img/portfolio/deuxtubes.avif">
 	        <source type="image/webp" srcset="img/portfolio/deuxtubes.webp">
-	        <img loading="lazy" src="img/portfolio/deuxtubes.jpg" alt="Aperçu du projet : Packaging — déclinaison produit" class="case-img" width="1920" height="1281">
+	        <img loading="lazy" decoding="async" src="img/portfolio/deuxtubes.jpg" alt="Aperçu du projet : Packaging — déclinaison produit" class="case-img" width="1920" height="1281">
 	      </picture>
 	    </div>
 	  </div>
@@ -1987,7 +1976,7 @@
 	      <picture>
 	        <source type="image/avif" srcset="img/portfolio/enseignebio.avif">
 	        <source type="image/webp" srcset="img/portfolio/enseignebio.webp">
-	        <img loading="lazy" src="img/portfolio/enseignebio.jpg" alt="Aperçu du projet : Enseigne — Vita Food" class="case-img" width="1200" height="800">
+	        <img loading="lazy" decoding="async" src="img/portfolio/enseignebio.jpg" alt="Aperçu du projet : Enseigne — Vita Food" class="case-img" width="1200" height="800">
 	      </picture>
 	    </div>
 	  </div>
@@ -2000,7 +1989,7 @@
 	      <picture>
 	        <source type="image/avif" srcset="img/portfolio/illuechiquier.avif">
 	        <source type="image/webp" srcset="img/portfolio/illuechiquier.webp">
-	        <img loading="lazy" src="img/portfolio/illuechiquier.jpg" alt="Aperçu du projet : Illustration — Échiquier" class="case-img" width="1000" height="1001">
+	        <img loading="lazy" decoding="async" src="img/portfolio/illuechiquier.jpg" alt="Aperçu du projet : Illustration — Échiquier" class="case-img" width="1000" height="1001">
 	      </picture>
 	    </div>
 	  </div>
@@ -2013,7 +2002,7 @@
 	      <picture>
 	        <source type="image/avif" srcset="img/portfolio/illurond2.avif">
 	        <source type="image/webp" srcset="img/portfolio/illurond2.webp">
-	        <img loading="lazy" src="img/portfolio/illurond2.jpg" alt="Aperçu du projet : Illustration — Cercle 2D" class="case-img" width="1077" height="1082">
+	        <img loading="lazy" decoding="async" src="img/portfolio/illurond2.jpg" alt="Aperçu du projet : Illustration — Cercle 2D" class="case-img" width="1077" height="1082">
 	      </picture>
 	    </div>
 	  </div>
@@ -2026,7 +2015,7 @@
 	      <picture>
 	        <source type="image/avif" srcset="img/portfolio/magazine-bulthaup.avif">
 	        <source type="image/webp" srcset="img/portfolio/magazine-bulthaup.webp">
-	        <img loading="lazy" src="img/portfolio/magazine-bulthaup.jpg" alt="Aperçu du projet : Magazine — Pages Bulthaup"
+	        <img loading="lazy" decoding="async" src="img/portfolio/magazine-bulthaup.jpg" alt="Aperçu du projet : Magazine — Pages Bulthaup"
 	          class="case-img" width="1200" height="675">
 	      </picture>
 	    </div>
@@ -2040,7 +2029,7 @@
 	      <picture>
 	        <source type="image/avif" srcset="img/portfolio/logoartemis.avif">
 	        <source type="image/webp" srcset="img/portfolio/logoartemis.webp">
-	        <img loading="lazy" src="img/portfolio/logoartemis.jpg" alt="Aperçu du projet : Logo — Artemis" class="case-img" width="800" height="1200">
+	        <img loading="lazy" decoding="async" src="img/portfolio/logoartemis.jpg" alt="Aperçu du projet : Logo — Artemis" class="case-img" width="800" height="1200">
 	      </picture>
 	    </div>
 	  </div>
@@ -2053,7 +2042,7 @@
 	      <picture>
 	        <source type="image/avif" srcset="img/portfolio/magazine-astronomie1.avif">
 	        <source type="image/webp" srcset="img/portfolio/magazine-astronomie1.webp">
-	        <img loading="lazy" src="img/portfolio/magazine-astronomie1.jpg" alt="Aperçu du projet : Couverture — Magazine Astronomie"
+	        <img loading="lazy" decoding="async" src="img/portfolio/magazine-astronomie1.jpg" alt="Aperçu du projet : Couverture — Magazine Astronomie"
 	          class="case-img" width="4000" height="2667">
 	      </picture>
 	    </div>
@@ -2064,7 +2053,7 @@
     <p><strong>Objectifs :</strong> message clair, hiérarchie, lisibilité.</p>
     <p><strong>Outils :</strong> Suite Adobe</p>
     <div class="u-mt-12">
-      <img loading="lazy" src="img/portfolio/page-pub-borne1.jpg" alt="Aperçu du projet : Publicité — Bornes (1)" class="case-img" width="1200" height="801">
+      <img loading="lazy" decoding="async" src="img/portfolio/page-pub-borne1.jpg" alt="Aperçu du projet : Publicité — Bornes (1)" class="case-img" width="1200" height="801">
     </div>
   </div>
 
@@ -2073,7 +2062,7 @@
     <p><strong>Objectifs :</strong> tester une autre hiérarchie / mise en page.</p>
     <p><strong>Outils :</strong> Suite Adobe</p>
     <div class="u-mt-12">
-      <img loading="lazy" src="img/portfolio/page-pub-borne2.jpg" alt="Aperçu du projet : Publicité — Bornes (2)" class="case-img" width="1200" height="801">
+      <img loading="lazy" decoding="async" src="img/portfolio/page-pub-borne2.jpg" alt="Aperçu du projet : Publicité — Bornes (2)" class="case-img" width="1200" height="801">
     </div>
   </div>
 
@@ -2082,7 +2071,7 @@
     <p><strong>Objectifs :</strong> identité, lisibilité, cohérence.</p>
     <p><strong>Outils :</strong> Illustrator / Photoshop</p>
     <div class="u-mt-12">
-      <img loading="lazy" src="img/portfolio/paquetdegraine.jpg" alt="Aperçu du projet : Packaging — Vita Food" class="case-img" width="1000" height="667">
+      <img loading="lazy" decoding="async" src="img/portfolio/paquetdegraine.jpg" alt="Aperçu du projet : Packaging — Vita Food" class="case-img" width="1000" height="667">
     </div>
   </div>
 
@@ -2091,7 +2080,7 @@
     <p><strong>Objectifs :</strong> ambiance visuelle, composition.</p>
     <p><strong>Outils :</strong> Photoshop</p>
     <div class="u-mt-12">
-      <img loading="lazy" src="img/portfolio/tableaufemmezebre.jpg" alt="Aperçu du projet : Art digital — Femme zébrée"
+      <img loading="lazy" decoding="async" src="img/portfolio/tableaufemmezebre.jpg" alt="Aperçu du projet : Art digital — Femme zébrée"
         class="case-img" width="1000" height="700">
     </div>
   </div>
@@ -2104,7 +2093,7 @@
 	      <picture>
 	        <source type="image/avif" srcset="img/portfolio/sacbio.avif">
 	        <source type="image/webp" srcset="img/portfolio/sacbio.webp">
-	        <img loading="lazy" src="img/portfolio/sacbio.jpg" alt="Aperçu du projet : Mockup — logo sur sac" class="case-img" width="1000" height="722">
+	        <img loading="lazy" decoding="async" src="img/portfolio/sacbio.jpg" alt="Aperçu du projet : Mockup — logo sur sac" class="case-img" width="1000" height="722">
 	      </picture>
 	    </div>
 	  </div>
@@ -2114,7 +2103,7 @@
     <p><strong>Objectifs :</strong> projection produit, rendu réaliste.</p>
     <p><strong>Outils :</strong> Photoshop</p>
     <div class="u-mt-12">
-      <img loading="lazy" src="img/portfolio/tshirtlafemme.jpg" alt="Aperçu du projet : Mockup — illustration tee-shirt"
+      <img loading="lazy" decoding="async" src="img/portfolio/tshirtlafemme.jpg" alt="Aperçu du projet : Mockup — illustration tee-shirt"
         class="case-img" width="1000" height="735">
     </div>
   </div>
@@ -2382,7 +2371,7 @@
       });
 
       // Lazy load images
-      document.querySelectorAll('img[loading="lazy"]').forEach(img => {
+      document.querySelectorAll('img[loading="lazy" decoding="async"]').forEach(img => {
         if (img.complete) {
           img.classList.add('loaded');
         } else {
@@ -2410,7 +2399,7 @@
 
 	  <!-- CTA Flottant (mobile) -->
 	  <div class="floating-cta">
-	    <a href="#contact">📩 Me contacter</a>
+	    <a href="#contact" aria-label="Accéder à la section contact">Me contacter</a>
 	  </div>
 </body>
 
