@@ -204,32 +204,9 @@ $(document).ready(function () {
   /*======== Contact Form Setup ========*/
   contactFormSetup();
   setupLinkedInFeed();
-  setupContentProtection();
 
   // Quick quote wizard removed (portfolio mode)
 });
-
-/********** Function Content Protection **********/
-function setupContentProtection() {
-  document.body.classList.add("protect-content");
-
-  $(document).on("contextmenu copy cut selectstart dragstart", function (event) {
-    var $target = $(event.target);
-    if ($target.closest("input, textarea, [contenteditable='true']").length) return;
-    event.preventDefault();
-  });
-
-  $(document).on("keydown", function (event) {
-    var key = String(event.key || "").toLowerCase();
-    var hasModifier = event.ctrlKey || event.metaKey;
-    if (!hasModifier) return;
-    if (key !== "c" && key !== "x" && key !== "a") return;
-
-    var $target = $(event.target);
-    if ($target.closest("input, textarea, [contenteditable='true']").length) return;
-    event.preventDefault();
-  });
-}
 
 /********** Function LinkedIn Feed Setup **********/
 function setupLinkedInFeed() {
