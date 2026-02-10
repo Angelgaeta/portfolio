@@ -206,7 +206,12 @@ a:hover {
 
 .header-main {
   background: linear-gradient(180deg, rgba(11, 16, 32, 0.94), rgba(11, 16, 32, 0.9));
-  border-right: 1px solid var(--border);
+  border-right: 0;
+}
+
+.header-main .simplebar-track {
+  border: 0 !important;
+  background: transparent;
 }
 
 .header-main .nav-menu ul {
