@@ -367,35 +367,35 @@ function setupLinkedInFeed() {
     var viewCount = post.views;
     var isExpanded = !!interaction.expanded;
     var hasEmbed = !!(post.embedUrl && /^https:\/\/www\.linkedin\.com\/embed\/feed\/update\/urn:li:(share|activity):\d+/i.test(post.embedUrl));
+    if (hasEmbed) {
+      return (
+        '<article class="linkedin-native-frame' + (featured ? " is-featured" : "") + '">' +
+        '<iframe src="' + esc(post.embedUrl) + '" title="Post LinkedIn intégré" loading="lazy" frameborder="0" allowfullscreen></iframe>' +
+        "</article>"
+      );
+    }
     var textSource = post.content || post.excerpt || "";
     var previewMax = 90;
     var needsExpand = textSource.length > previewMax;
     var previewText = needsExpand ? textSource.slice(0, previewMax).replace(/\s+\S*$/, "") + "..." : textSource;
     var readMoreLabel = isExpanded ? "Voir moins" : "Voir plus";
 
-    var embedMarkup =
-      hasEmbed
-        ? '<div class="linkedin-post-embed"><iframe src="' + esc(post.embedUrl) + '" title="Post LinkedIn intégré" loading="lazy" frameborder="0" allowfullscreen></iframe></div>'
-        : "";
+    var embedMarkup = "";
 
     var textMarkup =
-      hasEmbed
-        ? '<p class="linkedin-embed-caption">Publication originale LinkedIn intégrée.</p>'
-        : '<p class="linkedin-post-preview' + (isExpanded ? " is-hidden" : "") + '">' + esc(previewText) + "</p>" +
-          '<div class="linkedin-post-full' + (isExpanded ? " is-visible" : "") + '"><p>' + esc(textSource) + "</p></div>" +
-          (needsExpand
-            ? '<button type="button" class="linkedin-readmore-btn" data-action="expand" data-post-id="' + esc(post.id) + '" aria-expanded="' + (isExpanded ? "true" : "false") + '">' + esc(readMoreLabel) + "</button>"
-            : "");
+      '<p class="linkedin-post-preview' + (isExpanded ? " is-hidden" : "") + '">' + esc(previewText) + "</p>" +
+      '<div class="linkedin-post-full' + (isExpanded ? " is-visible" : "") + '"><p>' + esc(textSource) + "</p></div>" +
+      (needsExpand
+        ? '<button type="button" class="linkedin-readmore-btn" data-action="expand" data-post-id="' + esc(post.id) + '" aria-expanded="' + (isExpanded ? "true" : "false") + '">' + esc(readMoreLabel) + "</button>"
+        : "");
 
     var tagsAndKpiMarkup =
-      hasEmbed
-        ? ""
-        : tagsMarkup(post.tags) +
-          '<div class="linkedin-post-kpi">' +
-          "<span>" + esc(formatCompactNumber(viewCount)) + " vues</span>" +
-          "<span>" + esc(formatCompactNumber(likeCount)) + " réactions</span>" +
-          "<span>" + esc(formatCompactNumber(post.comments)) + " commentaires</span>" +
-          "</div>";
+      tagsMarkup(post.tags) +
+      '<div class="linkedin-post-kpi">' +
+      "<span>" + esc(formatCompactNumber(viewCount)) + " vues</span>" +
+      "<span>" + esc(formatCompactNumber(likeCount)) + " réactions</span>" +
+      "<span>" + esc(formatCompactNumber(post.comments)) + " commentaires</span>" +
+      "</div>";
 
     return (
       '<article class="linkedin-post glass-card' + (featured ? " is-featured" : "") + '">' +
