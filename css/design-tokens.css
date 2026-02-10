@@ -1,4 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700;800&display=swap");
+
 :root {
+  --font-title: "Playfair Display", Georgia, "Times New Roman", serif;
+  --font-body: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
   --bg: #0B1020;
   --surface: #111A33;
   --surface-2: #0E1730;
@@ -44,7 +48,7 @@ body {
 }
 
 body {
-  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  font-family: var(--font-body);
   font-size: 16px;
   line-height: 1.6;
   color: var(--text);
@@ -91,10 +95,13 @@ body.has-scrolled::before {
 
 h1,
 h2,
-h3 {
-  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+h3,
+h4,
+.title {
+  font-family: var(--font-title);
   font-weight: 600;
   letter-spacing: -0.02em;
+  line-height: 1.05;
   margin: 0 0 var(--space-2);
   color: var(--text);
 }
