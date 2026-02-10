@@ -203,9 +203,366 @@ $(document).ready(function () {
 
   /*======== Contact Form Setup ========*/
   contactFormSetup();
+  setupLinkedInFeed();
+  setupContentProtection();
 
   // Quick quote wizard removed (portfolio mode)
 });
+
+/********** Function Content Protection **********/
+function setupContentProtection() {
+  document.body.classList.add("protect-content");
+
+  $(document).on("contextmenu copy cut selectstart dragstart", function (event) {
+    var $target = $(event.target);
+    if ($target.closest("input, textarea, [contenteditable='true']").length) return;
+    event.preventDefault();
+  });
+
+  $(document).on("keydown", function (event) {
+    var key = String(event.key || "").toLowerCase();
+    var hasModifier = event.ctrlKey || event.metaKey;
+    if (!hasModifier) return;
+    if (key !== "c" && key !== "x" && key !== "a") return;
+
+    var $target = $(event.target);
+    if ($target.closest("input, textarea, [contenteditable='true']").length) return;
+    event.preventDefault();
+  });
+}
+
+/********** Function LinkedIn Feed Setup **********/
+function setupLinkedInFeed() {
+  var feed = document.querySelector("[data-linkedin-feed]");
+  if (!feed) return;
+
+  var categoryContainer = document.querySelector("[data-linkedin-categories]");
+  var summaryContainer = document.querySelector("[data-linkedin-summary]");
+  var storageKey = "knowledge_feed_interactions_v1";
+  var state = {
+    posts: [],
+    category: "all",
+    interactions: {},
+  };
+
+  function esc(text) {
+    return String(text || "")
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/\"/g, "&quot;")
+      .replace(/'/g, "&#39;");
+  }
+
+  function formatDate(iso) {
+    if (!iso) return "";
+    var d = new Date(iso);
+    if (Number.isNaN(d.getTime())) return iso;
+    return d.toLocaleDateString("fr-FR", {
+      year: "numeric",
+      month: "short",
+      day: "numeric",
+    });
+  }
+
+  function formatCompactNumber(num) {
+    var n = Number(num) || 0;
+    return new Intl.NumberFormat("fr-FR", { notation: "compact", maximumFractionDigits: 1 }).format(n);
+  }
+
+  function sortPosts(posts) {
+    var clone = posts.slice();
+    clone.sort(function (a, b) {
+      return new Date(b.date).getTime() - new Date(a.date).getTime();
+    });
+    return clone;
+  }
+
+  function normalizeCategory(value) {
+    var c = String(value || "").trim();
+    return c || "General";
+  }
+
+  function normalizePost(raw) {
+    var post = raw || {};
+    var tags = Array.isArray(post.tags) ? post.tags : [];
+    return {
+      id: String(post.id || post.url || Math.random()),
+      title: String(post.title || "Article"),
+      excerpt: String(post.excerpt || ""),
+      content: String(post.content || post.excerpt || ""),
+      date: String(post.date || ""),
+      category: normalizeCategory(post.category),
+      url: String(post.url || "https://www.linkedin.com/in/angeliqueredjdal/"),
+      likes: Math.max(0, Number(post.likes) || 0),
+      comments: Math.max(0, Number(post.comments) || 0),
+      views: Math.max(0, Number(post.views) || 0),
+      readTimeMin: Math.max(1, Number(post.readTimeMin) || 3),
+      tags: tags.slice(0, 5).map(function (tag) { return String(tag); }),
+    };
+  }
+
+  function loadInteractions() {
+    try {
+      var parsed = JSON.parse(localStorage.getItem(storageKey) || "{}");
+      if (parsed && typeof parsed === "object") {
+        state.interactions = parsed;
+      }
+    } catch (e) {
+      state.interactions = {};
+    }
+  }
+
+  function saveInteractions() {
+    try {
+      localStorage.setItem(storageKey, JSON.stringify(state.interactions));
+    } catch (e) {
+      // ignore storage quota errors
+    }
+  }
+
+  function getPostInteraction(postId) {
+    if (!state.interactions[postId]) {
+      state.interactions[postId] = { liked: false, saved: false };
+    }
+    return state.interactions[postId];
+  }
+
+  function getFilteredPosts() {
+    var sorted = sortPosts(state.posts);
+    if (state.category === "all") return sorted;
+    return sorted.filter(function (post) {
+      return normalizeCategory(post.category).toLowerCase() === state.category;
+    });
+  }
+
+  function renderCategories() {
+    if (!categoryContainer) return;
+    var categories = state.posts.reduce(function (acc, post) {
+      var c = normalizeCategory(post.category).toLowerCase();
+      if (!acc.includes(c)) acc.push(c);
+      return acc;
+    }, []);
+    categories.sort();
+
+    var buttons = ['<button type="button" class="linkedin-filter ' + (state.category === "all" ? "is-active" : "") + '" data-linkedin-category="all" aria-pressed="' + (state.category === "all" ? "true" : "false") + '">Tous</button>'];
+    categories.forEach(function (cat) {
+      var label = cat.charAt(0).toUpperCase() + cat.slice(1);
+      var active = state.category === cat;
+      buttons.push('<button type="button" class="linkedin-filter ' + (active ? "is-active" : "") + '" data-linkedin-category="' + esc(cat) + '" aria-pressed="' + (active ? "true" : "false") + '">' + esc(label) + "</button>");
+    });
+    categoryContainer.innerHTML = buttons.join("");
+  }
+
+  function renderSummary() {
+    if (!summaryContainer) return;
+    var postsCount = state.posts.length;
+    var categoriesCount = state.posts.reduce(function (acc, post) {
+      var key = normalizeCategory(post.category).toLowerCase();
+      if (!acc.includes(key)) acc.push(key);
+      return acc;
+    }, []).length;
+    var totalViews = state.posts.reduce(function (sum, post) {
+      return sum + (Number(post.views) || 0);
+    }, 0);
+
+    summaryContainer.innerHTML =
+      '<div class="linkedin-summary-item"><strong>' + esc(String(postsCount)) + "</strong><span>Articles</span></div>" +
+      '<div class="linkedin-summary-item"><strong>' + esc(String(categoriesCount)) + "</strong><span>Catégories</span></div>" +
+      '<div class="linkedin-summary-item"><strong>' + esc(formatCompactNumber(totalViews)) + "</strong><span>Vues cumulées</span></div>";
+  }
+
+  function tagsMarkup(tags) {
+    if (!tags || !tags.length) return "";
+    return (
+      '<div class="linkedin-post-tags">' +
+      tags.map(function (tag) {
+        return '<span>#' + esc(tag) + "</span>";
+      }).join("") +
+      "</div>"
+    );
+  }
+
+  function postCard(post) {
+    var interaction = getPostInteraction(post.id);
+    var likeCount = post.likes;
+    var viewCount = post.views;
+    var isExpanded = !!interaction.expanded;
+    var textSource = post.content || post.excerpt || "";
+    var previewMax = 90;
+    var needsExpand = textSource.length > previewMax;
+    var previewText = needsExpand ? textSource.slice(0, previewMax).replace(/\s+\S*$/, "") + "..." : textSource;
+    var readMoreLabel = isExpanded ? "Voir moins" : "Voir plus";
+
+    return (
+      '<article class="linkedin-post glass-card">' +
+      '<header class="linkedin-post-head">' +
+      '<img src="img/photo-portrait.jpg" alt="Photo Angélique Redjdal" loading="lazy" decoding="async" width="52" height="52">' +
+      '<div class="linkedin-post-meta">' +
+      "<h4>Angélique Redjdal</h4>" +
+      "<p>Blog de connaissances • Partage d'apprentissage</p>" +
+      '<span>' + esc(formatDate(post.date)) + " • " + esc(String(post.readTimeMin)) + " min</span>" +
+      "</div>" +
+      "</header>" +
+      '<div class="linkedin-post-body">' +
+      '<span class="linkedin-post-category">' + esc(post.category) + "</span>" +
+      "<h5>" + esc(post.title) + "</h5>" +
+      '<p class="linkedin-post-preview' + (isExpanded ? " is-hidden" : "") + '">' + esc(previewText) + "</p>" +
+      '<div class="linkedin-post-full' + (isExpanded ? " is-visible" : "") + '"><p>' + esc(textSource) + "</p></div>" +
+      (needsExpand
+        ? '<button type="button" class="linkedin-readmore-btn" data-action="expand" data-post-id="' + esc(post.id) + '" aria-expanded="' + (isExpanded ? "true" : "false") + '">' + esc(readMoreLabel) + "</button>"
+        : "") +
+      tagsMarkup(post.tags) +
+      '<div class="linkedin-post-kpi">' +
+      "<span>" + esc(formatCompactNumber(viewCount)) + " vues</span>" +
+      "<span>" + esc(formatCompactNumber(likeCount)) + " réactions</span>" +
+      "<span>" + esc(formatCompactNumber(post.comments)) + " commentaires</span>" +
+      "</div>" +
+      "</div>" +
+      '<footer class="linkedin-post-actions">' +
+      '<button type="button" class="linkedin-action-btn" data-action="copy" data-link="' + esc(post.url) + '">Copier le lien</button>' +
+      '<button type="button" class="linkedin-action-btn" data-action="share" data-title="' + esc(post.title) + '" data-link="' + esc(post.url) + '">Partager l\'article</button>' +
+      '<a href="' + esc(post.url) + '" target="_blank" rel="noopener noreferrer" data-action="open-link" data-post-id="' + esc(post.id) + '">Lire sur LinkedIn</a>' +
+      "</footer>" +
+      "</article>"
+    );
+  }
+
+  function render() {
+    var posts = getFilteredPosts();
+    var html = posts.map(postCard).join("");
+    feed.innerHTML = html || '<p class="linkedin-empty">Aucun article pour cette categorie.</p>';
+    renderCategories();
+    renderSummary();
+  }
+
+  if (categoryContainer) {
+    categoryContainer.addEventListener("click", function (event) {
+      var btn = event.target.closest("[data-linkedin-category]");
+      if (!btn) return;
+      state.category = btn.getAttribute("data-linkedin-category") || "all";
+      render();
+    });
+  }
+
+  function incrementPostView(postId) {
+    var target = state.posts.find(function (post) {
+      return post.id === postId;
+    });
+    if (!target) return;
+
+    target.views = (Number(target.views) || 0) + 1;
+    render();
+
+    fetch("track-post-view.php", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ id: postId }),
+    })
+      .then(function (res) {
+        if (!res.ok) throw new Error("track_failed");
+        return res.json();
+      })
+      .then(function (data) {
+        if (!data || !data.ok) return;
+        if (typeof data.views === "number") {
+          target.views = Math.max(0, Number(data.views) || target.views);
+          render();
+        }
+      })
+      .catch(function () {
+        // keep optimistic UI value when tracking endpoint is unavailable
+      });
+  }
+
+  feed.addEventListener("click", function (event) {
+    var link = event.target.closest('a[data-action="open-link"]');
+    if (link) {
+      var linkedPostId = link.getAttribute("data-post-id");
+      if (linkedPostId) {
+        incrementPostView(linkedPostId);
+      }
+      return;
+    }
+
+    var button = event.target.closest(".linkedin-action-btn, .linkedin-readmore-btn");
+    if (!button) return;
+    var action = button.getAttribute("data-action");
+    var postId = button.getAttribute("data-post-id");
+
+    if (action === "copy") {
+      var link = button.getAttribute("data-link") || "";
+      if (link && navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(link).then(function () {
+          button.textContent = "Lien copié";
+          button.classList.add("is-active");
+          setTimeout(function () {
+            button.textContent = "Copier le lien";
+            button.classList.remove("is-active");
+          }, 1300);
+        });
+      }
+      return;
+    }
+
+    if (action === "share") {
+      var shareUrl = button.getAttribute("data-link") || "";
+      var shareTitle = button.getAttribute("data-title") || "Article";
+      if (navigator.share) {
+        navigator.share({ title: shareTitle, url: shareUrl }).catch(function () {});
+      } else if (shareUrl && navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(shareUrl).then(function () {
+          button.textContent = "Lien copié";
+          button.classList.add("is-active");
+          setTimeout(function () {
+            button.textContent = "Partager l'article";
+            button.classList.remove("is-active");
+          }, 1300);
+        });
+      }
+      return;
+    }
+
+    if (!postId) return;
+    var interaction = getPostInteraction(postId);
+    if (action === "expand") {
+      var opening = !interaction.expanded;
+      interaction.expanded = opening;
+      if (opening) {
+        incrementPostView(postId);
+      }
+    }
+    saveInteractions();
+    render();
+  });
+
+  loadInteractions();
+  fetch("data/posts.json", { cache: "no-store" })
+    .then(function (res) {
+      if (!res.ok) throw new Error("posts_load_failed");
+      return res.json();
+    })
+    .then(function (posts) {
+      if (!Array.isArray(posts)) throw new Error("posts_invalid");
+      state.posts = posts.map(normalizePost);
+      render();
+    })
+    .catch(function () {
+      state.posts = [
+        normalizePost({
+          id: "fallback-1",
+          title: "Ajouter tes premiers articles",
+          excerpt: "Renseigne data/posts.json avec titre, resume, categorie, date et lien source.",
+          url: "https://www.linkedin.com/in/angeliqueredjdal/",
+          date: "",
+          category: "General",
+          views: 0,
+          readTimeMin: 2,
+        }),
+      ];
+      render();
+    });
+}
 
 /*********** Function Ajax Portfolio Setup **********/
 function ajaxPortfolioSetup($ajaxLink, $ajaxContainer) {
@@ -439,7 +796,11 @@ function contactFormSetup() {
     $.ajax({
       type: "POST",
       url: "mail.php",
-      data: { cf_name: name, cf_email: email, cf_message: message },
+      data: {
+        cf_name: name,
+        cf_email: email,
+        cf_message: message,
+      },
       dataType: "json",
       success: function (data) {
         var statusCode = data?.status || 500;
@@ -453,8 +814,9 @@ function contactFormSetup() {
         }
       },
       error: function (xhr) {
+        var backendMessage = xhr?.responseJSON?.message;
         var fallbackMessage =
-          "Oups… une erreur s'est produite. Veuillez réessayer plus tard.";
+          backendMessage || "Oups… une erreur s'est produite. Veuillez réessayer plus tard.";
         showAlertBox(
           xhr?.status || 500,
           fallbackMessage,
