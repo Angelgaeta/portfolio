@@ -1,5 +1,20 @@
 [
     {
+        "id": "li-7424441225744809985",
+        "title": "Article LinkedIn - Rappel d'apprentissage",
+        "excerpt": "Partage d'un rappel de cours et des points clés retenus pour progresser en pratique.",
+        "content": "Dans cet article, je synthétise ce que j'ai retenu d'un module de cours: les notions importantes, les erreurs à éviter, puis la façon dont je les applique dans mes exercices. L'objectif est de transformer la théorie en réflexes concrets sur mes projets.",
+        "url": "https://www.linkedin.com/feed/update/urn:li:activity:7424441225744809985/",
+        "embedUrl": "https://www.linkedin.com/embed/feed/update/urn:li:share:7424441224989929472?collapsed=1",
+        "date": "2026-02-10",
+        "category": "Journal",
+        "likes": 0,
+        "comments": 0,
+        "views": 0,
+        "readTimeMin": 3,
+        "tags": ["apprentissage", "cours", "progression"]
+    },
+    {
         "id": "post-2026-02-10-architecture",
         "title": "Architecture Java/Spring et Angular",
         "excerpt": "Choix techniques, maintainabilite, qualite de delivery et collaboration equipe sur un projet full-stack.",

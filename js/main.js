@@ -294,6 +294,7 @@ function setupLinkedInFeed() {
       date: String(post.date || ""),
       category: normalizeCategory(post.category),
       url: String(post.url || "https://www.linkedin.com/in/angeliqueredjdal/"),
+      embedUrl: String(post.embedUrl || ""),
       likes: Math.max(0, Number(post.likes) || 0),
       comments: Math.max(0, Number(post.comments) || 0),
       views: Math.max(0, Number(post.views) || 0),
@@ -383,19 +384,44 @@ function setupLinkedInFeed() {
     );
   }
 
-  function postCard(post) {
+  function postCard(post, featured) {
     var interaction = getPostInteraction(post.id);
     var likeCount = post.likes;
     var viewCount = post.views;
     var isExpanded = !!interaction.expanded;
+    var hasEmbed = !!(post.embedUrl && /^https:\/\/www\.linkedin\.com\/embed\/feed\/update\/urn:li:(share|activity):\d+/i.test(post.embedUrl));
     var textSource = post.content || post.excerpt || "";
     var previewMax = 90;
     var needsExpand = textSource.length > previewMax;
     var previewText = needsExpand ? textSource.slice(0, previewMax).replace(/\s+\S*$/, "") + "..." : textSource;
     var readMoreLabel = isExpanded ? "Voir moins" : "Voir plus";
 
+    var embedMarkup =
+      hasEmbed
+        ? '<div class="linkedin-post-embed"><iframe src="' + esc(post.embedUrl) + '" title="Post LinkedIn intégré" loading="lazy" frameborder="0" allowfullscreen></iframe></div>'
+        : "";
+
+    var textMarkup =
+      hasEmbed
+        ? '<p class="linkedin-embed-caption">Publication originale LinkedIn intégrée.</p>'
+        : '<p class="linkedin-post-preview' + (isExpanded ? " is-hidden" : "") + '">' + esc(previewText) + "</p>" +
+          '<div class="linkedin-post-full' + (isExpanded ? " is-visible" : "") + '"><p>' + esc(textSource) + "</p></div>" +
+          (needsExpand
+            ? '<button type="button" class="linkedin-readmore-btn" data-action="expand" data-post-id="' + esc(post.id) + '" aria-expanded="' + (isExpanded ? "true" : "false") + '">' + esc(readMoreLabel) + "</button>"
+            : "");
+
+    var tagsAndKpiMarkup =
+      hasEmbed
+        ? ""
+        : tagsMarkup(post.tags) +
+          '<div class="linkedin-post-kpi">' +
+          "<span>" + esc(formatCompactNumber(viewCount)) + " vues</span>" +
+          "<span>" + esc(formatCompactNumber(likeCount)) + " réactions</span>" +
+          "<span>" + esc(formatCompactNumber(post.comments)) + " commentaires</span>" +
+          "</div>";
+
     return (
-      '<article class="linkedin-post glass-card">' +
+      '<article class="linkedin-post glass-card' + (featured ? " is-featured" : "") + '">' +
       '<header class="linkedin-post-head">' +
       '<img src="img/photo-portrait.jpg" alt="Photo Angélique Redjdal" loading="lazy" decoding="async" width="52" height="52">' +
       '<div class="linkedin-post-meta">' +
@@ -407,17 +433,9 @@ function setupLinkedInFeed() {
       '<div class="linkedin-post-body">' +
       '<span class="linkedin-post-category">' + esc(post.category) + "</span>" +
       "<h5>" + esc(post.title) + "</h5>" +
-      '<p class="linkedin-post-preview' + (isExpanded ? " is-hidden" : "") + '">' + esc(previewText) + "</p>" +
-      '<div class="linkedin-post-full' + (isExpanded ? " is-visible" : "") + '"><p>' + esc(textSource) + "</p></div>" +
-      (needsExpand
-        ? '<button type="button" class="linkedin-readmore-btn" data-action="expand" data-post-id="' + esc(post.id) + '" aria-expanded="' + (isExpanded ? "true" : "false") + '">' + esc(readMoreLabel) + "</button>"
-        : "") +
-      tagsMarkup(post.tags) +
-      '<div class="linkedin-post-kpi">' +
-      "<span>" + esc(formatCompactNumber(viewCount)) + " vues</span>" +
-      "<span>" + esc(formatCompactNumber(likeCount)) + " réactions</span>" +
-      "<span>" + esc(formatCompactNumber(post.comments)) + " commentaires</span>" +
-      "</div>" +
+      textMarkup +
+      embedMarkup +
+      tagsAndKpiMarkup +
       "</div>" +
       '<footer class="linkedin-post-actions">' +
       '<button type="button" class="linkedin-action-btn" data-action="copy" data-link="' + esc(post.url) + '">Copier le lien</button>' +
@@ -430,7 +448,19 @@ function setupLinkedInFeed() {
 
   function render() {
     var posts = getFilteredPosts();
-    var html = posts.map(postCard).join("");
+    var featuredIndex = posts.findIndex(function (post) {
+      return post.embedUrl && /^https:\/\/www\.linkedin\.com\/embed\/feed\/update\/urn:li:(share|activity):\d+/i.test(post.embedUrl);
+    });
+    if (featuredIndex > 0) {
+      var featuredPost = posts.splice(featuredIndex, 1)[0];
+      posts.unshift(featuredPost);
+      featuredIndex = 0;
+    }
+    var html = posts
+      .map(function (post, index) {
+        return postCard(post, index === featuredIndex);
+      })
+      .join("");
     feed.innerHTML = html || '<p class="linkedin-empty">Aucun article pour cette categorie.</p>';
     renderCategories();
     renderSummary();
