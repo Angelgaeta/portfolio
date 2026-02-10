@@ -250,7 +250,7 @@ function setupLinkedInFeed() {
   function sortPosts(posts) {
     var clone = posts.slice();
     clone.sort(function (a, b) {
-      return new Date(b.date).getTime() - new Date(a.date).getTime();
+      return new Date(a.date).getTime() - new Date(b.date).getTime();
     });
     return clone;
   }
@@ -425,14 +425,7 @@ function setupLinkedInFeed() {
 
   function render() {
     var posts = getFilteredPosts();
-    var featuredIndex = posts.findIndex(function (post) {
-      return post.embedUrl && /^https:\/\/www\.linkedin\.com\/embed\/feed\/update\/urn:li:(share|activity):\d+/i.test(post.embedUrl);
-    });
-    if (featuredIndex > 0) {
-      var featuredPost = posts.splice(featuredIndex, 1)[0];
-      posts.unshift(featuredPost);
-      featuredIndex = 0;
-    }
+    var featuredIndex = -1;
     var html = posts
       .map(function (post, index) {
         return postCard(post, index === featuredIndex);

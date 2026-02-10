@@ -1,11 +1,39 @@
 [
+      {
+        "id": "li-7426876398885318657",
+        "title": "Publication LinkedIn",
+        "excerpt": "Publication native LinkedIn integree.",
+        "url": "https://www.linkedin.com/feed/update/urn:li:share:7426876398885318657/",
+        "embedUrl": "https://www.linkedin.com/embed/feed/update/urn:li:share:7426876398885318657",
+        "date": "2026-02-10",
+        "category": "Journal",
+        "likes": 0,
+        "comments": 0,
+        "views": 0,
+        "readTimeMin": 3,
+        "tags": ["linkedin"]
+    },
     {
+        "id": "li-7424774000456667136",
+        "title": "Publication LinkedIn",
+        "excerpt": "Publication native LinkedIn integree.",
+        "url": "https://www.linkedin.com/feed/update/urn:li:share:7424774000456667136/",
+        "embedUrl": "https://www.linkedin.com/embed/feed/update/urn:li:share:7424774000456667136",
+        "date": "2026-02-10",
+        "category": "Journal",
+        "likes": 0,
+        "comments": 0,
+        "views": 0,
+        "readTimeMin": 3,
+        "tags": ["linkedin"]
+    },
+     {
         "id": "li-7424441225744809985",
         "title": "Article LinkedIn - Rappel d'apprentissage",
         "excerpt": "Partage d'un rappel de cours et des points clés retenus pour progresser en pratique.",
         "content": "Dans cet article, je synthétise ce que j'ai retenu d'un module de cours: les notions importantes, les erreurs à éviter, puis la façon dont je les applique dans mes exercices. L'objectif est de transformer la théorie en réflexes concrets sur mes projets.",
         "url": "https://www.linkedin.com/feed/update/urn:li:activity:7424441225744809985/",
-        "embedUrl": "https://www.linkedin.com/embed/feed/update/urn:li:share:7424441224989929472?collapsed=1",
+        "embedUrl": "https://www.linkedin.com/embed/feed/update/urn:li:share:7424441224989929472",
         "date": "2026-02-10",
         "category": "Journal",
         "likes": 0,
@@ -13,58 +41,6 @@
         "views": 0,
         "readTimeMin": 3,
         "tags": ["apprentissage", "cours", "progression"]
-    },
-    {
-        "id": "post-2026-02-10-architecture",
-        "title": "Architecture Java/Spring et Angular",
-        "excerpt": "Choix techniques, maintainabilite, qualite de delivery et collaboration equipe sur un projet full-stack.",
-        "content": "Choix techniques, maintainabilite, qualite de delivery et collaboration equipe sur un projet full-stack. J'ai structure mes rappels en modules courts: architecture hexagonale, separation des responsabilites, gestion des erreurs et conventions de nommage. L'objectif est d'avoir un socle lisible, testable et facile a faire evoluer.",
-        "url": "https://www.linkedin.com/in/angeliqueredjdal/",
-        "date": "2026-02-10",
-        "category": "Java",
-        "likes": 42,
-        "comments": 12,
-        "views": 1240,
-        "readTimeMin": 4,
-        "tags": ["spring", "clean-architecture", "api"]
-    },
-    {
-        "id": "li-761cd227209bccce",
-        "title": "Rappel de cours: types avancés TypeScript",
-        "excerpt": "Synthese courte des utilitaires TypeScript que j'utilise pour fiabiliser mes modeles front.",
-        "url": "https://www.linkedin.com/posts/test",
-        "date": "2026-02-10",
-        "category": "TypeScript",
-        "likes": 27,
-        "comments": 7,
-        "views": 860,
-        "readTimeMin": 3,
-        "tags": ["typescript", "frontend", "quality"]
-    },
-    {
-        "id": "post-2026-01-29-cas-concret",
-        "title": "Cas concret: de l'idee au produit",
-        "excerpt": "Contexte, decoupage, stack, arbitrages UX et impact final sur la fiabilite du produit.",
-        "url": "https://www.linkedin.com/in/angeliqueredjdal/",
-        "date": "2026-01-29",
-        "category": "Angular",
-        "likes": 35,
-        "comments": 10,
-        "views": 980,
-        "readTimeMin": 5,
-        "tags": ["angular", "ui-ux", "maintenabilite"]
-    },
-    {
-        "id": "post-2026-01-18-qualite",
-        "title": "Qualite logicielle et UX claire",
-        "excerpt": "Approche practical pour livrer un code lisible, teste et evolutif sans sacrifier l'experience utilisateur.",
-        "url": "https://www.linkedin.com/in/angeliqueredjdal/",
-        "date": "2026-01-18",
-        "category": "Qualite",
-        "likes": 31,
-        "comments": 9,
-        "views": 910,
-        "readTimeMin": 4,
-        "tags": ["testing", "accessibilite", "refactoring"]
     }
+
 ]
