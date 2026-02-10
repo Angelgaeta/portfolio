@@ -237,10 +237,19 @@ a:hover {
 }
 
 .header-main .nav-menu a.pt-link .nav-menu-icon {
+  position: static;
   width: 18px;
+  flex: 0 0 18px;
   display: inline-flex;
+  align-items: center;
   justify-content: center;
   color: var(--muted);
+}
+
+.header-main .nav-menu a.pt-link .nav-menu-icon i {
+  display: block;
+  line-height: 1;
+  font-size: 18px;
 }
 
 .header-main .nav-menu a.pt-link:hover {
