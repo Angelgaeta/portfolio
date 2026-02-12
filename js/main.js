@@ -593,7 +593,7 @@ function ajaxPortfolioSetup($ajaxLink, $ajaxContainer) {
         $ajaxContainer
           .find(".content-wrap .popup-content")
           .html(
-            '<h1 class="text-center">Something went wrong! Retry or refresh the page.</h1>',
+            '<p class="text-center" role="alert">Something went wrong! Retry or refresh the page.</p>',
           );
       },
     });
@@ -675,6 +675,8 @@ function contactFormSetup() {
       .removeClass("sr-only is-loading is-success is-error")
       .addClass("is-visible")
       .text(message || "");
+
+    $status.attr("aria-live", type === "error" ? "assertive" : "polite");
 
     if (type === "loading") {
       $status.addClass("is-loading");

@@ -128,7 +128,7 @@
   <div class="preloader">
     <div class="loader">
       <!--mon nom-->
-      <h4>Angélique Redjdal</h4>
+      <p class="preloader-name">Angélique Redjdal</p>
       <span></span>
       <span></span>
       <span></span>
@@ -232,7 +232,7 @@
     <!--Header End-->
 
     <!--Main Start-->
-    <div id="main" class="site-main">
+    <div id="main" class="site-main" tabindex="-1">
       <!--Banner Section Start-->
 	      <section id="home" class="banner-section pt-page">
 					        <video id="video-container" autoplay muted playsinline loop preload="metadata" poster="img/photo-portrait.jpg" aria-hidden="true">
@@ -1604,23 +1604,23 @@
 	                  <div class="row">
 	                    <div class="col-md-6">
 	                      <div class="input">
-	                        <label class="sr-only" for="cf-name">Nom</label>
-	                        <input id="cf-name" class="input__field cf-validate" type="text" name="cf_name" autocomplete="name" required maxlength="80" placeholder="Nom" aria-describedby="cf-name-error" />
-	                        <span id="cf-name-error" class="cf-error-msg sr-only" aria-live="polite"></span>
+	                        <label class="form-label" for="cf-name">Nom</label>
+	                        <input id="cf-name" class="input__field cf-validate" type="text" name="cf_name" autocomplete="name" required aria-required="true" maxlength="80" placeholder="Nom" aria-describedby="cf-name-error" />
+	                        <span id="cf-name-error" class="cf-error-msg sr-only" aria-live="assertive" aria-atomic="true"></span>
 	                      </div>
 	                    </div>
 	                    <div class="col-md-6">
 	                      <div class="input">
-	                        <label class="sr-only" for="cf-email">Email</label>
-	                        <input id="cf-email" class="input__field cf-validate" type="email" name="cf_email" autocomplete="email" inputmode="email" required maxlength="120" placeholder="Email" aria-describedby="cf-email-error" />
-	                        <span id="cf-email-error" class="cf-error-msg sr-only" aria-live="polite"></span>
+	                        <label class="form-label" for="cf-email">Email</label>
+	                        <input id="cf-email" class="input__field cf-validate" type="email" name="cf_email" autocomplete="email" inputmode="email" required aria-required="true" maxlength="120" placeholder="Email" aria-describedby="cf-email-error" />
+	                        <span id="cf-email-error" class="cf-error-msg sr-only" aria-live="assertive" aria-atomic="true"></span>
 	                      </div>
 	                    </div>
 	                    <div class="col-12">
 	                      <div class="input">
-	                        <label class="sr-only" for="cf-message">Message</label>
-	                        <textarea id="cf-message" class="input__field cf-validate" name="cf_message" rows="6" required minlength="10" maxlength="2000" placeholder="Message (contexte, stack, timing, liens…)" aria-describedby="cf-message-error"></textarea>
-	                        <span id="cf-message-error" class="cf-error-msg sr-only" aria-live="polite"></span>
+	                        <label class="form-label" for="cf-message">Message</label>
+	                        <textarea id="cf-message" class="input__field cf-validate" name="cf_message" rows="6" required aria-required="true" minlength="10" maxlength="2000" placeholder="Message (contexte, stack, timing, liens…)" aria-describedby="cf-message-error"></textarea>
+	                        <span id="cf-message-error" class="cf-error-msg sr-only" aria-live="assertive" aria-atomic="true"></span>
 	                      </div>
 	                    </div>
 	                  </div>
@@ -1628,7 +1628,7 @@
 	                    <button type="submit" class="btn-cta primary">Envoyer</button>
 	                    <span class="contact-note">Je réponds dès que possible</span>
 	                  </div>
-	                  <p id="contact-form-status" class="contact-form-status sr-only" role="status" aria-live="polite"></p>
+	                  <p id="contact-form-status" class="contact-form-status sr-only" role="status" aria-live="polite" aria-atomic="true"></p>
                 </form>
               </div>
             </div>

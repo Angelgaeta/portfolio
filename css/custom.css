@@ -203,6 +203,12 @@ video{
   }
 }
 
+.preloader .loader .preloader-name{
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
 /* =========================================================
    TYPOGRAPHIE GLOBALE — HIÉRARCHIE CLAIRE
 ========================================================= */
@@ -297,6 +303,24 @@ a:focus-visible {
   outline: 3px solid var(--ui-focus);
   outline-offset: 3px;
   text-decoration-color: var(--ui-accent);
+}
+
+.skip-link{
+  position: absolute;
+  left: 12px;
+  top: -44px;
+  z-index: 10001;
+  padding: 10px 14px;
+  border-radius: 8px;
+  background: var(--ui-bg-1);
+  color: var(--ui-text);
+  border: 1px solid var(--ui-border-accent);
+  box-shadow: var(--ui-shadow-md);
+  text-decoration: none;
+}
+
+.skip-link:focus{
+  top: 12px;
 }
 
 ::selection{
@@ -3507,6 +3531,14 @@ img[loading="lazy"]:not([src=""]) {
 
 .contact-grid .input{
   margin-bottom: 14px;
+}
+
+.contact-grid .form-label{
+  display: inline-block;
+  margin-bottom: 6px;
+  color: var(--ui-text-2);
+  font-size: .9rem;
+  font-weight: 500;
 }
 
 .contact-grid .input__field{
