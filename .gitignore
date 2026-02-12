@@ -3,8 +3,5 @@
 update-posts.secret.php
 /_backup/
 *.bak
-*.pre_restore_*
-*.pre_revert_*
-!archive/**/*.bak
-!archive/**/*.pre_restore_*
-!archive/**/*.pre_revert_*
+*.pre_*
+_backup/
