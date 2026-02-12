@@ -27,4 +27,3 @@ Portfolio personnel (webdesign + developpement front/back) deploye sur:
 ## Production
 
 - URL: `https://devweb.angelgaeta.com/`
-- Canonical configure dans `index.html`
