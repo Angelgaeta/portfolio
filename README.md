@@ -39,11 +39,6 @@ Portfolio personnel (webdesign + developpement front/back) deploye sur:
 - `data/posts.json`: donnees de posts/projets
 - `archive/`: anciens backups de travail (sortis de la racine)
 
-## Captures
-
-![Apercu portfolio](img/og-cover.jpg)
-![Capture projet](img/portfolio/00-screenshot-1.png)
-
 ## Production
 
 - URL: `https://devweb.angelgaeta.com/`
