@@ -4,6 +4,32 @@
 
 :root{
   --top-nav-height: 58px;
+  /* Layout */
+  --container: 1120px;
+  --gutter: clamp(16px, 3vw, 28px);
+
+  /* Type scale (tech, propre) */
+  --fs-1: clamp(14px, 1.2vw, 16px);
+  --fs-2: clamp(16px, 1.6vw, 18px);
+  --fs-3: clamp(20px, 2.4vw, 28px);
+  --fs-4: clamp(28px, 3.6vw, 44px);
+
+  /* Spacing */
+  --s-1: 8px;
+  --s-2: 12px;
+  --s-3: 16px;
+  --s-4: 24px;
+  --s-5: 32px;
+  --s-6: 48px;
+
+  /* Radius / depth */
+  --r-1: 12px;
+  --r-2: 18px;
+
+  /* Surfaces */
+  --border: color-mix(in srgb, var(--text, #fff) 10%, transparent);
+  --card: color-mix(in srgb, var(--bg, #0b0f17) 88%, #fff 12%);
+  --shadow: 0 10px 30px rgba(0,0,0,.35);
   /* ── Backgrounds ── */
   --ui-bg: #0B0F1A;
   --ui-bg-1: rgba(11,15,26,.94);
@@ -143,6 +169,25 @@
   --motion-base: .24s;
   --motion-slow: .4s;
   --ease-standard: cubic-bezier(.2,.8,.2,1);
+}
+
+.container{
+  width: min(var(--container), calc(100% - 2 * var(--gutter)));
+  margin-inline: auto;
+}
+
+.card{
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--r-2);
+  box-shadow: var(--shadow);
+}
+
+@supports not (background: color-mix(in srgb, white 50%, black 50%)) {
+  :root{
+    --border: rgba(255,255,255,.10);
+    --card: rgba(18,22,32,.92);
+  }
 }
 
 html{
