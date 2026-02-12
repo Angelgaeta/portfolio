@@ -2050,6 +2050,29 @@ textarea:focus-visible{
   font-size: .9rem;
 }
 
+#portfolio .esn-case-studies{
+  margin-bottom: 24px;
+}
+
+#portfolio .subheading.subheading-alt{
+  margin-bottom: 14px;
+}
+
+#portfolio .esn-case-card{
+  height: 100%;
+  border-radius: 14px;
+  padding: 16px;
+  background: var(--ui-glass);
+  border: 1px solid var(--ui-border);
+  box-shadow: 0 10px 30px rgba(0,0,0,.22);
+}
+
+#portfolio .esn-case-card h4{
+  margin: 0 0 10px;
+  color: var(--ui-text);
+  font-size: 1rem;
+}
+
 .flagship-proof{
   margin: 10px 0 0;
   font-size: 13px;

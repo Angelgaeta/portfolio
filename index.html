@@ -795,7 +795,7 @@
 		            <div class="col-md-12">
 		              <div class="subheading">
 		                <h3>Projets phares</h3>
-		                <p class="portfolio-proof-note">3 projets représentatifs : front, back et full-stack.</p>
+		                <p class="portfolio-proof-note">Top 3 flagship avec mini case studies : front, back et full-stack.</p>
 		              </div>
 		            </div>
 
@@ -875,12 +875,70 @@
 			            </div>
 		          </div>
 
+          <div class="row mb-30 esn-case-studies">
+            <div class="col-md-12">
+              <div class="subheading">
+                <h3>Expérience ESN - études de cas</h3>
+                <p class="portfolio-proof-note">
+                  Études de cas anonymisées pour respecter la confidentialité client: contexte, contraintes, architecture, décisions et impact.
+                </p>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-sm-6">
+              <article class="esn-case-card">
+                <h4>Portail métier multi-profils (anonymisé)</h4>
+                <ul class="project-meta">
+                  <li><strong>Contexte :</strong> application interne pour des profils admin, encadrant et utilisateur final.</li>
+                  <li><strong>Contraintes :</strong> rôles stricts, parcours hétérogènes, dette UI existante.</li>
+                  <li><strong>Architecture :</strong> front Angular + API Java/Spring Boot, gestion des rôles côté back.</li>
+                  <li><strong>Décisions :</strong> séparation claire des vues par rôle, contrats API stabilisés, composants réutilisables.</li>
+                  <li><strong>Impact :</strong> onboarding simplifié et baisse des erreurs de navigation en recette.</li>
+                </ul>
+              </article>
+            </div>
+
+            <div class="col-lg-4 col-sm-6">
+              <article class="esn-case-card">
+                <h4>API métier et fiabilisation des échanges (anonymisé)</h4>
+                <ul class="project-meta">
+                  <li><strong>Contexte :</strong> backend centralisant des données de plusieurs outils internes.</li>
+                  <li><strong>Contraintes :</strong> volumétrie variable, validations métier, erreurs peu lisibles côté consommateurs.</li>
+                  <li><strong>Architecture :</strong> API REST Spring Boot, DTO validés, gestion d’exceptions homogène.</li>
+                  <li><strong>Décisions :</strong> standardisation des réponses d’erreur et structuration par domaines métier.</li>
+                  <li><strong>Impact :</strong> intégration front plus stable, maintenance et diagnostic accélérés.</li>
+                </ul>
+              </article>
+            </div>
+
+            <div class="col-lg-4 col-sm-6">
+              <article class="esn-case-card">
+                <h4>Refonte UX d’un dashboard opérationnel (anonymisé)</h4>
+                <ul class="project-meta">
+                  <li><strong>Contexte :</strong> dashboard utilisé quotidiennement pour des actions critiques.</li>
+                  <li><strong>Contraintes :</strong> temps limité, continuité de service, besoins divergents selon équipes.</li>
+                  <li><strong>Architecture :</strong> UI modulaire + filtres avancés, endpoints dédiés par usage.</li>
+                  <li><strong>Décisions :</strong> priorisation des parcours fréquents, hiérarchie visuelle orientée action.</li>
+                  <li><strong>Impact :</strong> actions clés plus rapides et retour utilisateur plus positif en exploitation.</li>
+                </ul>
+              </article>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-12 text-center">
+              <div class="subheading subheading-alt">
+                <h3>Autres projets</h3>
+                <p class="portfolio-bonus-note">Projets perso/TP et livrables complémentaires, consultables en grille filtrable.</p>
+              </div>
+            </div>
+          </div>
+
           <div class="row">
             <div class="col-md-12 portfolio-filter text-center">
-	              <p class="portfolio-bonus-note">UI/UX et graphisme restent consultables en bonus.</p>
 	              <ul>
-	                <li class="active" data-filter=".design" role="button" tabindex="0" aria-pressed="true">Applications & Développement</li>
-	                <li data-filter=".data" role="button" tabindex="0" aria-pressed="false">Data & Modélisation</li>
+	                <li class="active" data-filter=".design" role="button" tabindex="0" aria-pressed="true">Projets perso/TP - Développement</li>
+	                <li data-filter=".data" role="button" tabindex="0" aria-pressed="false">Data & Modélisation (formation)</li>
 	                <li data-filter=".graphic" role="button" tabindex="0" aria-pressed="false">UI/UX (bonus)</li>
 	                <li data-filter=".brand" role="button" tabindex="0" aria-pressed="false">Graphisme (bonus)</li>
 	              </ul>
@@ -1168,15 +1226,6 @@
 		                </figure>
 	              </a>
 	            </div>
-
-            <div class="info-dev design">
-              <p class="u-opacity-85">
-                Pour des raisons de confidentialité, certains développements réalisés en contexte professionnel ne
-                peuvent pas
-                être partagés publiquement.
-                Je peux détailler mon rôle, les contraintes et les résultats en entretien.
-              </p>
-            </div>
 
             <!-- ===================================================
            GRAPHISME — OUVRE EN MINI CAS D’ÉTUDE (data-case-open)
