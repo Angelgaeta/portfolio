@@ -393,15 +393,15 @@
           <div class="row services mb-30">
             <div class="col-md-12">
               <div class="subheading">
-                <h3>Ce que je fais vraiment</h3>
+                <h3>Expertises</h3>
               </div>
             </div>
 
             <!--Service Item-->
             <div class="col-lg-4 col-sm-6">
-              <div class="service-item">
+              <div class="service-item expertise-card">
                 <div class="icon"><i aria-hidden="true">🧱</i></div>
-                <h4>Architecture & backend</h4>
+                <h4>Backend & architecture</h4>
                 <p>
                   API robustes, validation, sécurité, séparation des responsabilités.
                 </p>
@@ -410,7 +410,7 @@
 
             <!--Service Item-->
             <div class="col-lg-4 col-sm-6">
-              <div class="service-item">
+              <div class="service-item expertise-card">
                 <div class="icon"><i aria-hidden="true">🅰️</i></div>
                 <h4>Front Angular</h4>
                 <p>
@@ -421,7 +421,7 @@
 
             <!--Service Item-->
             <div class="col-lg-4 col-sm-6">
-              <div class="service-item">
+              <div class="service-item expertise-card">
                 <div class="icon"><i aria-hidden="true">🎯</i></div>
                 <h4>UX & qualité</h4>
                 <p>
@@ -800,60 +800,75 @@
 
 	            <div class="col-lg-4 col-sm-6 fade-in stagger-1">
 	              <div class="service-item scale-in">
-                  <img class="flagship-cover" src="img/portfolio/formulaire.png" alt="Capture du projet Pokémon App Angular" loading="lazy" decoding="async" width="554" height="313" />
+                  <div class="flagship-media">
+                    <img class="flagship-cover" src="img/portfolio/formulaire.png" alt="Capture du projet Pokémon App Angular" loading="lazy" decoding="async" width="554" height="313" />
+                    <div class="project-badges project-badges--overlay">
+                      <span class="project-badge">Front</span>
+                      <span class="project-badge">Angular</span>
+                      <span class="project-badge">TypeScript</span>
+                    </div>
+                  </div>
 	                <div class="content">
 	                  <h4>Pokémon App — SPA Angular</h4>
-	                  <div class="project-badges">
-	                    <span class="project-badge">Front</span>
-	                    <span class="project-badge">Angular</span>
-	                    <span class="project-badge">TypeScript</span>
-	                  </div>
 	                  <ul class="project-meta">
 	                    <li><strong>Problème :</strong> navigation peu fluide et recherche lente dans un volume de données élevé.</li>
 	                    <li><strong>Ce que j’ai fait :</strong> architecture Angular modulaire, composants réutilisables, filtres et états UI structurés.</li>
 	                    <li><strong>Résultat :</strong> parcours plus court, affichage clair, interactions stables en temps réel.</li>
 	                  </ul>
-	                  <p class="u-mt-12"><a href="#" class="btn-main" data-case-open="case-dev-pokemon">Voir le cas</a></p>
+                    <div class="project-ctas u-mt-12">
+                      <a href="https://github.com/Angelgaeta" target="_blank" rel="noopener noreferrer" class="btn-main project-cta">GitHub</a>
+                      <a href="#" class="btn-main project-cta project-cta-demo" data-case-open="case-dev-pokemon">Démo</a>
+                    </div>
 	                </div>
 	              </div>
 	            </div>
 
 	            <div class="col-lg-4 col-sm-6 fade-in stagger-2">
 	              <div class="service-item scale-in">
-                  <img class="flagship-cover" src="img/arborescence-dashboard-admin.png" alt="Capture du projet API REST Spring Boot" loading="lazy" decoding="async" width="1920" height="927" />
+                  <div class="flagship-media">
+                    <img class="flagship-cover" src="img/arborescence-dashboard-admin.png" alt="Capture du projet API REST Spring Boot" loading="lazy" decoding="async" width="1920" height="927" />
+                    <div class="project-badges project-badges--overlay">
+                      <span class="project-badge">Back</span>
+                      <span class="project-badge">Java</span>
+                      <span class="project-badge">Spring Boot</span>
+                    </div>
+                  </div>
 	                <div class="content">
 	                  <h4>API REST — Spring Boot</h4>
-	                  <div class="project-badges">
-	                    <span class="project-badge">Back</span>
-	                    <span class="project-badge">Java</span>
-	                    <span class="project-badge">Spring Boot</span>
-	                  </div>
 	                  <ul class="project-meta">
 	                    <li><strong>Problème :</strong> besoin d’une API métier fiable avec validation stricte et erreurs lisibles.</li>
 	                    <li><strong>Ce que j’ai fait :</strong> endpoints REST Spring Boot, DTO validés, gestion d’erreurs normalisée et tests ciblés.</li>
 	                    <li><strong>Résultat :</strong> API robuste, comportements prévisibles, maintenance facilitée pour le front.</li>
 	                  </ul>
-	                  <p class="u-mt-12"><a href="#" class="btn-main" data-case-open="case-dev-springapi">Voir le cas</a></p>
+                    <div class="project-ctas u-mt-12">
+                      <a href="https://github.com/Angelgaeta" target="_blank" rel="noopener noreferrer" class="btn-main project-cta">GitHub</a>
+                      <a href="#" class="btn-main project-cta project-cta-demo" data-case-open="case-dev-springapi">Démo</a>
+                    </div>
 	                </div>
 	              </div>
 	            </div>
 
 		            <div class="col-lg-4 col-sm-6 fade-in stagger-3">
 		              <div class="service-item scale-in">
-                      <img class="flagship-cover" src="img/maquette-site-bornes-recharge.png" alt="Capture du projet full-stack portail data dashboard" loading="lazy" decoding="async" width="622" height="591" />
+                      <div class="flagship-media">
+                        <img class="flagship-cover" src="img/maquette-site-bornes-recharge.png" alt="Capture du projet full-stack portail data dashboard" loading="lazy" decoding="async" width="622" height="591" />
+                        <div class="project-badges project-badges--overlay">
+                          <span class="project-badge">Full-stack</span>
+                          <span class="project-badge">Angular</span>
+                          <span class="project-badge">Spring Boot</span>
+                        </div>
+                      </div>
 		                <div class="content">
 		                  <h4>Portail Data / Dashboard — Full-stack</h4>
-		                  <div class="project-badges">
-		                    <span class="project-badge">Full-stack</span>
-		                    <span class="project-badge">Angular</span>
-		                    <span class="project-badge">Spring Boot</span>
-		                  </div>
 		                  <ul class="project-meta">
 		                    <li><strong>Problème :</strong> accès données trop long et interfaces peu adaptées aux usages métier.</li>
 		                    <li><strong>Ce que j’ai fait :</strong> écrans Angular orientés tâches, API Spring Boot, structuration des flux et filtres.</li>
 		                    <li><strong>Résultat :</strong> dashboard lisible, actions plus rapides, adoption facilitée côté utilisateurs.</li>
 		                  </ul>
-		                  <p class="u-mt-12"><a href="#" class="btn-main" data-case-open="case-dev-dashboard">Voir le cas</a></p>
+                      <div class="project-ctas u-mt-12">
+                        <a href="https://github.com/Angelgaeta" target="_blank" rel="noopener noreferrer" class="btn-main project-cta">GitHub</a>
+                        <a href="#" class="btn-main project-cta project-cta-demo" data-case-open="case-dev-dashboard">Démo</a>
+                      </div>
 		                </div>
 		              </div>
 			            </div>
