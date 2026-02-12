@@ -164,6 +164,19 @@ body{
   color: var(--ui-text);
 }
 
+/* Typographic hierarchy */
+:where(h1, h2, h3, h4, h5, h6, .page-heading h2, .subheading h3, .home-hero-title){
+  font-family: var(--font-display);
+}
+
+:where(p, li, a, span, small, label, input, textarea, button){
+  font-family: var(--font-body);
+}
+
+:where(code, pre, kbd, samp, .project-badge, .hero-chip, .project-proof, .timeline-date){
+  font-family: var(--font-mono);
+}
+
 button,
 input,
 select,
