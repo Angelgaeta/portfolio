@@ -10,6 +10,26 @@ Portfolio personnel (webdesign + developpement front/back) deploye sur:
 - JavaScript (vanilla)
 - PHP (endpoints simples: contact, tracking, update JSON)
 
+## Projets phares
+
+### Angular
+
+[Voir les projets Angular](https://github.com/Angelgaeta?tab=repositories&q=angular&type=&language=)
+
+![Projet Angular](img/portfolio/formulaire.png)
+
+### Spring
+
+[Voir les projets Spring](https://github.com/Angelgaeta?tab=repositories&q=spring&type=&language=)
+
+![Projet Spring](img/arborescence-dashboard-admin.png)
+
+### Full-stack
+
+[Voir les projets full-stack](https://github.com/Angelgaeta?tab=repositories&q=full-stack&type=&language=)
+
+![Projet Full-stack](img/maquette-site-bornes-recharge.png)
+
 ## Structure rapide
 
 - `index.html`: page principale du portfolio
