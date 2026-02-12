@@ -1588,11 +1588,29 @@ textarea:focus-visible{
   font-weight: 800;
   line-height: 1.02;
   margin: 0 0 14px;
-  letter-spacing: -.02em;
+  letter-spacing: -.015em;
   max-width: 16ch;
   margin-left: auto;
   margin-right: auto;
   text-wrap: balance;
+  color: var(--ui-text);
+  background: linear-gradient(180deg, var(--ui-white-98) 0%, var(--ui-ice-92) 62%, rgba(124,92,255,.86) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 10px 28px rgba(0,0,0,.34), 0 0 18px rgba(124,92,255,.12);
+  position: relative;
+}
+
+#home .home-hero-title::after{
+  content: "";
+  display: block;
+  width: min(220px, 46%);
+  height: 2px;
+  margin: 12px auto 0;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(124,92,255,0), rgba(124,92,255,.55), rgba(124,92,255,0));
+  opacity: .7;
 }
 
 #home .home-hero-stack{
@@ -1794,6 +1812,10 @@ textarea:focus-visible{
   #home .home-hero-title{
     font-size: clamp(24px, 7vw, 32px);
     line-height: 1.15;
+    background: none;
+    -webkit-text-fill-color: var(--ui-text);
+    color: var(--ui-text);
+    text-shadow: 0 8px 20px rgba(0,0,0,.32);
   }
 
   #home .home-hero-stack{
