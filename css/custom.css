@@ -4144,3 +4144,85 @@ textarea{
 .site-main {
   left: 0;
 }
+
+/* =========================================================
+   Accent Discipline (80/15/5)
+========================================================= */
+:root{
+  /* 80% neutrals */
+  --ui-bg: #0d1119;
+  --ui-bg-1: rgba(13,17,25,.96);
+  --ui-bg-2: rgba(10,14,22,.99);
+  --ui-glass: rgba(255,255,255,.045);
+
+  /* 15% surfaces */
+  --ui-surface: rgba(255,255,255,.03);
+  --ui-surface-hover: rgba(255,255,255,.05);
+  --ui-border: rgba(255,255,255,.11);
+  --ui-border-weak: rgba(255,255,255,.06);
+  --ui-border-medium: rgba(255,255,255,.16);
+
+  /* 5% accent (signal only) */
+  --ui-accent-soft: rgba(124,92,255,.10);
+  --ui-border-accent: rgba(124,92,255,.26);
+}
+
+/* Surfaces should stay neutral */
+.glass-card,
+.service-item,
+.certification-card,
+.currently-card,
+.timeline-content{
+  border-color: var(--ui-border);
+}
+
+.glass-card:hover,
+.service-item:hover{
+  border-color: var(--ui-border-medium);
+}
+
+/* Accent should not decorate passive chips/badges */
+.hero-chip,
+.skill-pill,
+.project-badge,
+.timeline-date{
+  background: var(--ui-surface);
+  border-color: var(--ui-border);
+  color: var(--ui-text-2);
+  box-shadow: none;
+}
+
+.hero-chip:hover,
+.skill-pill:hover,
+.project-badge:hover{
+  border-color: var(--ui-border-medium);
+  color: var(--ui-text);
+}
+
+.gradient-text{
+  background: none;
+  -webkit-text-fill-color: currentColor;
+  color: var(--ui-text);
+}
+
+/* Keep violet only for signal: CTA, links, focus, active nav/tab */
+.cta-group .btn-cta.primary,
+.resume-button .btn-main,
+.top-sticky-nav .top-contact-btn{
+  background: var(--ui-accent-07);
+  border-color: var(--ui-border-accent);
+  color: var(--ui-white);
+}
+
+.cta-group .btn-cta.primary:hover,
+.resume-button .btn-main:hover,
+.top-sticky-nav .top-contact-btn:hover{
+  background: var(--ui-accent-12);
+  border-color: var(--ui-accent-55);
+}
+
+#portfolio .portfolio-filter ul li.active{
+  background: var(--ui-accent-07);
+  border-color: var(--ui-border-accent);
+  color: var(--ui-white);
+}
