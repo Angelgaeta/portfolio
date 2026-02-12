@@ -57,10 +57,10 @@
 	  <link rel="stylesheet" href="css/plugins.css" />
 	  <!--Styles principaux CSS-->
 	  <link rel="stylesheet" href="css/style-dark.css" />
-	  <!--Couleur CSS-->
+  <!--Couleur CSS-->
+  <link rel="stylesheet" href="css/design-tokens.css" />
   <link rel="stylesheet" href="css/purple-color.css" />
   <link rel="stylesheet" href="css/custom.css" />
-  <link rel="stylesheet" href="css/design-tokens.css" />
 
 
   <!--Modernizr (requis par plugins.min.js pour les transitions de page)-->
@@ -380,11 +380,11 @@
             </div>
             <div class="col-md-12">
               <ul class="work-method">
-                <li><strong>Clean code</strong> — nommage explicite, fonctions courtes, responsabilité unique</li>
-                <li><strong>Tests</strong> — unitaires et d'intégration pour fiabiliser chaque livraison</li>
-                <li><strong>API robuste</strong> — validation DTO, gestion d'erreurs structurée, documentation</li>
-                <li><strong>UX soignée</strong> — états de chargement, feedback utilisateur, parcours fluide</li>
-                <li><strong>Collaboration</strong> — Git, code reviews, communication claire avec l'équipe</li>
+                <li><strong>✔ API = source de vérité</strong></li>
+                <li><strong>✔ Contrôleurs minces</strong></li>
+                <li><strong>✔ Tests unitaires ciblés</strong></li>
+                <li><strong>✔ UX pragmatique</strong></li>
+                <li><strong>✔ Code lisible &gt; code complexe</strong></li>
               </ul>
             </div>
           </div>
@@ -393,54 +393,39 @@
           <div class="row services mb-30">
             <div class="col-md-12">
               <div class="subheading">
-                <h3>Ce que j'apporte</h3>
+                <h3>Ce que je fais vraiment</h3>
               </div>
             </div>
 
             <!--Service Item-->
-            <div class="col-lg-3 col-sm-6">
+            <div class="col-lg-4 col-sm-6">
               <div class="service-item">
-                <div class="icon"><i class="lnr lnr-laptop"></i></div>
-                <h4>Architecture & Données</h4>
+                <div class="icon"><i aria-hidden="true">🧱</i></div>
+                <h4>Architecture & backend</h4>
                 <p>
-                  Conception de bases de données robustes (UML, MCD, SQL). 
-                  Structure claire, données cohérentes, évolutivité assurée.
+                  API robustes, validation, sécurité, séparation des responsabilités.
                 </p>
               </div>
             </div>
 
             <!--Service Item-->
-            <div class="col-lg-3 col-sm-6">
+            <div class="col-lg-4 col-sm-6">
               <div class="service-item">
-                <div class="icon"><i class="lnr lnr-eye"></i></div>
-                <h4>Développement Full-Stack</h4>
+                <div class="icon"><i aria-hidden="true">🅰️</i></div>
+                <h4>Front Angular</h4>
                 <p>
-                  Applications web front & back-end. Code propre, performant, 
-                  maintenable. PHP, JavaScript, API REST.
+                  Interfaces claires, tables métiers, états maîtrisés.
                 </p>
               </div>
             </div>
 
             <!--Service Item-->
-            <div class="col-lg-3 col-sm-6">
+            <div class="col-lg-4 col-sm-6">
               <div class="service-item">
-                <div class="icon"><i class="lnr lnr-laptop-phone"></i></div>
-                <h4>UI/UX & Accessibilité</h4>
+                <div class="icon"><i aria-hidden="true">🎯</i></div>
+                <h4>UX & qualité</h4>
                 <p>
-                  Interfaces claires, intuitives, accessibles. 
-                  Du wireframe à l'intégration pixel-perfect.
-                </p>
-              </div>
-            </div>
-
-            <!--Service Item-->
-            <div class="col-lg-3 col-sm-6">
-              <div class="service-item">
-                <div class="icon"><i class="lnr lnr-camera"></i></div>
-                <h4>Qualité & Sécurité</h4>
-                <p>
-                  Tests, validation, bonnes pratiques. 
-                  Code fiable, sécurisé, documenté.
+                  Parcours simplifiés, erreurs explicites, lisibilité avant complexité.
                 </p>
               </div>
             </div>
@@ -815,6 +800,7 @@
 
 	            <div class="col-lg-4 col-sm-6 fade-in stagger-1">
 	              <div class="service-item scale-in">
+                  <img class="flagship-cover" src="img/portfolio/formulaire.png" alt="Capture du projet Pokémon App Angular" loading="lazy" decoding="async" width="554" height="313" />
 	                <div class="content">
 	                  <h4>Pokémon App — SPA Angular</h4>
 	                  <div class="project-badges">
@@ -823,11 +809,10 @@
 	                    <span class="project-badge">TypeScript</span>
 	                  </div>
 	                  <ul class="project-meta">
-	                    <li><strong>Rôle :</strong> architecture, composants, routing, forms</li>
-	                    <li><strong>Stack :</strong> Angular, TypeScript, RxJS</li>
-	                    <li><strong>Résultat :</strong> recherche/filtre temps réel, gestion d'états (loading/empty/error)</li>
+	                    <li><strong>Problème :</strong> navigation peu fluide et recherche lente dans un volume de données élevé.</li>
+	                    <li><strong>Ce que j’ai fait :</strong> architecture Angular modulaire, composants réutilisables, filtres et états UI structurés.</li>
+	                    <li><strong>Résultat :</strong> parcours plus court, affichage clair, interactions stables en temps réel.</li>
 	                  </ul>
-	                  <p class="flagship-proof">Impact : UX simplifiée — parcours en 2 clics, composants réutilisables</p>
 	                  <p class="u-mt-12"><a href="#" class="btn-main" data-case-open="case-dev-pokemon">Voir le cas</a></p>
 	                </div>
 	              </div>
@@ -835,6 +820,7 @@
 
 	            <div class="col-lg-4 col-sm-6 fade-in stagger-2">
 	              <div class="service-item scale-in">
+                  <img class="flagship-cover" src="img/arborescence-dashboard-admin.png" alt="Capture du projet API REST Spring Boot" loading="lazy" decoding="async" width="1920" height="927" />
 	                <div class="content">
 	                  <h4>API REST — Spring Boot</h4>
 	                  <div class="project-badges">
@@ -843,11 +829,10 @@
 	                    <span class="project-badge">Spring Boot</span>
 	                  </div>
 	                  <ul class="project-meta">
-	                    <li><strong>Rôle :</strong> conception API, modélisation, validation, tests</li>
-	                    <li><strong>Stack :</strong> Java, Spring Boot, REST, MySQL</li>
-	                    <li><strong>Résultat :</strong> CRUD complet + erreurs structurées (400/404/409)</li>
+	                    <li><strong>Problème :</strong> besoin d’une API métier fiable avec validation stricte et erreurs lisibles.</li>
+	                    <li><strong>Ce que j’ai fait :</strong> endpoints REST Spring Boot, DTO validés, gestion d’erreurs normalisée et tests ciblés.</li>
+	                    <li><strong>Résultat :</strong> API robuste, comportements prévisibles, maintenance facilitée pour le front.</li>
 	                  </ul>
-	                  <p class="flagship-proof">Impact : API fiable — validation DTO, tests, documentation Swagger</p>
 	                  <p class="u-mt-12"><a href="#" class="btn-main" data-case-open="case-dev-springapi">Voir le cas</a></p>
 	                </div>
 	              </div>
@@ -855,6 +840,7 @@
 
 		            <div class="col-lg-4 col-sm-6 fade-in stagger-3">
 		              <div class="service-item scale-in">
+                      <img class="flagship-cover" src="img/maquette-site-bornes-recharge.png" alt="Capture du projet full-stack portail data dashboard" loading="lazy" decoding="async" width="622" height="591" />
 		                <div class="content">
 		                  <h4>Portail Data / Dashboard — Full-stack</h4>
 		                  <div class="project-badges">
@@ -863,11 +849,10 @@
 		                    <span class="project-badge">Spring Boot</span>
 		                  </div>
 		                  <ul class="project-meta">
-		                    <li><strong>Rôle :</strong> écrans Angular + API Spring Boot + modélisation BDD</li>
-		                    <li><strong>Stack :</strong> Angular, Java, Spring Boot, MySQL</li>
-		                    <li><strong>Résultat :</strong> dashboard métier fonctionnel, parcours utilisateur simplifié</li>
+		                    <li><strong>Problème :</strong> accès données trop long et interfaces peu adaptées aux usages métier.</li>
+		                    <li><strong>Ce que j’ai fait :</strong> écrans Angular orientés tâches, API Spring Boot, structuration des flux et filtres.</li>
+		                    <li><strong>Résultat :</strong> dashboard lisible, actions plus rapides, adoption facilitée côté utilisateurs.</li>
 		                  </ul>
-		                  <p class="flagship-proof">Impact : accès données réduit de 5 étapes à 2 — tri, filtres, pagination</p>
 		                  <p class="u-mt-12"><a href="#" class="btn-main" data-case-open="case-dev-dashboard">Voir le cas</a></p>
 		                </div>
 		              </div>

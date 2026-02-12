@@ -4,41 +4,41 @@
 
 :root{
   /* ── Backgrounds ── */
-  --ui-bg: #0E0F12;
-  --ui-bg-1: rgba(14,15,18,.96);
-  --ui-bg-2: rgba(10,11,14,.98);
+  --ui-bg: #0B0F1A;
+  --ui-bg-1: rgba(11,15,26,.94);
+  --ui-bg-2: rgba(8,11,20,.98);
 
   /* ── Surfaces (cards, glass) ── */
   --ui-surface: var(--ui-overlay-04);
   --ui-surface-hover: var(--ui-overlay-07);
-  --ui-glass: var(--ui-overlay-05);
+  --ui-glass: rgba(255,255,255,.06);
 
   /* ── Borders ── */
-  --ui-border: var(--ui-overlay-06);
+  --ui-border: rgba(255,255,255,.12);
   --ui-border-weak: var(--ui-overlay-03);
   --ui-border-medium: var(--ui-overlay-18);
   --ui-border-accent: var(--ui-accent-18);
 
   /* ── Text ── */
-  --ui-text: #EDEDED;
-  --ui-text-2: #D0D0D6;
-  --ui-muted: #9698A3;
-  --ui-white: #F6F6F7;
-  --ui-text-92: rgba(237,237,237,.92);
-  --ui-text-2-70: rgba(208,208,214,.7);
-  --ui-text-2-14: rgba(208,208,214,.14);
-  --ui-text-2-06: rgba(208,208,214,.06);
-  --ui-text-2-03: rgba(208,208,214,.03);
-  --ui-ice: #E7E7EE;
-  --ui-ice-88: rgba(231,231,238,.88);
-  --ui-ice-92: rgba(231,231,238,.92);
-  --ui-ice-95: rgba(231,231,238,.95);
+  --ui-text: #E8EAF0;
+  --ui-text-2: #D8DDE8;
+  --ui-muted: #9CA3AF;
+  --ui-white: #F3F5FA;
+  --ui-text-92: rgba(232,234,240,.92);
+  --ui-text-2-70: rgba(216,221,232,.70);
+  --ui-text-2-14: rgba(216,221,232,.14);
+  --ui-text-2-06: rgba(216,221,232,.06);
+  --ui-text-2-03: rgba(216,221,232,.03);
+  --ui-ice: #E8EAF0;
+  --ui-ice-88: rgba(232,234,240,.88);
+  --ui-ice-92: rgba(232,234,240,.92);
+  --ui-ice-95: rgba(232,234,240,.95);
 
   /* ── Accent (1 principal + 1 soft) ── */
-  --ui-accent: #6F69C9;
-  --ui-accent-soft: rgba(111,105,201,.14);
-  --ui-accent-2: #817CD6;
-  --ui-accent-3: #5C58AC;
+  --ui-accent: #7C5CFF;
+  --ui-accent-soft: rgba(124,92,255,.14);
+  --ui-accent-2: #9276FF;
+  --ui-accent-3: #6846E6;
   --ui-accent-03: var(--ui-accent-soft);
   --ui-accent-05: var(--ui-accent-soft);
   --ui-accent-06: var(--ui-accent-soft);
@@ -52,19 +52,19 @@
   --ui-accent-24: var(--ui-accent-soft);
   --ui-accent-26: var(--ui-accent-soft);
   --ui-accent-30: var(--ui-accent-soft);
-  --ui-accent-92: rgba(111,105,201,.92);
-  --ui-accent-55: rgba(111,105,201,.55);
-  --ui-accent-75: rgba(111,105,201,.75);
-  --ui-accent-85: rgba(111,105,201,.85);
-  --ui-accent-2-88: rgba(129,124,214,.88);
-  --ui-accent-3-03: rgba(92,88,172,.03);
-  --ui-accent-3-10: rgba(92,88,172,.10);
-  --ui-accent-3-12: rgba(92,88,172,.12);
-  --ui-accent-3-14: rgba(92,88,172,.14);
-  --ui-accent-3-16: rgba(92,88,172,.16);
-  --ui-accent-3-18: rgba(92,88,172,.18);
-  --ui-accent-3-78: rgba(92,88,172,.78);
-  --ui-accent-3-32: rgba(92,88,172,.32);
+  --ui-accent-92: rgba(124,92,255,.92);
+  --ui-accent-55: rgba(124,92,255,.55);
+  --ui-accent-75: rgba(124,92,255,.75);
+  --ui-accent-85: rgba(124,92,255,.85);
+  --ui-accent-2-88: rgba(146,118,255,.88);
+  --ui-accent-3-03: rgba(104,70,230,.03);
+  --ui-accent-3-10: rgba(104,70,230,.10);
+  --ui-accent-3-12: rgba(104,70,230,.12);
+  --ui-accent-3-14: rgba(104,70,230,.14);
+  --ui-accent-3-16: rgba(104,70,230,.16);
+  --ui-accent-3-18: rgba(104,70,230,.18);
+  --ui-accent-3-78: rgba(104,70,230,.78);
+  --ui-accent-3-32: rgba(104,70,230,.32);
   --gradient-accent: linear-gradient(90deg, var(--ui-accent) 0%, var(--ui-accent-2) 100%);
   --gradient-cta: linear-gradient(135deg, var(--ui-accent) 0%, var(--ui-accent-2) 100%);
   --ui-focus: var(--ui-accent);
@@ -134,7 +134,7 @@
 
   /* ── Fonts ── */
   --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-  --font-display: "Playfair Display", Georgia, "Times New Roman", serif;
+  --font-display: "Playfair Display", "DM Serif Display", Georgia, "Times New Roman", serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 
   /* ── Motion ── */
@@ -316,13 +316,14 @@ a:focus-visible {
 /* Glassmorphism card */
 .glass-card {
   background: var(--ui-glass);
-  -webkit-backdrop-filter: blur(12px);
-  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
   border: 1px solid var(--ui-border);
-  border-radius: var(--ui-radius-xl);
+  border-radius: 16px;
   padding: var(--space-md);
   position: relative;
   overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.4);
   transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
 }
 
@@ -346,7 +347,7 @@ a:focus-visible {
 
 .glass-card:hover {
   transform: translateY(-2px);
-  box-shadow: var(--ui-shadow-md);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.4);
   border-color: var(--ui-border-accent);
 }
 
@@ -431,8 +432,8 @@ a:focus-visible {
   margin: 10px 0 0;
   padding-left: 18px;
   color: var(--ui-text-2);
-  font-size: .92rem;
-  line-height: 1.55;
+  font-size: .9rem;
+  line-height: 1.5;
 }
 
 .project-meta li{
@@ -465,7 +466,7 @@ a:focus-visible {
   padding: 6px 10px;
   border-radius: 999px;
   border: 1px solid var(--ui-overlay-16);
-  background: rgba(2,6,23,.35);
+  background: var(--ui-overlay-05);
   -webkit-backdrop-filter: blur(6px);
   backdrop-filter: blur(6px);
   color: var(--ui-text-92);
@@ -477,7 +478,7 @@ a:focus-visible {
 
 .hero-chip:hover{
   border-color: var(--ui-accent-30);
-  background: rgba(2,6,23,.28);
+  background: var(--ui-overlay-07);
   box-shadow: 0 10px 30px var(--ui-accent-10);
   transform: translateY(-1px);
 }
@@ -609,8 +610,8 @@ a:focus-visible {
 }
 
 .why-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--ui-shadow-md);
+  transform: translateY(-1px);
+  box-shadow: var(--ui-shadow-subtle);
   border-color: var(--ui-border-accent);
 }
 
@@ -683,17 +684,20 @@ a:focus-visible {
    SERVICES CARDS — AMÉLIORATION
 ========================================================= */
 .service-item {
-  background: var(--ui-surface);
+  background: var(--ui-glass);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
   border: 1px solid var(--ui-border);
-  border-radius: var(--ui-radius-md);
+  border-radius: 16px;
   padding: var(--space-md);
   height: 100%;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.4);
   transition: transform .2s ease, box-shadow .2s ease;
 }
 
 .service-item:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--ui-shadow-md);
+  transform: translateY(-1px);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.4);
 }
 
 .service-item .icon {
@@ -702,7 +706,7 @@ a:focus-visible {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, var(--ui-accent), var(--ui-accent-2));
+  background: var(--ui-accent);
   border-radius: var(--ui-radius-sm);
   margin-bottom: var(--space-sm);
 }
@@ -765,12 +769,13 @@ textarea:focus-visible{
   width:min(920px,92vw);
   max-height:90dvh;
   overflow:auto;
-  background:linear-gradient(180deg, var(--ui-bg-1), var(--ui-bg-2));
+  background: var(--ui-glass);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
   color: var(--ui-text-2);
-  border-radius: var(--ui-radius-xl);
-  box-shadow:
-    0 30px 80px rgba(0,0,0,.65),
-    inset 0 0 0 1px var(--ui-overlay-04);
+  border: 1px solid var(--ui-border);
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.4);
 }
 
 /* ===== Header ===== */
@@ -782,7 +787,9 @@ textarea:focus-visible{
   justify-content:space-between;
   gap:12px;
   padding:16px 18px;
-  background:linear-gradient(180deg, var(--ui-bg-1), var(--ui-bg-2));
+  background: rgba(255,255,255,0.06);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
   border-bottom:1px solid var(--ui-overlay-06);
   z-index:2;
 }
@@ -1042,7 +1049,7 @@ textarea:focus-visible{
 
 .btn-cta.primary:hover{
   transform:translateY(-1px);
-  box-shadow: 0 10px 26px rgba(0,0,0,.30);
+  box-shadow: 0 9px 22px rgba(0,0,0,.30), 0 0 0 1px var(--ui-accent-30);
 }
 
 /* CTA secondaire */
@@ -1131,8 +1138,8 @@ textarea:focus-visible{
   justify-content:center;
   font-weight:700;
   color: var(--ui-white);
-  background: var(--gradient-cta);
-  box-shadow: 0 12px 30px var(--ui-accent-18);
+  background: var(--ui-accent);
+  box-shadow: 0 8px 18px rgba(0,0,0,.24);
   margin-bottom:10px;
 }
 
@@ -1174,10 +1181,12 @@ textarea:focus-visible{
 .quick-quote{
   margin:10px 0 30px;
   padding:20px;
-  border-radius: var(--ui-radius-xl);
-  background:linear-gradient(180deg, rgba(17,24,39,.72), rgba(2,6,23,.78));
-  border:1px solid var(--ui-overlay-06);
-  box-shadow:0 24px 60px rgba(0,0,0,.35);
+  border-radius: 16px;
+  background: var(--ui-glass);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  border: 1px solid var(--ui-border);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.4);
 }
 
 .quick-quote h3{
@@ -1212,7 +1221,7 @@ textarea:focus-visible{
 .qq-step__badge{
   width:26px;height:26px;border-radius:10px;
   display:inline-flex;align-items:center;justify-content:center;
-  background: var(--gradient-cta);
+  background: var(--ui-accent);
   color: var(--ui-white);font-weight:700;font-size:13px;
 }
 
@@ -1643,10 +1652,10 @@ textarea:focus-visible{
 }
 
 .btn-main:hover{
-  transform: translateY(-2px);
+  transform: translateY(-1px);
   background: var(--ui-surface-hover);
   border-color: var(--ui-border-accent);
-  box-shadow: 0 16px 44px rgba(0,0,0,.28);
+  box-shadow: 0 10px 24px rgba(0,0,0,.28), 0 0 0 1px var(--ui-accent-22);
 }
 
 /* CTA base */
@@ -1659,9 +1668,10 @@ textarea:focus-visible{
 }
 
 .btn-cta.ghost:hover{
-  transform: translateY(-2px);
+  transform: translateY(-1px);
   background: var(--ui-overlay-06);
   border-color: var(--ui-overlay-28);
+  box-shadow: 0 8px 20px rgba(0,0,0,.24), 0 0 0 1px var(--ui-accent-16);
 }
 
 .btn-cta:focus-visible{
@@ -1980,10 +1990,13 @@ textarea:focus-visible{
 #portfolio .service-item{
   position: relative;
   isolation: isolate;
-  border-radius: var(--ui-radius-lg);
+  border-radius: 16px;
   overflow: hidden;
-  background: var(--ui-surface);
+  background: var(--ui-glass);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
   border: 1px solid var(--ui-border);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.4);
   transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
 }
 
@@ -1998,19 +2011,27 @@ textarea:focus-visible{
   -webkit-mask-composite: xor;
   mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   mask-composite: exclude;
-  opacity: 0;
+  opacity: .22;
   transition: opacity .2s ease;
   pointer-events: none;
 }
 
 #portfolio .service-item:hover{
-  transform: translateY(-4px);
-  background: var(--ui-overlay-05);
-  box-shadow: var(--ui-shadow-md);
+  transform: translateY(-2px);
+  background: var(--ui-glass);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.4);
 }
 
 #portfolio .service-item:hover::before{
-  opacity: .95;
+  opacity: .5;
+}
+
+#portfolio .flagship-cover{
+  display:block;
+  width:100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-bottom: 1px solid var(--ui-overlay-10);
 }
 
 #portfolio .service-item .content{
@@ -2409,8 +2430,8 @@ textarea:focus-visible{
    BANDEAU DISPONIBILITÉ
 ========================================================= */
 .availability-banner {
-  background: linear-gradient(90deg, rgba(34,197,94,.15), rgba(16,185,129,.1));
-  border: 1px solid rgba(34,197,94,.3);
+  background: var(--ui-surface);
+  border: 1px solid var(--ui-border);
   border-radius: var(--ui-radius-md);
   padding: 16px 24px;
   margin-bottom: 30px;
@@ -2425,12 +2446,6 @@ textarea:focus-visible{
   height: 12px;
   background: var(--ui-success);
   border-radius: 50%;
-  animation: pulse-dot 2s infinite;
-}
-
-@keyframes pulse-dot {
-  0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(34,197,94,.4); }
-  50% { opacity: .8; box-shadow: 0 0 0 8px rgba(34,197,94,0); }
 }
 
 .availability-text {
@@ -2447,7 +2462,8 @@ textarea:focus-visible{
 ========================================================= */
 .stats-container {
   padding: 50px 0;
-  background: linear-gradient(135deg, var(--ui-accent-06), var(--ui-accent-3-03));
+  background: var(--ui-surface);
+  border: 1px solid var(--ui-border);
   border-radius: var(--ui-radius-lg);
   margin: 40px 0;
 }
@@ -2475,10 +2491,7 @@ textarea:focus-visible{
 .stat-number {
   font-size: 2.8rem;
   font-weight: 800;
-  background: linear-gradient(135deg, var(--ui-accent), var(--ui-accent-2));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--ui-accent);
   line-height: 1.2;
 }
 
@@ -2723,8 +2736,8 @@ textarea:focus-visible{
   gap: 8px;
   margin-bottom: 16px;
   padding: 8px 14px;
-  background: rgba(34,197,94,.1);
-  border: 1px solid rgba(34,197,94,.25);
+  background: var(--ui-overlay-04);
+  border: 1px solid var(--ui-border);
   border-radius: 999px;
   width: fit-content;
 }
@@ -2734,7 +2747,6 @@ textarea:focus-visible{
   height: 8px;
   background: var(--ui-success);
   border-radius: 50%;
-  animation: pulse-dot 2s infinite;
 }
 
 .status-text {
@@ -2875,8 +2887,8 @@ textarea:focus-visible{
 ========================================================= */
 .fade-in {
   opacity: 0;
-  transform: translateY(30px);
-  transition: opacity .6s ease, transform .6s ease;
+  transform: translateY(14px);
+  transition: opacity .38s ease, transform .38s ease;
 }
 
 .fade-in.is-visible {
@@ -2886,8 +2898,8 @@ textarea:focus-visible{
 
 .fade-in-left {
   opacity: 0;
-  transform: translateX(-30px);
-  transition: opacity .6s ease, transform .6s ease;
+  transform: translateX(-14px);
+  transition: opacity .38s ease, transform .38s ease;
 }
 
 .fade-in-left.is-visible {
@@ -2897,8 +2909,8 @@ textarea:focus-visible{
 
 .fade-in-right {
   opacity: 0;
-  transform: translateX(30px);
-  transition: opacity .6s ease, transform .6s ease;
+  transform: translateX(14px);
+  transition: opacity .38s ease, transform .38s ease;
 }
 
 .fade-in-right.is-visible {
@@ -2908,8 +2920,8 @@ textarea:focus-visible{
 
 .scale-in {
   opacity: 0;
-  transform: scale(.95);
-  transition: opacity .5s ease, transform .5s ease;
+  transform: scale(.97);
+  transition: opacity .34s ease, transform .34s ease;
 }
 
 .scale-in.is-visible {
@@ -3203,15 +3215,15 @@ img[loading="lazy"]:not([src=""]) {
 }
 
 #portfolio .portfolio-items .item figure:hover{
-  transform: translateY(-4px);
+  transform: translateY(-2px);
   border-color: var(--ui-overlay-16);
-  box-shadow: 0 18px 52px rgba(0,0,0,.34);
+  box-shadow: 0 12px 30px rgba(0,0,0,.30);
 }
 
 #portfolio .portfolio-items .item a:focus-visible figure{
-  transform: translateY(-3px);
+  transform: translateY(-2px);
   border-color: var(--ui-border-accent);
-  box-shadow: 0 0 0 3px var(--ui-accent-16), 0 18px 52px rgba(0,0,0,.34);
+  box-shadow: 0 0 0 2px var(--ui-accent-16), 0 12px 30px rgba(0,0,0,.30);
 }
 
 #portfolio .portfolio-items .item figure:hover img{
@@ -3245,7 +3257,7 @@ img[loading="lazy"]:not([src=""]) {
 }
 
 #portfolio .portfolio-items .item figure:hover figcaption h4{
-  background: rgba(2,6,23,.28) !important;
+  background: var(--ui-overlay-08) !important;
   border-color: var(--ui-overlay-14) !important;
   -webkit-backdrop-filter: blur(10px) saturate(1.15) !important;
   backdrop-filter: blur(10px) saturate(1.15) !important;
