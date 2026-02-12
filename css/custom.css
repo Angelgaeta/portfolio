@@ -795,6 +795,23 @@ textarea:focus-visible{
   color: var(--ui-text);
 }
 
+.case-header-text{
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+  min-width:0;
+}
+
+.case-subtitle{
+  margin:0;
+  font-size:13px;
+  line-height:1.35;
+  color: var(--ui-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 /* Bouton fermer */
 .case-close{
   border:none;

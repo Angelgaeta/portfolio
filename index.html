@@ -111,7 +111,10 @@
     <div id="caseDialog" class="case-modal" role="dialog" aria-modal="true" aria-labelledby="caseTitle" tabindex="-1">
 
       <header>
-        <h3 id="caseTitle">Projet</h3>
+        <div class="case-header-text">
+          <h3 id="caseTitle">Projet</h3>
+          <p id="caseSubtitle" class="case-subtitle" hidden></p>
+        </div>
         <button id="caseClose" class="case-close" aria-label="Fermer">×</button>
       </header>
 
@@ -2190,6 +2193,7 @@
 	      const closeBtn = document.getElementById('caseClose');
 	      const content = document.getElementById('caseContent');
 	      const title = document.getElementById('caseTitle');
+	      const subtitle = document.getElementById('caseSubtitle');
 	      const triggerSelector = '[data-case-open]';
 
 	      let lastFocusedEl = null;
@@ -2206,6 +2210,57 @@
 	      function setAria(open) {
 	        overlay.setAttribute('aria-hidden', open ? 'false' : 'true');
 	      }
+
+      function normalizeForCompare(value) {
+        return String(value || '')
+          .normalize('NFD')
+          .replace(/[\u0300-\u036f]/g, '')
+          .replace(/[^\w\s-]/g, '')
+          .replace(/\s+/g, ' ')
+          .trim()
+          .toLowerCase();
+      }
+
+      function setSubtitleText(text) {
+        if (!subtitle) return;
+        const clean = String(text || '').trim();
+        if (!clean) {
+          subtitle.textContent = '';
+          subtitle.hidden = true;
+          return;
+        }
+        subtitle.textContent = clean;
+        subtitle.hidden = false;
+      }
+
+      function removeDuplicatedHeading(mainTitle) {
+        const firstHeading = content.querySelector('h1, h2, h3, h4');
+        if (!firstHeading) return;
+
+        const titleNorm = normalizeForCompare(mainTitle);
+        const firstNorm = normalizeForCompare(firstHeading.textContent || '');
+
+        if (titleNorm !== '' && firstNorm !== '' && firstNorm === titleNorm) {
+          firstHeading.remove();
+        }
+      }
+
+      function extractStackSubtitle() {
+        const rows = Array.from(content.querySelectorAll('p'));
+        for (const p of rows) {
+          const strong = p.querySelector('strong');
+          if (!strong) continue;
+          const label = String(strong.textContent || '').toLowerCase();
+          if (!label.includes('stack') && !label.includes('outils')) continue;
+
+          const copy = p.cloneNode(true);
+          const copyStrong = copy.querySelector('strong');
+          if (copyStrong) copyStrong.remove();
+          const value = copy.textContent.replace(/^[:\s]+/, '').trim();
+          if (value) return value;
+        }
+        return '';
+      }
 
       function getFocusableElements(root) {
         const selectors = [
@@ -2315,8 +2370,11 @@
 
         lastFocusedEl = document.activeElement;
 
-	        title.textContent = tpl.dataset.title || "Projet";
+	        const modalTitle = tpl.dataset.title || "Projet";
+	        title.textContent = modalTitle;
 	        content.innerHTML = tpl.innerHTML;
+          removeDuplicatedHeading(modalTitle);
+          setSubtitleText(extractStackSubtitle());
 
 	        enhanceMetaRows();
 	        enhanceDemoLink();
@@ -2338,6 +2396,7 @@
         document.body.style.overflow = '';
         setAria(false);
         content.innerHTML = '';
+        setSubtitleText('');
 
         if (lastFocusedEl && typeof lastFocusedEl.focus === 'function') {
           lastFocusedEl.focus();
