@@ -203,6 +203,7 @@ $(document).ready(function () {
 
   /*======== Contact Form Setup ========*/
   contactFormSetup();
+  setupNavigationUX();
   setupEmailPrivacy();
   setupLinkedInFeed();
 
@@ -967,7 +968,10 @@ function setupNavigationUX() {
   var $headerContent = $(".header-content");
   var $headerMain = $(".header-main");
   var $headerToggle = $(".header-toggle");
-  var $navLinks = $(".nav-menu a.pt-link");
+  var $topNav = $(".top-sticky-nav");
+  var $topNavToggle = $(".top-nav-toggle");
+  var $topNavLinks = $("#topNavLinks");
+  var $navLinks = $(".nav-menu a.pt-link, .top-sticky-nav a.pt-link");
   var menuObserver = null;
   var lastMenuOpen = false;
   var sectionData = $navLinks
@@ -1020,6 +1024,29 @@ function setupNavigationUX() {
     syncMenuA11y();
   }
 
+  function isTopNavMobileContext() {
+    return window.matchMedia("(max-width: 800px)").matches;
+  }
+
+  function syncTopNavA11y() {
+    if (!$topNav.length || !$topNavToggle.length || !$topNavLinks.length) return;
+    var isOpen = $topNav.hasClass("menu-open");
+    var isMobile = isTopNavMobileContext();
+    if (!isMobile) {
+      $topNav.removeClass("menu-open");
+      isOpen = false;
+    }
+    $topNavToggle.attr("aria-expanded", isOpen ? "true" : "false");
+    $topNavToggle.attr("aria-label", isOpen ? "Fermer le menu" : "Ouvrir le menu");
+    $topNavLinks.attr("aria-hidden", !isMobile || isOpen ? "false" : "true");
+  }
+
+  function closeTopNavMenu() {
+    if (!$topNav.hasClass("menu-open")) return;
+    $topNav.removeClass("menu-open");
+    syncTopNavA11y();
+  }
+
   function setCurrentLink(hash) {
     if (!hash) hash = "#home";
 
@@ -1041,6 +1068,7 @@ function setupNavigationUX() {
   $(document).on("keydown", function (e) {
     if (e.key === "Escape") {
       closeMobileMenu();
+      closeTopNavMenu();
       return;
     }
 
@@ -1071,13 +1099,27 @@ function setupNavigationUX() {
   $navLinks.on("click", function () {
     setCurrentLink(this.getAttribute("href"));
     closeMobileMenu();
+    closeTopNavMenu();
+  });
+
+  if ($topNavToggle.length) {
+    $topNavToggle.on("click", function () {
+      $topNav.toggleClass("menu-open");
+      syncTopNavA11y();
+    });
+  }
+
+  $(document).on("click", function (e) {
+    if (!$topNav.length || !$topNav.hasClass("menu-open")) return;
+    if ($(e.target).closest(".top-sticky-nav").length) return;
+    closeTopNavMenu();
   });
 
   $(window).on("hashchange", function () {
     setCurrentLink(window.location.hash);
   });
 
-  setCurrentLink(window.location.hash || $(".nav-menu a.pt-link.active").attr("href"));
+  setCurrentLink(window.location.hash || $(".nav-menu a.pt-link.active, .top-sticky-nav a.pt-link.active").first().attr("href"));
 
   if ($headerContent.length) {
     menuObserver = new MutationObserver(syncMenuA11y);
@@ -1085,6 +1127,7 @@ function setupNavigationUX() {
   }
 
   syncMenuA11y();
+  syncTopNavA11y();
 
   var ticking = false;
 
@@ -1123,6 +1166,7 @@ function setupNavigationUX() {
     requestUpdate();
     if (!isMobileMenuContext()) closeMobileMenu();
     syncMenuA11y();
+    syncTopNavA11y();
   });
 
 }

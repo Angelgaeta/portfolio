@@ -106,6 +106,34 @@
 
 <body>
   <a class="skip-link" href="#main">Aller au contenu principal</a>
+  <div class="top-sticky-nav" role="navigation" aria-label="Navigation principale rapide">
+    <div class="top-sticky-inner">
+      <a href="#home" class="top-nav-brand pt-link" aria-label="Retour à l'accueil">
+        <img src="img/logoAR.jpeg" alt="Logo Arprodev" width="800" height="800">
+        <span>Arprodev</span>
+      </a>
+      <button class="top-nav-toggle" type="button" aria-expanded="false" aria-controls="topNavLinks" aria-label="Ouvrir le menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div id="topNavLinks" class="top-nav-links">
+        <a href="#home" class="pt-link active">Accueil</a>
+        <a href="#about" class="pt-link">Profil</a>
+        <a href="#portfolio" class="pt-link">Portfolio</a>
+        <a href="#linkedin" class="pt-link">Publications</a>
+        <a href="#contact" class="pt-link top-contact-btn">Contact</a>
+      </div>
+    </div>
+  </div>
+  <!-- Bridge technique: requis pour le moteur PageTransitions (.nav-menu .pt-link) -->
+  <nav class="nav-menu nav-menu-bridge" aria-hidden="true">
+    <a href="#home" class="pt-link active" tabindex="-1">Accueil</a>
+    <a href="#about" class="pt-link" tabindex="-1">Profil</a>
+    <a href="#portfolio" class="pt-link" tabindex="-1">Portfolio</a>
+    <a href="#linkedin" class="pt-link" tabindex="-1">Publications</a>
+    <a href="#contact" class="pt-link" tabindex="-1">Contact</a>
+  </nav>
 
   <div id="caseOverlay" class="case-overlay" aria-hidden="true">
     <div id="caseDialog" class="case-modal" role="dialog" aria-modal="true" aria-labelledby="caseTitle" tabindex="-1">
@@ -141,91 +169,90 @@
   <!--Fin du préchargeur-->
 
   <div id="page">
-    <!--Début d'en-tête-->
-    <header>
-      <div class="header-content u-pos-relative">
-        <!-- Position relative pour que l'image reste liée à la sidebar -->
-        <!--En-tête mobile-->
-        <div class="header-mobile">
-          <a class="header-toggle" role="button" tabindex="0" aria-label="Ouvrir le menu" aria-expanded="false"><i class="fas fa-bars" aria-hidden="true"></i></a>
+    <!-- Sidebar legacy désactivée (conservée pour rollback rapide) -->
+    <template id="legacy-sidebar" hidden>
+      <header>
+        <div class="header-content u-pos-relative">
+          <!-- Position relative pour que l'image reste liée à la sidebar -->
+          <!--En-tête mobile-->
+          <div class="header-mobile">
+            <a class="header-toggle" role="button" tabindex="0" aria-label="Ouvrir le menu" aria-expanded="false"><i class="fas fa-bars" aria-hidden="true"></i></a>
 
-          <div class="header-mobile-brand">
-            <img src="img/logoAR.jpeg" alt="Logo Arprodev" class="header-mobile-logo" width="800" height="800">
+            <div class="header-mobile-brand">
+              <img src="img/logoAR.jpeg" alt="Logo Arprodev" class="header-mobile-logo" width="800" height="800">
 
-            <span class="header-mobile-text">
-              <span class="header-mobile-name">Arprodev</span>
-            </span>
-          </div>
+              <span class="header-mobile-text">
+                <span class="header-mobile-name">Arprodev</span>
+              </span>
+            </div>
 
-        </div>
-
-
-        <!--En-tête principal-->
-        <div class="header-main u-overflow-visible" data-simplebar>
-          <div class="hero-brand">
-            <img class="home-logo" src="img/portfolio/logo-angel-blanc-480x480.png" alt="Logo Arprodev" width="480" height="480">
           </div>
 
 
-          <!--Nav Menus-->
-	          <nav class="nav-menu">
-	            <ul>
-	              <li>
-	                <a href="#home" class="pt-link active"><span class="nav-menu-icon"><i
-	                      class="lnr lnr-home"></i></span>Accueil</a>
-	              </li>
-	              <li>
-	                <a href="#about" class="pt-link"><span class="nav-menu-icon"><i
-	                      class="lnr lnr-user"></i></span>Profil</a>
-	              </li>
-		              <li>
-		                <a href="#portfolio" class="pt-link"><span class="nav-menu-icon"><i
-		                      class="lnr lnr-briefcase"></i></span>Portfolio</a>
-		              </li>
-		              <li>
-	                <a href="#linkedin" class="pt-link"><span class="nav-menu-icon"><i
-	                      class="lnr lnr-earth"></i></span>Publications</a>
-	              </li>
-		              <li>
-	                <a href="#contact" class="pt-link"><span class="nav-menu-icon"><i
-	                      class="lnr lnr-envelope"></i></span>Contact</a>
-	              </li>
-            </ul>
-          </nav>
-          <!--Nav Footer-->
-          <div class="nav-footer">
-            <!--Status badge-->
-            <!-- <div class="sidebar-status">
-              <span class="status-dot"></span>
-              <span class="status-text">Disponible</span>
-            </div> -->
-            <!--Liens sociaux-->
-            <ul class="social">
-              <li>
-                <a href="https://www.linkedin.com/in/angeliqueredjdal/" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i
-                    class="fab fa-linkedin"></i></a>
-              </li>
-              <li>
-                <a href="https://github.com/Angelgaeta" target="_blank" rel="noopener noreferrer" title="GitHub"><i
-                    class="fab fa-github-square"></i></a>
-              </li>
-              <li>
-                <a href="https://www.behance.net/angel_gaeta_redjdal" target="_blank" rel="noopener noreferrer" title="Behance"><i
-                    class="fab fa-behance-square"></i></a>
-              </li>
-            </ul>
-            <!--Texte du droit d'auteur-->
-            <div class="copy">
-              <p>2026 &copy; Angélique Redjdal</p>
-              <p class="copy-sub">Montpellier</p>
+          <!--En-tête principal-->
+          <div class="header-main u-overflow-visible" data-simplebar>
+            <div class="hero-brand">
+              <img class="home-logo" src="img/portfolio/logo-angel-blanc-480x480.png" alt="Logo Arprodev" width="480" height="480">
+            </div>
+
+
+            <!--Nav Menus-->
+		            <nav class="nav-menu">
+		              <ul>
+		                <li>
+		                  <a href="#home" class="pt-link active"><span class="nav-menu-icon"><i
+		                        class="lnr lnr-home"></i></span>Accueil</a>
+		                </li>
+		                <li>
+		                  <a href="#about" class="pt-link"><span class="nav-menu-icon"><i
+		                        class="lnr lnr-user"></i></span>Profil</a>
+		                </li>
+		                <li>
+		                  <a href="#portfolio" class="pt-link"><span class="nav-menu-icon"><i
+		                        class="lnr lnr-briefcase"></i></span>Portfolio</a>
+		                </li>
+		                <li>
+		                  <a href="#linkedin" class="pt-link"><span class="nav-menu-icon"><i
+		                        class="lnr lnr-earth"></i></span>Publications</a>
+		                </li>
+		                <li>
+		                  <a href="#contact" class="pt-link"><span class="nav-menu-icon"><i
+		                        class="lnr lnr-envelope"></i></span>Contact</a>
+		                </li>
+		              </ul>
+		            </nav>
+            <!--Nav Footer-->
+            <div class="nav-footer">
+              <!--Status badge-->
+              <!-- <div class="sidebar-status">
+                <span class="status-dot"></span>
+                <span class="status-text">Disponible</span>
+              </div> -->
+              <!--Liens sociaux-->
+              <ul class="social">
+                <li>
+                  <a href="https://www.linkedin.com/in/angeliqueredjdal/" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i
+                      class="fab fa-linkedin"></i></a>
+                </li>
+                <li>
+                  <a href="https://github.com/Angelgaeta" target="_blank" rel="noopener noreferrer" title="GitHub"><i
+                      class="fab fa-github-square"></i></a>
+                </li>
+                <li>
+                  <a href="https://www.behance.net/angel_gaeta_redjdal" target="_blank" rel="noopener noreferrer" title="Behance"><i
+                      class="fab fa-behance-square"></i></a>
+                </li>
+              </ul>
+              <!--Texte du droit d'auteur-->
+              <div class="copy">
+                <p>2026 &copy; Angélique Redjdal</p>
+                <p class="copy-sub">Montpellier</p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </header>
-
-
-    <!--Header End-->
+      </header>
+    </template>
 
     <!--Main Start-->
     <div id="main" class="site-main" tabindex="-1">
@@ -237,15 +264,35 @@
 					        </video>
 
 		        <div class="banner-content">
-		          <h1 class="home-hero-title">Angélique Redjdal</h1>
-		          <p class="home-hero-stack">Développeuse Full-Stack Java / Spring Boot & Angular</p>
-		          <p class="home-hero-promise">Applications métiers • Architecture propre • UX orientée produit</p>
-		          <!-- <p class="hero-proof">2+ ans en ESN • Projets apps métiers & API</p> -->
+		          <h1 class="home-hero-title">Développeuse Full-Stack Java / Spring Boot & Angular</h1>
+		          <p class="home-hero-promise">Je conçois des apps métiers maintenables : API propres, UI/UX soignées, sécurité et qualité.</p>
+              <ul class="hero-chips" aria-label="Preuves rapides">
+                <li class="hero-chip">2,5 ans ESN</li>
+                <li class="hero-chip">Apps métiers</li>
+                <li class="hero-chip">Clean architecture</li>
+                <li class="hero-chip">UX</li>
+                <li class="hero-chip">Tests</li>
+              </ul>
+
+              <div class="hero-stat-block" aria-label="Indicateurs clés">
+                <div class="hero-stat-item">
+                  <strong>Projets sélectionnés</strong>
+                  <span>Flagships + cas ESN + formation</span>
+                </div>
+                <div class="hero-stat-item">
+                  <strong>Stack</strong>
+                  <span>Java / Angular</span>
+                </div>
+              </div>
 
 		          <div class="cta-group">
 		            <a href="#portfolio" class="btn-cta primary">Voir mes projets</a>
-		            <a href="#contact" class="btn-cta secondary" aria-label="Me contacter - formulaire de contact">Me contacter</a>
+		            <a href="img/CV-Angelique-Redjdal.pdf" class="btn-cta secondary" target="_blank" rel="noopener noreferrer">Télécharger mon CV</a>
 		          </div>
+              <div class="hero-secondary-links">
+                <a href="https://www.linkedin.com/in/angeliqueredjdal/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="https://github.com/Angelgaeta" target="_blank" rel="noopener noreferrer">GitHub</a>
+              </div>
 
 	          <p class="hero-note">Montpellier / Remote • Ouverte aux opportunités</p>
         </div>
