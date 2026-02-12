@@ -660,6 +660,8 @@ function contactFormSetup() {
   var $form = $("#contact-form");
   var $submitBtn = $form.find('button[type="submit"]').first();
   var $status = $("#contact-form-status");
+  var $csrfField = $("#cf-csrf-token");
+  var $honeypotField = $("#cf-website");
   var submitDefaultLabel = $submitBtn.length ? $submitBtn.text() : "Envoyer";
   var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
   var messageMin = 10;
@@ -693,6 +695,25 @@ function contactFormSetup() {
 
   clearStatus();
 
+  function loadCsrfToken() {
+    return $.ajax({
+      type: "GET",
+      url: "mail.php",
+      data: { action: "csrf" },
+      dataType: "json",
+      cache: false,
+    })
+      .done(function (data) {
+        var token = data && data.csrf_token ? String(data.csrf_token) : "";
+        if ($csrfField.length) $csrfField.val(token);
+      })
+      .fail(function () {
+        if ($csrfField.length) $csrfField.val("");
+      });
+  }
+
+  loadCsrfToken();
+
   $(".input__field").each(function () {
     $(this).parent(".input").toggleClass("input--filled", !!$(this).val());
   });
@@ -725,6 +746,8 @@ function contactFormSetup() {
     var name = $.trim($("#cf-name").val()).replace(/\s+/g, " "),
       email = $.trim($("#cf-email").val()),
       message = $.trim($("#cf-message").val()),
+      csrfToken = $.trim($csrfField.val()),
+      website = $honeypotField.length ? $.trim($honeypotField.val()) : "",
       required = 0,
       $firstInvalid = $();
 
@@ -786,6 +809,11 @@ function contactFormSetup() {
       $("#cf-message").addClass("cf-error").attr("aria-invalid", "true").trigger("focus");
       return;
     }
+    if (!csrfToken) {
+      setStatus("Session expirée, merci de réessayer.", "error");
+      loadCsrfToken();
+      return;
+    }
 
     if ($submitBtn.length) {
       $submitBtn.prop("disabled", true).attr("aria-busy", "true").text("Envoi...");
@@ -800,6 +828,8 @@ function contactFormSetup() {
         cf_name: name,
         cf_email: email,
         cf_message: message,
+        csrf_token: csrfToken,
+        website: website,
       },
       dataType: "json",
       success: function (data) {
@@ -808,8 +838,11 @@ function contactFormSetup() {
         showAlertBox(statusCode, messageText);
         if (data && data.status === 200) {
           $("#contact-form .input__field").val("").trigger("keyup");
+          if ($honeypotField.length) $honeypotField.val("");
+          loadCsrfToken();
           setStatus(messageText, "success");
         } else {
+          if (statusCode === 403 || statusCode === 429) loadCsrfToken();
           setStatus(messageText, "error");
         }
       },
@@ -821,6 +854,7 @@ function contactFormSetup() {
           xhr?.status || 500,
           fallbackMessage,
         );
+        if (xhr?.status === 403 || xhr?.status === 429) loadCsrfToken();
         setStatus(fallbackMessage, "error");
       },
       complete: function () {
