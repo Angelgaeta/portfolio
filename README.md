@@ -10,19 +10,6 @@ Portfolio personnel (webdesign + developpement front/back) deploye sur:
 - JavaScript (vanilla)
 - PHP (endpoints simples: contact, tracking, update JSON)
 
-## Lancer le projet en local
-
-1. Cloner le repo:
-   `git clone https://github.com/Angelgaeta/portfolio.git`
-2. Se placer dans le dossier:
-   `cd angelgaeta`
-3. Lancer un serveur PHP local (recommande pour tester les scripts `.php`):
-   `php -S localhost:8080`
-4. Ouvrir:
-   `http://localhost:8080`
-
-Note: pour un test purement statique, `index.html` peut aussi etre ouvert directement, mais les endpoints PHP ne fonctionneront pas.
-
 ## Structure rapide
 
 - `index.html`: page principale du portfolio
