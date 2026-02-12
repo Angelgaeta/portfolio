@@ -16,19 +16,19 @@ Portfolio personnel (webdesign + developpement front/back) deploye sur:
 
 [Voir les projets Angular](https://github.com/Angelgaeta?tab=repositories&q=angular&type=&language=)
 
-![Projet Angular](img/portfolio/formulaire.png)
+`[Placeholder screenshot Angular à venir]`
 
 ### Spring
 
 [Voir les projets Spring](https://github.com/Angelgaeta?tab=repositories&q=spring&type=&language=)
 
-![Projet Spring](img/arborescence-dashboard-admin.png)
+`[Placeholder screenshot Spring à venir]`
 
 ### Full-stack
 
 [Voir les projets full-stack](https://github.com/Angelgaeta?tab=repositories&q=full-stack&type=&language=)
 
-![Projet Full-stack](img/maquette-site-bornes-recharge.png)
+`[Placeholder screenshot Full-stack à venir]`
 
 ## Structure rapide
 
