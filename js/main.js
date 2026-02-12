@@ -454,7 +454,7 @@ function setupLinkedInFeed() {
     target.views = (Number(target.views) || 0) + 1;
     render();
 
-    fetch("track-post-view.php", {
+    fetch("api/track-post-view.php", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ id: postId }),
@@ -698,7 +698,7 @@ function contactFormSetup() {
   function loadCsrfToken() {
     return $.ajax({
       type: "GET",
-      url: "mail.php",
+      url: "api/mail.php",
       data: { action: "csrf" },
       dataType: "json",
       cache: false,
@@ -823,7 +823,7 @@ function contactFormSetup() {
 
     $.ajax({
       type: "POST",
-      url: "mail.php",
+      url: "api/mail.php",
       data: {
         cf_name: name,
         cf_email: email,

@@ -2,6 +2,7 @@
 declare(strict_types=1);
 
 header('Content-Type: application/json; charset=utf-8');
+header('X-Content-Type-Options: nosniff');
 
 function respond(int $status, array $payload): void
 {
@@ -10,8 +11,75 @@ function respond(int $status, array $payload): void
     exit;
 }
 
+function client_ip(): string
+{
+    $ip = (string) ($_SERVER['REMOTE_ADDR'] ?? '');
+    return filter_var($ip, FILTER_VALIDATE_IP) ? $ip : '0.0.0.0';
+}
+
+function rate_limit_ok(string $scope, string $ip, int $minSpacingSeconds, int $windowSeconds, int $maxAttempts): bool
+{
+    $dir = rtrim(sys_get_temp_dir(), DIRECTORY_SEPARATOR) . DIRECTORY_SEPARATOR . 'portfolio_rate_limit';
+    if (!is_dir($dir) && !@mkdir($dir, 0700, true) && !is_dir($dir)) {
+        return true;
+    }
+
+    $file = $dir . DIRECTORY_SEPARATOR . hash('sha256', $scope . '|' . $ip) . '.json';
+    $now = time();
+    $payload = ['hits' => [], 'last' => 0];
+
+    if (is_file($file)) {
+        $raw = (string) @file_get_contents($file);
+        $decoded = json_decode($raw, true);
+        if (is_array($decoded)) {
+            $payload = array_merge($payload, $decoded);
+        }
+    }
+
+    $hits = array_values(array_filter(
+        array_map('intval', (array) ($payload['hits'] ?? [])),
+        static fn(int $t): bool => ($now - $t) <= $windowSeconds
+    ));
+    $last = (int) ($payload['last'] ?? 0);
+
+    if ($last > 0 && ($now - $last) < $minSpacingSeconds) {
+        return false;
+    }
+    if (count($hits) >= $maxAttempts) {
+        return false;
+    }
+
+    $hits[] = $now;
+    $payload['hits'] = $hits;
+    $payload['last'] = $now;
+    @file_put_contents($file, json_encode($payload), LOCK_EX);
+    return true;
+}
+
+function valid_token(string $token): bool
+{
+    if ($token === '' || mb_strlen($token) > 256) {
+        return false;
+    }
+    return !preg_match('/[\r\n]/', $token);
+}
+
 if (($_SERVER['REQUEST_METHOD'] ?? '') !== 'POST') {
     respond(405, ['ok' => false, 'error' => 'method_not_allowed']);
+}
+
+if (!rate_limit_ok('update_posts', client_ip(), 2, 600, 20)) {
+    respond(429, ['ok' => false, 'error' => 'rate_limited']);
+}
+
+$contentType = strtolower((string) ($_SERVER['CONTENT_TYPE'] ?? ''));
+if (!str_contains($contentType, 'application/json')) {
+    respond(415, ['ok' => false, 'error' => 'unsupported_media_type']);
+}
+
+$contentLength = (int) ($_SERVER['CONTENT_LENGTH'] ?? 0);
+if ($contentLength > 200000) {
+    respond(413, ['ok' => false, 'error' => 'payload_too_large']);
 }
 
 $defaultToken = 'CHANGE_ME_STRONG_TOKEN';
@@ -31,18 +99,16 @@ if ($secretToken === $defaultToken) {
 
 $authHeader = (string) ($_SERVER['HTTP_AUTHORIZATION'] ?? '');
 $headerToken = (string) ($_SERVER['HTTP_X_WEBHOOK_TOKEN'] ?? '');
-$queryToken = (string) ($_GET['token'] ?? '');
 $providedToken = '';
 
 if ($headerToken !== '') {
     $providedToken = $headerToken;
 } elseif (preg_match('/^\s*Bearer\s+(.+)\s*$/i', $authHeader, $m)) {
     $providedToken = (string) $m[1];
-} elseif ($queryToken !== '') {
-    $providedToken = $queryToken;
 }
 
-if (!hash_equals($secretToken, trim($providedToken))) {
+$providedToken = trim($providedToken);
+if (!valid_token($providedToken) || !hash_equals($secretToken, $providedToken)) {
     respond(401, ['ok' => false, 'error' => 'unauthorized']);
 }
 
@@ -67,6 +133,9 @@ if (isset($decoded['posts']) && is_array($decoded['posts'])) {
 
 if (count($incomingPosts) === 0) {
     respond(400, ['ok' => false, 'error' => 'no_posts']);
+}
+if (count($incomingPosts) > 50) {
+    respond(400, ['ok' => false, 'error' => 'too_many_posts']);
 }
 
 function norm_text($value, int $max): string
@@ -169,7 +238,7 @@ if (count($normalizedIncoming) === 0) {
     respond(400, ['ok' => false, 'error' => 'no_valid_posts']);
 }
 
-$dataDir = __DIR__ . '/data';
+$dataDir = dirname(__DIR__) . '/data';
 $postsFile = $dataDir . '/posts.json';
 
 if (!is_dir($dataDir) && !mkdir($dataDir, 0755, true) && !is_dir($dataDir)) {

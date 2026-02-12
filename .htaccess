@@ -2,6 +2,23 @@ RewriteEngine On
 RewriteCond %{ENV:HTTPS} !on
 RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
+# Legacy endpoint URLs -> /api
+RewriteRule ^mail\.php$ /api/mail.php [L,R=302]
+RewriteRule ^track-post-view\.php$ /api/track-post-view.php [L,R=302]
+RewriteRule ^update-posts\.php$ /api/update-posts.php [L,R=302]
+RewriteRule ^(?:api/)?private(?:/|$) - [F,L]
+
+# Block direct access to secrets / config-like files
+<FilesMatch "(^\\.env|^\\.git|\\.secret\\.php$|\\.config\\.php$|^config\\.php$|^update-posts\\.secret(?:\\.example)?\\.php$)">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Order allow,deny
+        Deny from all
+    </IfModule>
+</FilesMatch>
+
 <IfModule mod_headers.c>
     Header always set X-Content-Type-Options "nosniff"
     Header always set X-Frame-Options "SAMEORIGIN"
