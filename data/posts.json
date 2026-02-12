@@ -1,8 +1,9 @@
 [
-      {
+    {
         "id": "li-7426876398885318657",
-        "title": "Publication LinkedIn",
-        "excerpt": "Publication native LinkedIn integree.",
+        "title": "HTTP methods = intention et contrat API",
+        "excerpt": "Pourquoi expliciter l'intention d'un endpoint réduit les ambiguïtés côté front et QA.",
+        "content": "Avant de coder un endpoint, je fixe l'intention métier de chaque méthode HTTP, le contrat d'entrée/sortie et les erreurs attendues. Ce cadrage réduit les aller-retours, aligne l'équipe et diminue les régressions en recette.",
         "url": "https://www.linkedin.com/feed/update/urn:li:share:7426876398885318657/",
         "embedUrl": "https://www.linkedin.com/embed/feed/update/urn:li:share:7426876398885318657",
         "date": "2026-02-10",
@@ -11,12 +12,13 @@
         "comments": 0,
         "views": 0,
         "readTimeMin": 3,
-        "tags": ["linkedin"]
+        "tags": ["cadrage", "qualite", "delivery"]
     },
     {
         "id": "li-7424774000456667136",
-        "title": "Publication LinkedIn",
-        "excerpt": "Publication native LinkedIn integree.",
+        "title": "Cacher un bouton != sécuriser une action",
+        "excerpt": "UI masquée ne veut pas dire autorisation sécurisée: le contrôle doit vivre côté serveur.",
+        "content": "Masquer une action dans l'interface améliore l'ergonomie, mais ne protège pas la donnée. Je rappelle pourquoi l'autorisation doit être vérifiée côté API, avec rôles explicites, validations strictes et retours d'erreur cohérents.",
         "url": "https://www.linkedin.com/feed/update/urn:li:share:7424774000456667136/",
         "embedUrl": "https://www.linkedin.com/embed/feed/update/urn:li:share:7424774000456667136",
         "date": "2026-02-10",
@@ -27,11 +29,11 @@
         "readTimeMin": 3,
         "tags": ["linkedin"]
     },
-     {
+    {
         "id": "li-7424441225744809985",
-        "title": "Article LinkedIn - Rappel d'apprentissage",
+        "title": "Transformer la théorie en réflexes de développement",
         "excerpt": "Partage d'un rappel de cours et des points clés retenus pour progresser en pratique.",
-        "content": "Dans cet article, je synthétise ce que j'ai retenu d'un module de cours: les notions importantes, les erreurs à éviter, puis la façon dont je les applique dans mes exercices. L'objectif est de transformer la théorie en réflexes concrets sur mes projets.",
+        "content": "Dans cet article, je synthétise ce que j'ai retenu d'un module de cours: notions importantes, erreurs à éviter, et mise en pratique immédiate dans mes exercices. L'objectif est de transformer la théorie en réflexes concrets sur mes projets.",
         "url": "https://www.linkedin.com/feed/update/urn:li:activity:7424441225744809985/",
         "embedUrl": "https://www.linkedin.com/embed/feed/update/urn:li:share:7424441224989929472",
         "date": "2026-02-10",

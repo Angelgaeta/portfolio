@@ -214,6 +214,10 @@ function setupLinkedInFeed() {
   var feed = document.querySelector("[data-linkedin-feed]");
   if (!feed) return;
 
+  // Optional tracking for dynamic hosting only.
+  // Enable explicitly with: window.LINKEDIN_TRACKING_ENABLED = true
+  var TRACKING_ENABLED = typeof window !== "undefined" && window.LINKEDIN_TRACKING_ENABLED === true;
+
   var categoryContainer = document.querySelector("[data-linkedin-categories]");
   var summaryContainer = document.querySelector("[data-linkedin-summary]");
   var storageKey = "knowledge_feed_interactions_v1";
@@ -345,10 +349,16 @@ function setupLinkedInFeed() {
       return sum + (Number(post.views) || 0);
     }, 0);
 
-    summaryContainer.innerHTML =
+    var items =
       '<div class="linkedin-summary-item"><strong>' + esc(String(postsCount)) + "</strong><span>Articles</span></div>" +
-      '<div class="linkedin-summary-item"><strong>' + esc(String(categoriesCount)) + "</strong><span>Catégories</span></div>" +
-      '<div class="linkedin-summary-item"><strong>' + esc(formatCompactNumber(totalViews)) + "</strong><span>Vues cumulées</span></div>";
+      '<div class="linkedin-summary-item"><strong>' + esc(String(categoriesCount)) + "</strong><span>Catégories</span></div>";
+
+    if (totalViews > 0) {
+      items +=
+        '<div class="linkedin-summary-item"><strong>' + esc(formatCompactNumber(totalViews)) + "</strong><span>Vues cumulées</span></div>";
+    }
+
+    summaryContainer.innerHTML = items;
   }
 
   function tagsMarkup(tags) {
@@ -390,13 +400,16 @@ function setupLinkedInFeed() {
         ? '<button type="button" class="linkedin-readmore-btn" data-action="expand" data-post-id="' + esc(post.id) + '" aria-expanded="' + (isExpanded ? "true" : "false") + '">' + esc(readMoreLabel) + "</button>"
         : "");
 
+    var kpiItems = [];
+    if (viewCount > 0) kpiItems.push("<span>" + esc(formatCompactNumber(viewCount)) + " vues</span>");
+    if (likeCount > 0) kpiItems.push("<span>" + esc(formatCompactNumber(likeCount)) + " réactions</span>");
+    if (post.comments > 0) kpiItems.push("<span>" + esc(formatCompactNumber(post.comments)) + " commentaires</span>");
+
     var tagsAndKpiMarkup =
       tagsMarkup(post.tags) +
-      '<div class="linkedin-post-kpi">' +
-      "<span>" + esc(formatCompactNumber(viewCount)) + " vues</span>" +
-      "<span>" + esc(formatCompactNumber(likeCount)) + " réactions</span>" +
-      "<span>" + esc(formatCompactNumber(post.comments)) + " commentaires</span>" +
-      "</div>";
+      (kpiItems.length
+        ? '<div class="linkedin-post-kpi">' + kpiItems.join("") + "</div>"
+        : "");
 
     return (
       '<article class="linkedin-post glass-card' + (featured ? " is-featured" : "") + '">' +
@@ -447,6 +460,8 @@ function setupLinkedInFeed() {
   }
 
   function incrementPostView(postId) {
+    if (!TRACKING_ENABLED) return;
+
     var target = state.posts.find(function (post) {
       return post.id === postId;
     });

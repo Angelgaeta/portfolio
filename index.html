@@ -273,33 +273,33 @@
             </div>
             <div class="col-md-6">
               <div class="glass-card">
-                <h5 class="gradient-text">Front-end</h5>
+                <h5 class="gradient-text">Front</h5>
                 <div class="tech-tags">
-                  <span class="skill-pill">HTML5</span><span class="skill-pill">CSS3</span><span class="skill-pill">JavaScript</span><span class="skill-pill">Bootstrap</span>
+                  <span class="skill-pill">Angular</span><span class="skill-pill">TypeScript</span><span class="skill-pill">RxJS</span><span class="skill-pill">NgRx (si besoin)</span><span class="skill-pill">Jest/Cypress</span>
                 </div>
               </div>
             </div>
             <div class="col-md-6">
               <div class="glass-card">
-                <h5 class="gradient-text">Back-end</h5>
+                <h5 class="gradient-text">Back</h5>
                 <div class="tech-tags">
-                  <span class="skill-pill">PHP</span><span class="skill-pill">SQL</span><span class="skill-pill">MySQL</span><span class="skill-pill">WordPress</span>
+                  <span class="skill-pill">Java</span><span class="skill-pill">Spring Boot</span><span class="skill-pill">Spring Security</span><span class="skill-pill">JPA/Hibernate</span><span class="skill-pill">REST</span>
                 </div>
               </div>
             </div>
             <div class="col-md-6">
               <div class="glass-card">
-                <h5 class="gradient-text">Data & Conception</h5>
+                <h5 class="gradient-text">Qualité</h5>
                 <div class="tech-tags">
-                  <span class="skill-pill">MCD/MLD</span><span class="skill-pill">UML</span><span class="skill-pill">Merise</span>
+                  <span class="skill-pill">Clean code</span><span class="skill-pill">Tests</span><span class="skill-pill">Lint/Format</span><span class="skill-pill">Performance</span><span class="skill-pill">Accessibilité</span>
                 </div>
               </div>
             </div>
             <div class="col-md-6">
               <div class="glass-card">
-                <h5 class="gradient-text">Outils & Workflow</h5>
+                <h5 class="gradient-text">Architecture & Delivery</h5>
                 <div class="tech-tags">
-                  <span class="skill-pill">Git</span><span class="skill-pill">Figma</span><span class="skill-pill">VS Code</span><span class="skill-pill">Notion</span>
+                  <span class="skill-pill">Architecture modulaire</span><span class="skill-pill">API design</span><span class="skill-pill">Git</span><span class="skill-pill">CI/CD</span><span class="skill-pill">Documentation technique</span>
                 </div>
               </div>
             </div>
@@ -810,6 +810,9 @@
 	                <div class="content">
 	                  <h4>Pokémon App — SPA Angular</h4>
                     <p class="project-impact">Impact: recherche instantanée et navigation simplifiée sur un catalogue dense.</p>
+                    <p class="project-why"><strong>Pourquoi ces décisions ?</strong> Architecture modulaire + état UI explicite pour limiter les effets de bord et accélérer les évolutions.</p>
+                    <p class="project-metric"><strong>Micro-métrique :</strong> stabilisation du contrat d’UI et baisse des régressions visuelles en itération.</p>
+                    <img class="project-archi-schema" src="img/architecture-flow.svg" alt="Schéma de preuve architecture Front Angular vers API Spring Boot vers base de données" loading="lazy" decoding="async" width="1200" height="360" />
                     <div class="project-badges">
                       <span class="project-badge">Angular</span>
                       <span class="project-badge">TypeScript</span>
@@ -834,6 +837,9 @@
 	                <div class="content">
 	                  <h4>API REST — Spring Boot</h4>
                     <p class="project-impact">Impact: API plus prévisible, erreurs standardisées et intégration front accélérée.</p>
+                    <p class="project-why"><strong>Pourquoi ces décisions ?</strong> Standardiser les réponses d’erreur et les validations pour réduire la complexité côté consommateurs.</p>
+                    <p class="project-metric"><strong>Micro-métrique :</strong> moins d’allers-retours de recette grâce à des contrats API plus stables.</p>
+                    <img class="project-archi-schema" src="img/architecture-flow.svg" alt="Schéma de preuve architecture Front Angular vers API Spring Boot vers base de données" loading="lazy" decoding="async" width="1200" height="360" />
                     <div class="project-badges">
                       <span class="project-badge">Java</span>
                       <span class="project-badge">Spring Boot</span>
@@ -858,6 +864,9 @@
 		                <div class="content">
 		                  <h4>Portail Data / Dashboard — Full-stack</h4>
                       <p class="project-impact">Impact: lecture des données plus claire et actions métier plus rapides au quotidien.</p>
+                      <p class="project-why"><strong>Pourquoi ces décisions ?</strong> Isoler les flux critiques par usage pour prioriser les parcours fréquents et limiter les frictions.</p>
+                      <p class="project-metric"><strong>Micro-métrique :</strong> temps de parcours réduit sur les actions principales et retours support moins fréquents.</p>
+                      <img class="project-archi-schema" src="img/architecture-flow.svg" alt="Schéma de preuve architecture Front Angular vers API Spring Boot vers base de données" loading="lazy" decoding="async" width="1200" height="360" />
                       <div class="project-badges">
                         <span class="project-badge">Angular</span>
                         <span class="project-badge">Spring Boot</span>
@@ -896,8 +905,11 @@
                   <li><strong>Contraintes :</strong> rôles stricts, parcours hétérogènes, dette UI existante.</li>
                   <li><strong>Architecture :</strong> front Angular + API Java/Spring Boot, gestion des rôles côté back.</li>
                   <li><strong>Décisions :</strong> séparation claire des vues par rôle, contrats API stabilisés, composants réutilisables.</li>
+                  <li><strong>Pourquoi ces décisions ?</strong> Réduire la charge cognitive par profil et fiabiliser les droits d’accès.</li>
+                  <li><strong>Micro-métrique :</strong> baisse des retours recette liés aux droits et navigation.</li>
                   <li><strong>Impact :</strong> onboarding simplifié et baisse des erreurs de navigation en recette.</li>
                 </ul>
+                <img class="case-archi-schema" src="img/architecture-flow.svg" alt="Schéma architecture Angular vers Spring Boot et base de données avec auth et rôles" loading="lazy" decoding="async" width="1200" height="360" />
               </article>
             </div>
 
@@ -912,8 +924,11 @@
                   <li><strong>Contraintes :</strong> volumétrie variable, validations métier, erreurs peu lisibles côté consommateurs.</li>
                   <li><strong>Architecture :</strong> API REST Spring Boot, DTO validés, gestion d’exceptions homogène.</li>
                   <li><strong>Décisions :</strong> standardisation des réponses d’erreur et structuration par domaines métier.</li>
+                  <li><strong>Pourquoi ces décisions ?</strong> Diminuer les cas implicites et faciliter le diagnostic côté front/QA.</li>
+                  <li><strong>Micro-métrique :</strong> contrat API stabilisé, moins de régressions en intégration continue.</li>
                   <li><strong>Impact :</strong> intégration front plus stable, maintenance et diagnostic accélérés.</li>
                 </ul>
+                <img class="case-archi-schema" src="img/architecture-flow.svg" alt="Schéma architecture Angular vers Spring Boot et base de données avec auth et rôles" loading="lazy" decoding="async" width="1200" height="360" />
               </article>
             </div>
 
@@ -928,8 +943,11 @@
                   <li><strong>Contraintes :</strong> temps limité, continuité de service, besoins divergents selon équipes.</li>
                   <li><strong>Architecture :</strong> UI modulaire + filtres avancés, endpoints dédiés par usage.</li>
                   <li><strong>Décisions :</strong> priorisation des parcours fréquents, hiérarchie visuelle orientée action.</li>
+                  <li><strong>Pourquoi ces décisions ?</strong> Cibler d’abord la valeur opérationnelle au lieu d’une refonte globale risquée.</li>
+                  <li><strong>Micro-métrique :</strong> tickets support orientés UX en diminution sur les parcours critiques.</li>
                   <li><strong>Impact :</strong> actions clés plus rapides et retour utilisateur plus positif en exploitation.</li>
                 </ul>
+                <img class="case-archi-schema" src="img/architecture-flow.svg" alt="Schéma architecture Angular vers Spring Boot et base de données avec auth et rôles" loading="lazy" decoding="async" width="1200" height="360" />
               </article>
             </div>
           </div>
@@ -1669,8 +1687,14 @@
     <p><strong>Contexte :</strong> application front orientée catalogue avec recherche et navigation multi-écrans.</p>
     <p><strong>Problème / objectif :</strong> améliorer la rapidité de consultation et limiter les allers-retours utilisateur.</p>
     <p><strong>Décisions techniques :</strong> architecture Angular modulaire, composants réutilisables et gestion d’état UI par features.</p>
+    <p><strong>Pourquoi ces décisions ?</strong> privilégier une structure évolutive pour absorber les nouveaux cas d’usage sans régression globale.</p>
     <p><strong>Stack :</strong> Angular / TypeScript / RxJS</p>
+    <p><strong>Micro-métrique :</strong> moins de retouches recette sur la navigation et les états d’interface.</p>
     <p><strong>Impact :</strong> parcours plus fluide et recherche plus lisible sur un volume de données conséquent.</p>
+    <div class="u-mt-12">
+      <img loading="lazy" decoding="async" src="img/architecture-flow.svg" alt="Schéma architecture Front Angular vers API Spring Boot vers base de données"
+        class="case-img" width="1200" height="360">
+    </div>
     <div class="u-mt-12">
       <img loading="lazy" decoding="async" src="img/portfolio/formulaire.png" alt="Aperçu du projet : Pokémon App Angular"
         class="case-img" width="1200" height="734">
@@ -1681,8 +1705,14 @@
     <p><strong>Contexte :</strong> backend métier destiné à alimenter plusieurs écrans front.</p>
     <p><strong>Problème / objectif :</strong> fiabiliser les échanges et rendre les erreurs exploitables côté front.</p>
     <p><strong>Décisions techniques :</strong> endpoints REST structurés, DTO validés, gestion d’exceptions homogène et tests ciblés.</p>
+    <p><strong>Pourquoi ces décisions ?</strong> standardiser les conventions pour éviter les comportements implicites selon endpoint.</p>
     <p><strong>Stack :</strong> Java / Spring Boot / API REST / Validation</p>
+    <p><strong>Micro-métrique :</strong> baisse des anomalies d’intégration liées au parsing des erreurs API.</p>
     <p><strong>Impact :</strong> comportements API prévisibles et diagnostic plus rapide en intégration.</p>
+    <div class="u-mt-12">
+      <img loading="lazy" decoding="async" src="img/architecture-flow.svg" alt="Schéma architecture Front Angular vers API Spring Boot vers base de données"
+        class="case-img" width="1200" height="360">
+    </div>
     <div class="u-mt-12">
       <img loading="lazy" decoding="async" src="img/arborescence-dashboard-admin.PNG" alt="Aperçu du projet : API REST Spring Boot"
         class="case-img" width="1354" height="687">
@@ -1693,8 +1723,14 @@
     <p><strong>Contexte :</strong> dashboard métier avec usages quotidiens multi-profils.</p>
     <p><strong>Problème / objectif :</strong> réduire le temps d’accès à l’information utile et clarifier les actions prioritaires.</p>
     <p><strong>Décisions techniques :</strong> front Angular orienté tâches, API Spring Boot par cas d’usage, filtres et parcours simplifiés.</p>
+    <p><strong>Pourquoi ces décisions ?</strong> maximiser le gain opérationnel à court terme sans compromettre la maintenabilité.</p>
     <p><strong>Stack :</strong> Angular / Spring Boot / API REST / UX Dashboard</p>
+    <p><strong>Micro-métrique :</strong> parcours critiques plus courts et baisse des demandes support sur les actions clés.</p>
     <p><strong>Impact :</strong> lecture des données améliorée et exécution des actions métier plus rapide.</p>
+    <div class="u-mt-12">
+      <img loading="lazy" decoding="async" src="img/architecture-flow.svg" alt="Schéma architecture Front Angular vers API Spring Boot vers base de données"
+        class="case-img" width="1200" height="360">
+    </div>
     <div class="u-mt-12">
       <img loading="lazy" decoding="async" src="img/maquette-site-bornes-recharge.png" alt="Aperçu du projet : Portail Data Dashboard Full-stack"
         class="case-img" width="1944" height="1030">

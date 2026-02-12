@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="360" viewBox="0 0 1200 360" role="img" aria-labelledby="title desc">
+  <title id="title">Schema architecture applicative</title>
+  <desc id="desc">Front Angular vers API Spring Boot vers base de donnees, avec authentification et gestion des roles.</desc>
+  <defs>
+    <style>
+      .bg { fill: #101827; }
+      .box { fill: #192436; stroke: #4f6b93; stroke-width: 2; rx: 16; }
+      .txt { fill: #e6edf7; font: 600 30px Inter, Arial, sans-serif; }
+      .sub { fill: #b8c7dd; font: 500 22px Inter, Arial, sans-serif; }
+      .arrow { stroke: #86a6d6; stroke-width: 4; fill: none; marker-end: url(#arrowhead); }
+      .pill { fill: #22324a; stroke: #5679a8; stroke-width: 1.5; rx: 14; }
+    </style>
+    <marker id="arrowhead" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 z" fill="#86a6d6"/>
+    </marker>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="1200" height="360"/>
+
+  <rect class="box" x="70" y="85" width="290" height="140"/>
+  <text class="txt" x="215" y="145" text-anchor="middle">Front</text>
+  <text class="sub" x="215" y="183" text-anchor="middle">Angular / TypeScript</text>
+
+  <rect class="box" x="455" y="85" width="290" height="140"/>
+  <text class="txt" x="600" y="145" text-anchor="middle">API</text>
+  <text class="sub" x="600" y="183" text-anchor="middle">Java / Spring Boot</text>
+
+  <rect class="box" x="840" y="85" width="290" height="140"/>
+  <text class="txt" x="985" y="145" text-anchor="middle">DB</text>
+  <text class="sub" x="985" y="183" text-anchor="middle">SQL / Donnees metier</text>
+
+  <path class="arrow" d="M360 155 L448 155"/>
+  <path class="arrow" d="M745 155 L833 155"/>
+
+  <rect class="pill" x="410" y="255" width="380" height="56"/>
+  <text class="sub" x="600" y="290" text-anchor="middle">Auth JWT + roles + validation DTO</text>
+</svg>

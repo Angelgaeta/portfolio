@@ -2097,6 +2097,7 @@ textarea:focus-visible{
   font-size: 1rem;
 }
 
+
 .flagship-proof{
   margin: 10px 0 0;
   font-size: 13px;
@@ -2215,6 +2216,28 @@ textarea:focus-visible{
   font-size: 12.5px;
   letter-spacing: .2px;
   opacity: .92;
+}
+
+#portfolio .project-why,
+#portfolio .project-metric{
+  margin: 0;
+  color: var(--ui-text-2);
+  font-size: .88rem;
+  line-height: 1.5;
+}
+
+#portfolio .project-metric{
+  color: var(--ui-ice-92);
+}
+
+#portfolio .project-archi-schema,
+#portfolio .case-archi-schema{
+  display: block;
+  width: 100%;
+  margin-top: 8px;
+  border-radius: 10px;
+  border: 1px solid var(--ui-overlay-14);
+  background: var(--ui-overlay-02);
 }
 
 #portfolio .service-item .content p{
