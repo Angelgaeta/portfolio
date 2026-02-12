@@ -876,7 +876,6 @@ function setupNavigationUX() {
   var $headerMain = $(".header-main");
   var $headerToggle = $(".header-toggle");
   var $navLinks = $(".nav-menu a.pt-link");
-  var $floatingCta = $(".floating-cta");
   var menuObserver = null;
   var lastMenuOpen = false;
   var sectionData = $navLinks
@@ -1034,18 +1033,4 @@ function setupNavigationUX() {
     syncMenuA11y();
   });
 
-  if ($floatingCta.length && "IntersectionObserver" in window) {
-    var contactSection = document.getElementById("contact");
-    if (contactSection) {
-      var observer = new IntersectionObserver(
-        function (entries) {
-          entries.forEach(function (entry) {
-            $floatingCta.toggleClass("is-hidden", entry.isIntersecting);
-          });
-        },
-        { threshold: 0.25 },
-      );
-      observer.observe(contactSection);
-    }
-  }
 }

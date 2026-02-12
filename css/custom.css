@@ -2184,6 +2184,15 @@ textarea:focus-visible{
   letter-spacing: .2px;
 }
 
+#portfolio .project-impact{
+  margin: 0;
+  color: var(--ui-ice-95);
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  letter-spacing: .2px;
+  opacity: .92;
+}
+
 #portfolio .service-item .content p{
   margin: 0;
 }
@@ -2239,7 +2248,7 @@ textarea:focus-visible{
 }
 
 #portfolio .project-cta{
-  flex: 1 1 120px;
+  flex: 1 1 108px;
   min-height: 42px;
   background: rgba(255,255,255,0.12);
   border: 1px solid rgba(255,255,255,0.26);
@@ -2265,6 +2274,21 @@ textarea:focus-visible{
   border-color: rgba(124,92,255,0.55);
   background: rgba(124,92,255,0.28);
   color: var(--ui-white);
+}
+
+#portfolio .esn-case-visual{
+  margin: 0 0 12px;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid var(--ui-overlay-12);
+}
+
+#portfolio .esn-case-visual img{
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  filter: saturate(.85) contrast(.96);
 }
 
 #portfolio .project-cta:hover{
@@ -2568,44 +2592,6 @@ textarea:focus-visible{
 .btn-sm {
   padding: 10px 20px !important;
   font-size: .9rem !important;
-}
-
-/* =========================================================
-   CTA FLOTTANT (mobile)
-========================================================= */
-.floating-cta {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 9999;
-  display: none;
-}
-
-.floating-cta a {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  background: var(--ui-accent);
-  border: 1px solid var(--ui-accent-55);
-  color: var(--ui-white);
-  padding: 14px 20px;
-  border-radius: 999px;
-  font-weight: 600;
-  font-size: .95rem;
-  box-shadow: 0 8px 20px rgba(0,0,0,.26);
-  text-decoration: none;
-  transition: transform .15s ease, box-shadow .15s ease;
-}
-
-.floating-cta a:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 10px 24px rgba(0,0,0,.30);
-}
-
-@media (max-width: 768px) {
-  .floating-cta {
-    display: block;
-  }
 }
 
 /* =========================================================
