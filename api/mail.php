@@ -12,6 +12,8 @@ session_start();
 
 header('Content-Type: application/json; charset=utf-8');
 header('X-Content-Type-Options: nosniff');
+header('Cache-Control: no-store, no-cache, must-revalidate, max-age=0');
+header('Pragma: no-cache');
 
 function respond(int $status, string $message, array $extra = []): void
 {
@@ -60,6 +62,28 @@ function client_ip(): string
 {
     $ip = (string) ($_SERVER['REMOTE_ADDR'] ?? '');
     return filter_var($ip, FILTER_VALIDATE_IP) ? $ip : '0.0.0.0';
+}
+
+function same_origin_ok(): bool
+{
+    $host = safe_host((string) ($_SERVER['HTTP_HOST'] ?? ''));
+    if ($host === '') {
+        return false;
+    }
+
+    $origin = trim((string) ($_SERVER['HTTP_ORIGIN'] ?? ''));
+    if ($origin !== '') {
+        $originHost = safe_host((string) (parse_url($origin, PHP_URL_HOST) ?? ''));
+        return $originHost !== '' && strcasecmp($originHost, $host) === 0;
+    }
+
+    $referer = trim((string) ($_SERVER['HTTP_REFERER'] ?? ''));
+    if ($referer !== '') {
+        $refererHost = safe_host((string) (parse_url($referer, PHP_URL_HOST) ?? ''));
+        return $refererHost !== '' && strcasecmp($refererHost, $host) === 0;
+    }
+
+    return true;
 }
 
 function rate_limit_ok(string $ip): bool
@@ -177,6 +201,15 @@ if ($method === 'GET' && (string) ($_GET['action'] ?? '') === 'csrf') {
 
 if ($method !== 'POST') {
     respond(405, 'Méthode non autorisée.');
+}
+
+$contentLength = (int) ($_SERVER['CONTENT_LENGTH'] ?? 0);
+if ($contentLength > 20000) {
+    respond(413, 'Requête trop volumineuse.');
+}
+
+if (!same_origin_ok()) {
+    respond(403, 'Origine non autorisée.');
 }
 
 $honeypot = clean_single_line((string) ($_POST['website'] ?? ''), 255);

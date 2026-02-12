@@ -203,6 +203,7 @@ $(document).ready(function () {
 
   /*======== Contact Form Setup ========*/
   contactFormSetup();
+  setupEmailPrivacy();
   setupLinkedInFeed();
 
   // Quick quote wizard removed (portfolio mode)
@@ -562,6 +563,80 @@ function setupLinkedInFeed() {
       ];
       render();
     });
+}
+
+/********** Function Email Privacy Setup **********/
+function setupEmailPrivacy() {
+  var blocks = document.querySelectorAll(".email-privacy");
+  if (!blocks.length) return;
+
+  function copyText(value) {
+    if (navigator.clipboard && window.isSecureContext) {
+      return navigator.clipboard.writeText(value);
+    }
+
+    return new Promise(function (resolve, reject) {
+      try {
+        var textarea = document.createElement("textarea");
+        textarea.value = value;
+        textarea.setAttribute("readonly", "true");
+        textarea.style.position = "absolute";
+        textarea.style.left = "-9999px";
+        document.body.appendChild(textarea);
+        textarea.select();
+        var ok = document.execCommand("copy");
+        document.body.removeChild(textarea);
+        if (ok) resolve();
+        else reject(new Error("copy_failed"));
+      } catch (err) {
+        reject(err);
+      }
+    });
+  }
+
+  blocks.forEach(function (block) {
+    var user = (block.getAttribute("data-email-user") || "").trim();
+    var domain = (block.getAttribute("data-email-domain") || "").trim();
+    if (!user || !domain) return;
+
+    var email = user + "@" + domain;
+    var link = block.querySelector(".email-link");
+    var revealBtn = block.querySelector(".email-reveal");
+    var copyBtn = block.querySelector(".email-copy");
+    var feedback = block.querySelector(".email-copy-feedback");
+
+    if (link) {
+      link.textContent = email;
+      link.setAttribute("href", "mailto:" + email);
+    }
+
+    if (revealBtn) {
+      revealBtn.addEventListener("click", function () {
+        if (link) {
+          link.hidden = false;
+          link.removeAttribute("aria-hidden");
+        }
+        revealBtn.setAttribute("aria-expanded", "true");
+        revealBtn.hidden = true;
+      });
+    }
+
+    if (copyBtn) {
+      copyBtn.addEventListener("click", function () {
+        copyText(email)
+          .then(function () {
+            if (!feedback) return;
+            feedback.textContent = "Email copié.";
+            feedback.classList.remove("sr-only");
+          })
+          .catch(function () {
+            if (!feedback) return;
+            feedback.textContent = "Copie impossible, utilisez l'option afficher.";
+            feedback.classList.remove("sr-only");
+          });
+      });
+    }
+  });
 }
 
 /*********** Function Ajax Portfolio Setup **********/
